@@ -75,6 +75,7 @@ const App = (props) => {
       setOpportunities(allOpportunities)
       console.log(allOpportunities)
     })()
+    return () => { setOpportunities('') }
   }, [loggedIn]);
 
   useEffect(() => {
@@ -83,6 +84,7 @@ const App = (props) => {
       setActivities(allActivities)
       console.log(allActivities)
     })()
+    return () => { setActivities('') }
   }, [loggedIn]);
 
   useEffect(() => {
@@ -91,6 +93,7 @@ const App = (props) => {
       setCompanies(allCompanies)
       console.log(allCompanies)
     })()
+    return () => { setCompanies('') }
   }, [loggedIn]);
 
   useEffect(() => {
@@ -99,6 +102,7 @@ const App = (props) => {
       setContacts(allContacts)
       console.log(allContacts)
     })()
+    return () => { setContacts('') }
   }, [loggedIn]);
 
   const handleLogin = async (e, data) => {

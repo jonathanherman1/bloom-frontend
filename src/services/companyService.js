@@ -6,7 +6,7 @@ export {
   getCompanyById,
 }
 
-const BASE_URL = 'http://localhost:8000/api/opportunities/'
+const BASE_URL = 'http://localhost:8000/api/companies/'
 
 async function create(company){
   console.log("opp: ", company)
