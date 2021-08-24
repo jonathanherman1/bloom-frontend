@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 
 // Styles
-import styles from './NewOpportunityForm.module.css'
+import styles from './NewOpportunityForm.module.css';
 import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
 
 function NewOpportunityForm(props) {
     const [formData, setFormData] = useState({
@@ -70,9 +71,9 @@ function NewOpportunityForm(props) {
               rows={4}
               variant="outlined" 
             />
-            <button type="submit">
+            <Button type="submit" variant="contained" color="primary">
               Add Opportunity
-            </button>
+            </Button>
           </form>
         </div>
     )
