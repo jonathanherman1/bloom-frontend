@@ -17,6 +17,7 @@ import NewOpportunityForm from '../../Components/NewOpportunityForm/NewOpportuni
 
 // Services
 import * as opportunityService from '../../services/opportunityService.js'
+import * as activityService from '../../services/activityService.js'
 
 // Styles
 import './App.css';
@@ -28,6 +29,7 @@ const App = (props) => {
       const [ displayedForm, setDisplayedForm ] = useState ('')
       const [ username, setUsername ] = useState ('')
 
+      const [activities, setActivities] = useState([])
       const [opportunities, setOpportunities] = useState([])
       const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)')
 
@@ -70,6 +72,15 @@ const App = (props) => {
       console.log(allOpportunities)
     })()
   }, [loggedIn]);
+
+  useEffect(() => {
+    (async () => {
+      const allActivities = await activityService.getAll()
+      setOpportunities(allActivities)
+      console.log(allActivities)
+    })()
+  }, [loggedIn]);
+
   const handleLogin = async (e, data) => {
     e.preventDefault();
     const res = await fetch('http://localhost:8000/token-auth/', {
