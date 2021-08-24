@@ -124,13 +124,13 @@ const App = (props) => {
   let form;
   switch (displayedForm) {
     case 'login':
-      form = <LoginForm handleLogin={handleLogin} />;
+      form = <LoginForm handleLogin={handleLogin} displayedForm={displayedForm} setDisplayedForm={setDisplayedForm} />;
       break;
     case 'signup':
-      form = <SignupForm handleSignup={handleSignup} />;
+      form = <SignupForm handleSignup={handleSignup} displayedForm={displayedForm} setDisplayedForm={setDisplayedForm} />;
       break;
     default:
-      form = null;
+      form = <SignupForm handleSignup={handleSignup} displayedForm={displayedForm} setDisplayedForm={setDisplayedForm} />;
   }
 
   const handleAddOpportunity = async (formData) => {
@@ -156,12 +156,12 @@ const App = (props) => {
           displayForm={displayForm}
           handleLogout={handleLogout}
         />
-        {form}
-        <h3>
-          {loggedIn
-            ? `Hello, ${username}`
-            : 'Please Log In'}
-        </h3>
+          {loggedIn &&
+            <>
+
+            </>
+          }
+          {form}
         <Switch checked={darkMode} onChange={() => setDarkMode(!darkMode)} />
         <Route path='/opportunities'>
           <NewOpportunityForm handleAddOpportunity={handleAddOpportunity}/>
