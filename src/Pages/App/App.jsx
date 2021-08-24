@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import {
-  Switch,
   createTheme,
   ThemeProvider,
   CssBaseline
 } from '@material-ui/core';
 import useMediaQuery from '@material-ui/core/useMediaQuery'
-import { BrowserRouter as Router, Route} from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 
 // Components
 import Nav from '../../Components/Nav/Nav'
@@ -16,6 +15,7 @@ import SignupForm from '../../Components/SignupForm/SignupForm'
 import NewOpportunityForm from '../../Components/NewOpportunityForm/NewOpportunityForm';
 import ContactForm from '../../Components/ContactForm/ContactForm';
 import OpportunityIndex from '../../Components/OpportunityIndex/OpportunityIndex';
+import OpportunityDetail from '../../Components/OpportunityDetail/OpportunityDetail';
 
 // Services
 import * as opportunityService from '../../services/opportunityService.js'
@@ -25,6 +25,7 @@ import * as contactService from '../../services/contactService.js'
 
 // Styles
 import './App.css';
+
 
 
 const App = (props) => {
@@ -194,7 +195,6 @@ const App = (props) => {
   }
 
   return (
-    <Router>
       <div className="App">
         <ThemeProvider theme={theme}>
         <CssBaseline />
@@ -205,20 +205,25 @@ const App = (props) => {
           darkMode={darkMode}
           setDarkMode={setDarkMode}
         />
-          {loggedIn 
-          ? <OpportunityIndex />
-          : form
-          }
-          
-        <Route path='/opportunities'>
-          <NewOpportunityForm handleAddOpportunity={handleAddOpportunity}/>
-        </Route>
-        <Route path='/contact'>
-          <ContactForm handleAddContact={handleAddContact}/>
-        </Route>
+        <Switch>
+          <Route exact path='/'>
+            {loggedIn 
+            ? <OpportunityIndex />
+            : form
+            }
+          </Route>
+          <Route exact path='/opportunities/:opp_id'>
+            <OpportunityDetail />
+          </Route>
+          <Route exact path='/opportunities'>
+            <NewOpportunityForm handleAddOpportunity={handleAddOpportunity}/>
+          </Route>
+          <Route exact path='/contact'>
+            <ContactForm handleAddContact={handleAddContact}/>
+          </Route>
+        </Switch>
         </ThemeProvider>
       </div>
-    </Router>
   );
 }
 

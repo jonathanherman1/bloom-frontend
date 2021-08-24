@@ -6,9 +6,10 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import { Link } from 'react-router-dom'
 import classes from './PrevCard.module.css'
 
-export default function MediaCard({ name, date, notes }) {
+export default function MediaCard({ name, date, notes, id }) {
   
     return (
       <Card className={classes.root}>
@@ -29,12 +30,14 @@ export default function MediaCard({ name, date, notes }) {
           </CardContent>
         </CardActionArea>
         <CardActions>
-          <Button size="small" color="primary">
-            View
-          </Button>
-          <Button size="small" color="primary">
-            Add Activity
-          </Button>
+          <Link to={`/opportunities/${id}`}>
+            <Button size="small" color="primary">
+                View
+            </Button>
+          </Link>
+            <Button size="small" color="primary">
+              Add Activity
+            </Button>
         </CardActions>
       </Card>
     );
