@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-class LoginForm extends React.Component {
+class SignupForm extends React.Component {
   state = {
     username: '',
     password: ''
@@ -19,8 +19,8 @@ class LoginForm extends React.Component {
 
   render() {
     return (
-      <form onSubmit={e => this.props.handle_login(e, this.state)}>
-        <h4>Log In</h4>
+      <form onSubmit={e => this.props.handle_signup(e, this.state)}>
+        <h4>Sign Up</h4>
         <label htmlFor="username">Username</label>
         <input
           type="text"
@@ -41,8 +41,8 @@ class LoginForm extends React.Component {
   }
 }
 
-export default LoginForm;
+export default SignupForm;
 
-LoginForm.propTypes = {
-  handle_login: PropTypes.func.isRequired
+SignupForm.propTypes = {
+  handle_signup: PropTypes.func.isRequired
 };
