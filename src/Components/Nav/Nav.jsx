@@ -31,7 +31,7 @@ function Nav({ displayForm, handleLogout, loggedIn }) {
           <IconButton edge="start" className={navStyles.menuButton} color="inherit" aria-label="menu">
           </IconButton>
           <Typography variant="h6" className={navStyles.title}>
-            <img className={navStyles.logo} src="/Assets/images/bloom-logo.png" alt="bloom logo"/>
+            <img className={navStyles.logo} src="/Assets/images/bloom-logo-blk.png" alt="bloom logo"/>
           </Typography>
           </div>
           <div className={navStyles.rightMenu}>
