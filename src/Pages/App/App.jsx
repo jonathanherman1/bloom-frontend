@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 
 // Components
 import Nav from '../../Components/Nav/Nav'
@@ -8,6 +9,7 @@ import NewOpportunityForm from '../../Components/NewOpportunityForm/NewOpportuni
 
 
 // Services
+import * as opportunityService from '../../services/opportunityService.js'
 
 // Styles
 import './App.module.css';
@@ -17,6 +19,8 @@ const App = (props) => {
       const [ loggedIn, setLoggedIn ] = useState(localStorage.getItem('token') ? true : false)
       const [ displayedForm, setDisplayedForm ] = useState ('')
       const [ username, setUsername ] = useState ('')
+
+      const [opportunities, setOpportunities] = useState([])
 
   useEffect(() => {
     (async () => {
@@ -86,6 +90,14 @@ const App = (props) => {
       form = null;
   }
 
+  const handleAddOpportunity = async (formData) => {
+    // const API_URL = 'http://localhost:8000/api/opportunities/'
+    // const response = await axios.post(API_URL, formData)
+    // console.log(response);
+    const newOpportunity = await opportunityService.create(formData)
+    setOpportunities([newOpportunity, ...opportunities])
+  }
+
   return (
     <div className="App">
       <Nav
@@ -99,7 +111,9 @@ const App = (props) => {
           ? `Hello, ${username}`
           : 'Please Log In'}
       </h3>
-      <NewOpportunityForm/>
+      <NewOpportunityForm 
+        handleAddOpportunity={handleAddOpportunity}
+      />
     </div>
   );
 }

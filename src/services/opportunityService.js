@@ -6,14 +6,16 @@ export {
     getOpportunityById,
 }
 
-const BASE_URL = '/api/opportunities/'
+const BASE_URL = 'http://localhost:8000/api/opportunities/'
 
 async function create(opportunity){
+    console.log(localStorage.getItem('token'))
     try {
         const res = await fetch(BASE_URL, {
             method: 'POST',
             headers: {
-                'content-type': 'application/json'
+                'content-type': 'application/json',
+                'Authorization': `Token ${localStorage.getItem('token')}`
             },
             body: JSON.stringify(opportunity)
         }, {mode: 'cors'})
@@ -30,7 +32,7 @@ async function getAll(){
             headers: {
             'content-type': 'application/json'
             }
-        }, {mode: 'cors'})
+        })
         const data = await res.json()
         return data
     } catch (error) {
@@ -42,7 +44,7 @@ async function deleteOne(id){
     try {
         await fetch(`${BASE_URL}${id}`, {
             method: 'DELETE'
-        }, {mode: 'cors'})
+        })
     } catch (error) {
         throw error
     }
@@ -57,7 +59,7 @@ async function update(opportunity, id){
                 'content-type': 'application/json',
             },
             body: JSON.stringify(opportunity)
-        }, {mode: 'cors'})
+        })
         const data = await res.json()
         return data
     } catch (error) {
@@ -67,7 +69,7 @@ async function update(opportunity, id){
 
 async function getOpportunityById (id) {
     try {
-        const res = await fetch(`${BASE_URL}${id}`, { mode: 'cors' })
+        const res = await fetch(`${BASE_URL}${id}`)
         const data = await res.json()
         return data
     } catch (error) {
