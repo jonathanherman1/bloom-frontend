@@ -1,4 +1,10 @@
 import React, { useState, useEffect } from 'react';
+import {
+  Switch,
+  createTheme,
+  ThemeProvider,
+  CssBaseline
+} from '@material-ui/core';
 
 // Components
 import Nav from '../../Components/Nav/Nav'
@@ -13,10 +19,17 @@ import NewOpportunityForm from '../../Components/NewOpportunityForm/NewOpportuni
 import './App.module.css';
 
 const App = (props) => {
-
+      const [ darkMode, setDarkMode ] = useState(false);
       const [ loggedIn, setLoggedIn ] = useState(localStorage.getItem('token') ? true : false)
       const [ displayedForm, setDisplayedForm ] = useState ('')
       const [ username, setUsername ] = useState ('')
+
+
+    const theme = createTheme({
+      palette: {
+        type: darkMode ? 'dark' : 'light',
+      },
+    });
 
   useEffect(() => {
     (async () => {
@@ -88,6 +101,8 @@ const App = (props) => {
 
   return (
     <div className="App">
+      <ThemeProvider theme={theme}>
+      <CssBaseline />
       <Nav
         loggedIn={loggedIn}
         displayForm={displayForm}
@@ -99,7 +114,9 @@ const App = (props) => {
           ? `Hello, ${username}`
           : 'Please Log In'}
       </h3>
+      <Switch checked={darkMode} onChange={() => setDarkMode(!darkMode)} />
       <NewOpportunityForm/>
+      </ThemeProvider>
     </div>
   );
 }
