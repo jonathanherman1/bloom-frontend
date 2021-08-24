@@ -205,9 +205,12 @@ const App = (props) => {
           darkMode={darkMode}
           setDarkMode={setDarkMode}
         />
-        <Switch>
+        
           <Route exact path='/'>
             { loggedIn ? <OpportunityIndex /> : form }
+          </Route>
+          <Route exact path='/opportunities/new'>
+            <NewOpportunityForm handleAddOpportunity={handleAddOpportunity}/>
           </Route>
           <Route exact path='/opportunities/:opp_id'>
             <OpportunityDetail />
@@ -215,13 +218,10 @@ const App = (props) => {
           <Route exact path='/opportunities/:opp_id/new-activity'>
             <NewActivityForm />
           </Route>
-          <Route exact path='/opportunities'>
-            <NewOpportunityForm handleAddOpportunity={handleAddOpportunity}/>
-          </Route>
           <Route exact path='/contact'>
             <ContactForm handleAddContact={handleAddContact}/>
           </Route>
-        </Switch>
+        
         </ThemeProvider>
       </div>
   );
