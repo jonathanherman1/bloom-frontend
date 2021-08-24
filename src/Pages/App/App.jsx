@@ -203,12 +203,11 @@ const App = (props) => {
           darkMode={darkMode}
           setDarkMode={setDarkMode}
         />
-          {loggedIn &&
-            <>
-
-            </>
+          {loggedIn 
+          ? <h1>Opportunities</h1>
+          : form
           }
-          {form}
+          
         <Route path='/opportunities'>
           <NewOpportunityForm handleAddOpportunity={handleAddOpportunity}/>
         </Route>
