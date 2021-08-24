@@ -10,19 +10,6 @@ import * as navStyles from './Nav.module.css';
 
 function Nav({ displayForm, handleLogout, loggedIn, darkMode, setDarkMode }) {
   
-  const loggedOutNav = (
-      <>
-        <Button onClick={() => displayForm('login')}>Login</Button>
-        <Button onClick={() => displayForm('signup')}>Signup</Button>
-      </>
-  );
-
-  const loggedInNav = (
-      <>
-        <Button onClick={handleLogout}>Logout</Button>
-      </>
-  );
-
   return (
     <>
     <header className={navStyles.header}>
@@ -36,7 +23,9 @@ function Nav({ displayForm, handleLogout, loggedIn, darkMode, setDarkMode }) {
           </Typography>
           </div>
           <div className={navStyles.rightMenu}>
-            {loggedIn ? loggedInNav : loggedOutNav}
+            {loggedIn &&
+              <Button onClick={handleLogout}>Logout</Button>
+            }
             <Switch checked={darkMode} onChange={() => setDarkMode(!darkMode)} />
           </div>
         </Toolbar>

@@ -33,6 +33,7 @@ const SignupForm = ({ setDisplayedForm, handleSignup}) => {
           label="Username"
           value={state.username}
           variant="outlined"
+          autoComplete="off"
           fullWidth
           onChange={handleChange}
         />
@@ -43,6 +44,7 @@ const SignupForm = ({ setDisplayedForm, handleSignup}) => {
           label="Password"
           value={state.password}
           variant="outlined"
+          autoComplete="off"
           fullWidth
           onChange={handleChange}
         />
