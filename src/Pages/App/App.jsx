@@ -18,6 +18,8 @@ import NewOpportunityForm from '../../Components/NewOpportunityForm/NewOpportuni
 // Services
 import * as opportunityService from '../../services/opportunityService.js'
 import * as activityService from '../../services/activityService.js'
+import * as companyService from '../../services/companyService.js'
+import * as contactService from '../../services/contactService.js'
 
 // Styles
 import './App.css';
@@ -30,6 +32,8 @@ const App = (props) => {
       const [ username, setUsername ] = useState ('')
 
       const [activities, setActivities] = useState([])
+      const [contacts, setContacts] = useState([])
+      const [companies, setCompanies] = useState([])
       const [opportunities, setOpportunities] = useState([])
       const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)')
 
@@ -71,14 +75,34 @@ const App = (props) => {
       setOpportunities(allOpportunities)
       console.log(allOpportunities)
     })()
+    return () => { setOpportunities('') }
   }, [loggedIn]);
 
   useEffect(() => {
     (async () => {
       const allActivities = await activityService.getAll()
-      setOpportunities(allActivities)
+      setActivities(allActivities)
       console.log(allActivities)
     })()
+    return () => { setActivities('') }
+  }, [loggedIn]);
+
+  useEffect(() => {
+    (async () => {
+      const allCompanies = await companyService.getAll()
+      setCompanies(allCompanies)
+      console.log(allCompanies)
+    })()
+    return () => { setCompanies('') }
+  }, [loggedIn]);
+
+  useEffect(() => {
+    (async () => {
+      const allContacts = await contactService.getAll()
+      setContacts(allContacts)
+      console.log(allContacts)
+    })()
+    return () => { setContacts('') }
   }, [loggedIn]);
 
   const handleLogin = async (e, data) => {
@@ -134,13 +158,34 @@ const App = (props) => {
   }
 
   const handleAddOpportunity = async (formData) => {
-    // const API_URL = 'http://localhost:8000/api/opportunities/'
-    // const response = await axios.post(API_URL, formData)
-    // console.log(response);
     try {
-      console.log(formData)
       const newOpportunity = await opportunityService.create(formData)
       setOpportunities([newOpportunity, ...opportunities])
+    } catch (error) {
+      throw error
+    }
+  }
+  const handleAddContact = async (formData) => {
+    try {
+      const newContact = await contactService.create(formData)
+      setContacts([newContact, ...contacts])
+    } catch (error) {
+      throw error
+    }
+  }
+  const handleAddActivity = async (formData) => {
+    try {
+      const newActivity = await activityService.create(formData)
+      setActivities([newActivity, ...activities])
+    } catch (error) {
+      throw error
+    }
+  }
+
+  const handleAddCompany = async (formData) => {
+    try {
+      const newCompany = await companyService.create(formData)
+      setCompanies([newCompany, ...companies])
     } catch (error) {
       throw error
     }
@@ -167,7 +212,7 @@ const App = (props) => {
           <NewOpportunityForm handleAddOpportunity={handleAddOpportunity}/>
         </Route>
         <Route path='/contact'>
-          <ContactForm />
+          <ContactForm handleAddContact={handleAddContact}/>
         </Route>
         </ThemeProvider>
       </div>
