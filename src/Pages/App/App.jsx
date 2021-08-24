@@ -80,7 +80,7 @@ const App = (props) => {
   useEffect(() => {
     (async () => {
       const allActivities = await activityService.getAll()
-      setOpportunities(allActivities)
+      setActivities(allActivities)
       console.log(allActivities)
     })()
   }, [loggedIn]);
@@ -88,7 +88,7 @@ const App = (props) => {
   useEffect(() => {
     (async () => {
       const allCompanies = await companyService.getAll()
-      setOpportunities(allCompanies)
+      setCompanies(allCompanies)
       console.log(allCompanies)
     })()
   }, [loggedIn]);
@@ -96,7 +96,7 @@ const App = (props) => {
   useEffect(() => {
     (async () => {
       const allContacts = await contactService.getAll()
-      setOpportunities(allContacts)
+      setContacts(allContacts)
       console.log(allContacts)
     })()
   }, [loggedIn]);
@@ -155,7 +155,6 @@ const App = (props) => {
 
   const handleAddOpportunity = async (formData) => {
     try {
-      console.log(formData)
       const newOpportunity = await opportunityService.create(formData)
       setOpportunities([newOpportunity, ...opportunities])
     } catch (error) {
@@ -164,7 +163,6 @@ const App = (props) => {
   }
   const handleAddContact = async (formData) => {
     try {
-      console.log(formData)
       const newContact = await contactService.create(formData)
       setContacts([newContact, ...contacts])
     } catch (error) {
@@ -173,7 +171,6 @@ const App = (props) => {
   }
   const handleAddActivity = async (formData) => {
     try {
-      console.log(formData)
       const newActivity = await activityService.create(formData)
       setActivities([newActivity, ...activities])
     } catch (error) {
@@ -183,7 +180,6 @@ const App = (props) => {
 
   const handleAddCompany = async (formData) => {
     try {
-      console.log(formData)
       const newCompany = await companyService.create(formData)
       setCompanies([newCompany, ...companies])
     } catch (error) {
