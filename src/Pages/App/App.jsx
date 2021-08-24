@@ -130,7 +130,9 @@ const App = (props) => {
             : 'Please Log In'}
         </h3>
         <Switch checked={darkMode} onChange={() => setDarkMode(!darkMode)} />
-        <NewOpportunityForm/>
+        <Route path='/opportunities'>
+          <NewOpportunityForm/>
+        </Route>
         <Route path='/contact'>
           <ContactForm />
         </Route>
