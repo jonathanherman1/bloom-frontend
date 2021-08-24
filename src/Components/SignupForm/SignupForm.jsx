@@ -4,7 +4,7 @@ import Button from '@material-ui/core/Button'
 import * as styles from "./SignupForm.module.css"
 import PropTypes from 'prop-types';
 
-const SignupForm = (props) => {
+const SignupForm = ({ setDisplayedForm, handleSignup}) => {
   const [ state, setState ] = useState({
     username: '',
     password: ''
@@ -21,9 +21,10 @@ const SignupForm = (props) => {
   };
 
     return (
+      <>
       <form 
         className={styles.form}
-        onSubmit={e => props.handleSignup(e, state)}>
+        onSubmit={e => handleSignup(e, state)}>
         <h4>Sign Up</h4>
 
         <TextField
@@ -47,6 +48,8 @@ const SignupForm = (props) => {
         />
         <Button type="submit" variant="contained" color="primary">Submit</Button>
       </form>
+      <Button onClick={() => setDisplayedForm('login')}>Login</Button>
+      </>
     );
 }
 
