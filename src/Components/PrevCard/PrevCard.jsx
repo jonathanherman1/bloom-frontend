@@ -35,9 +35,11 @@ export default function MediaCard({ name, date, notes, id }) {
                 View
             </Button>
           </Link>
+          <Link to={`/opportunities/${id}/new-activity`}>
             <Button size="small" color="primary">
               Add Activity
             </Button>
+          </Link>
         </CardActions>
       </Card>
     );
