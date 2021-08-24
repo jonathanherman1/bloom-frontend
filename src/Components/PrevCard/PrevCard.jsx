@@ -13,7 +13,10 @@ export default function MediaCard({ name, date, notes, id }) {
   
     return (
       <Card className={classes.root}>
-        <CardActionArea>
+        <CardActionArea
+        component={Link}
+        to={`/opportunities/${id}`}
+        >
           <CardMedia
             className={classes.media}
             image=""

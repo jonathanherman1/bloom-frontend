@@ -5,3 +5,7 @@
 .media {
     height: 140;
 }
+
+a {
+    text-decoration: none;
+}
