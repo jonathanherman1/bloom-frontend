@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import Nav from '../../Components/Nav/Nav'
 import LoginForm from '../../Components/LoginForm/LoginForm'
@@ -6,110 +6,96 @@ import SignupForm from '../../Components/SignupForm/SignupForm'
 
 import './App.module.css';
 
-class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      displayed_form: '',
-      logged_in: localStorage.getItem('token') ? true : false,
-      username: ''
-    };
-  }
+const App = (props) => {
 
-  componentDidMount() {
-    if (this.state.logged_in) {
-      fetch('http://localhost:8000/bloom/current_user/', {
-        headers: {
-          Authorization: `JWT ${localStorage.getItem('token')}`
-        }
-      })
-        .then(res => res.json())
-        .then(json => {
-          this.setState({ username: json.username });
-        });
-    }
-  }
+      const [ loggedIn, setLoggedIn ] = useState(localStorage.getItem('token') ? true : false)
+      const [ displayedForm, setDisplayedForm ] = useState ('')
+      const [ username, setUsername ] = useState ('')
 
-  handle_login = (e, data) => {
+  useEffect(() => {
+    (async () => {
+      if (loggedIn) {
+        const res = await fetch('http://localhost:8000/bloom/current_user/', {
+          headers: {
+            Authorization: `JWT ${ localStorage.getItem('token') }`
+          }
+        })
+        const json = await res.json()
+        setUsername(json.username)
+      }
+    })();
+    return () => { setUsername('') }
+  }, [loggedIn]);
+
+
+  const handleLogin = async (e, data) => {
     e.preventDefault();
-    fetch('http://localhost:8000/token-auth/', {
+    const res = await fetch('http://localhost:8000/token-auth/', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify(data)
     })
-      .then(res => res.json())
-      .then(json => {
-        localStorage.setItem('token', json.token);
-        this.setState({
-          logged_in: true,
-          displayed_form: '',
-          username: json.user.username
-        });
-      });
+    const json = await res.json()
+    localStorage.setItem('token', json.token);
+    setLoggedIn(true)
+    setDisplayedForm('')
+    setUsername(json.user.username)
   };
 
-  handle_signup = (e, data) => {
+  const handleSignup = async (e, data) => {
     e.preventDefault();
-    fetch('http://localhost:8000/bloom/users/', {
+    const res = await fetch('http://localhost:8000/bloom/users/', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify(data)
     })
-      .then(res => res.json())
-      .then(json => {
-        localStorage.setItem('token', json.token);
-        this.setState({
-          logged_in: true,
-          displayed_form: '',
-          username: json.username
-        });
-      });
+      const json = await res.json()
+      localStorage.setItem('token', json.token);
+      setLoggedIn(true)
+      setDisplayedForm('')
+      setUsername(json.username)
   };
 
-  handle_logout = () => {
+  const handleLogout = () => {
     localStorage.removeItem('token');
-    this.setState({ logged_in: false, username: '' });
+    setLoggedIn(false)
+    setUsername('')
   };
 
-  display_form = form => {
-    this.setState({
-      displayed_form: form
-    });
-  };
+  const displayForm = form => setDisplayedForm(form)
 
-  render() {
-    let form;
-    switch (this.state.displayed_form) {
-      case 'login':
-        form = <LoginForm handle_login={this.handle_login} />;
-        break;
-      case 'signup':
-        form = <SignupForm handle_signup={this.handle_signup} />;
-        break;
-      default:
-        form = null;
-    }
-
-    return (
-      <div className="App">
-        <Nav
-          logged_in={this.state.logged_in}
-          display_form={this.display_form}
-          handle_logout={this.handle_logout}
-        />
-        {form}
-        <h3>
-          {this.state.logged_in
-            ? `Hello, ${this.state.username}`
-            : 'Please Log In'}
-        </h3>
-      </div>
-    );
+  let form;
+  switch (displayedForm) {
+    case 'login':
+      form = <LoginForm handleLogin={handleLogin} />;
+      break;
+    case 'signup':
+      form = <SignupForm handleSignup={handleSignup} />;
+      break;
+    default:
+      form = null;
   }
+
+  return (
+    <div className="App">
+      <Nav
+        loggedIn={loggedIn}
+        displayForm={displayForm}
+        handleLogout={handleLogout}
+      />
+      {form}
+      <h3>
+        {loggedIn
+          ? `Hello, ${username}`
+          : 'Please Log In'}
+      </h3>
+    </div>
+  );
 }
+
 
 export default App;
