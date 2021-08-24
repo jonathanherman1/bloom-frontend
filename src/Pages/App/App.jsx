@@ -5,6 +5,7 @@ import {
   ThemeProvider,
   CssBaseline
 } from '@material-ui/core';
+import useMediaQuery from '@material-ui/core/useMediaQuery'
 
 // Components
 import Nav from '../../Components/Nav/Nav'
@@ -23,12 +24,24 @@ const App = (props) => {
       const [ displayedForm, setDisplayedForm ] = useState ('')
       const [ username, setUsername ] = useState ('')
 
+      const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)')
 
-    const theme = createTheme({
-      palette: {
-        type: darkMode ? 'dark' : 'light',
+  useEffect(() => {
+      prefersDarkMode ? setDarkMode(true) : setDarkMode(false)
+    },[prefersDarkMode],
+  );
+
+  const theme = createTheme({
+    palette: {
+      primary:{
+        main: '#c8e6c9'
       },
-    });
+      secondary:{
+        main: '#424444'
+      },
+      type: darkMode ? 'dark' : 'light',
+    },
+  });
 
   useEffect(() => {
     (async () => {
