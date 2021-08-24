@@ -4,10 +4,11 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
+import Switch from '@material-ui/core/Switch'
 import IconButton from '@material-ui/core/IconButton';
 import * as navStyles from './Nav.module.css';
 
-function Nav({ displayForm, handleLogout, loggedIn }) {
+function Nav({ displayForm, handleLogout, loggedIn, darkMode, setDarkMode }) {
   
   const loggedOutNav = (
       <>
@@ -35,7 +36,8 @@ function Nav({ displayForm, handleLogout, loggedIn }) {
           </Typography>
           </div>
           <div className={navStyles.rightMenu}>
-            {loggedIn ? loggedInNav : loggedOutNav} 
+            {loggedIn ? loggedInNav : loggedOutNav}
+            <Switch checked={darkMode} onChange={() => setDarkMode(!darkMode)} />
           </div>
         </Toolbar>
       </AppBar>

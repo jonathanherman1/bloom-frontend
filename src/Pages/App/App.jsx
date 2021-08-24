@@ -155,6 +155,8 @@ const App = (props) => {
           loggedIn={loggedIn}
           displayForm={displayForm}
           handleLogout={handleLogout}
+          darkMode={darkMode}
+          setDarkMode={setDarkMode}
         />
           {loggedIn &&
             <>
@@ -162,7 +164,6 @@ const App = (props) => {
             </>
           }
           {form}
-        <Switch checked={darkMode} onChange={() => setDarkMode(!darkMode)} />
         <Route path='/opportunities'>
           <NewOpportunityForm handleAddOpportunity={handleAddOpportunity}/>
         </Route>
