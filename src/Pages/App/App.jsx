@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import {
   Switch,
   createTheme,
@@ -15,6 +16,7 @@ import SignupForm from '../../Components/SignupForm/SignupForm'
 import NewOpportunityForm from '../../Components/NewOpportunityForm/NewOpportunityForm';
 
 // Services
+import * as opportunityService from '../../services/opportunityService.js'
 
 // Styles
 import './App.css';
@@ -26,6 +28,7 @@ const App = (props) => {
       const [ displayedForm, setDisplayedForm ] = useState ('')
       const [ username, setUsername ] = useState ('')
 
+      const [opportunities, setOpportunities] = useState([])
       const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)')
 
   useEffect(() => {
@@ -111,6 +114,19 @@ const App = (props) => {
       break;
     default:
       form = null;
+  }
+
+  const handleAddOpportunity = async (formData) => {
+    // const API_URL = 'http://localhost:8000/api/opportunities/'
+    // const response = await axios.post(API_URL, formData)
+    // console.log(response);
+    try {
+      console.log(formData)
+      const newOpportunity = await opportunityService.create(formData)
+      setOpportunities([newOpportunity, ...opportunities])
+    } catch (error) {
+      throw error
+    }
   }
 
   return (

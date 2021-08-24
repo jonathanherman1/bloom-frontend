@@ -18,7 +18,7 @@ function NewOpportunityForm(props) {
   
     const handleSubmit = (e) => {
       e.preventDefault()
-    //   props.handleAddOpportunity(formData)
+      props.handleAddOpportunity(formData)
       setFormData({
         name: '',
         date: '',
