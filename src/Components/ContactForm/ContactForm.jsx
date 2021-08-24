@@ -8,11 +8,11 @@ function ContactForm(props) {
     const handleChange = (e) => {
         setFormData({ 
             ...formData, 
-            [e.target.name]: e.target.value,
-            [e.target.phone]: e.target.value,
-            [e.target.email]: e.target.value,
-            [e.target.department]: e.target.value,
-            [e.target.notes]: e.target.value,
+            // [e.target.name]: e.target.value,
+            // [e.target.phone]: e.target.value,
+            // [e.target.email]: e.target.value,
+            // [e.target.department]: e.target.value,
+            // [e.target.notes]: e.target.value,
         })
     }
 

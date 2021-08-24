@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Route} from 'react-router-dom'
 
 // Components
 import Nav from '../../Components/Nav/Nav'
@@ -11,6 +12,7 @@ import NewOpportunityForm from '../../Components/NewOpportunityForm/NewOpportuni
 
 // Styles
 import './App.module.css';
+import ContactForm from '../../Components/ContactForm/ContactForm';
 
 const App = (props) => {
 
@@ -87,20 +89,28 @@ const App = (props) => {
   }
 
   return (
-    <div className="App">
-      <Nav
-        loggedIn={loggedIn}
-        displayForm={displayForm}
-        handleLogout={handleLogout}
-      />
-      {form}
-      <h3>
-        {loggedIn
-          ? `Hello, ${username}`
-          : 'Please Log In'}
-      </h3>
-      <NewOpportunityForm/>
-    </div>
+    <Router>
+      <div className="App">
+        <Route exact path='/'>
+          <Nav
+            loggedIn={loggedIn}
+            displayForm={displayForm}
+            handleLogout={handleLogout}
+          />
+          {form}
+          <h3>
+            {loggedIn
+              ? `Hello, ${username}`
+              : 'Please Log In'}
+          </h3>
+          <NewOpportunityForm />
+        </Route>
+        
+        <Route path='/contact'>
+          <ContactForm />
+        </Route>
+      </div>
+      </Router>
   );
 }
 
