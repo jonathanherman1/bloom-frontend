@@ -6,6 +6,7 @@ import {
   CssBaseline
 } from '@material-ui/core';
 import useMediaQuery from '@material-ui/core/useMediaQuery'
+import { BrowserRouter as Router, Route} from 'react-router-dom'
 
 // Components
 import Nav from '../../Components/Nav/Nav'
@@ -17,6 +18,7 @@ import NewOpportunityForm from '../../Components/NewOpportunityForm/NewOpportuni
 
 // Styles
 import './App.css';
+import ContactForm from '../../Components/ContactForm/ContactForm';
 
 const App = (props) => {
       const [ darkMode, setDarkMode ] = useState(false);
@@ -112,24 +114,29 @@ const App = (props) => {
   }
 
   return (
-    <div className="App">
-      <ThemeProvider theme={theme}>
-      <CssBaseline />
-      <Nav
-        loggedIn={loggedIn}
-        displayForm={displayForm}
-        handleLogout={handleLogout}
-      />
-      {form}
-      <h3>
-        {loggedIn
-          ? `Hello, ${username}`
-          : 'Please Log In'}
-      </h3>
-      <Switch checked={darkMode} onChange={() => setDarkMode(!darkMode)} />
-      <NewOpportunityForm/>
-      </ThemeProvider>
-    </div>
+    <Router>
+      <div className="App">
+        <ThemeProvider theme={theme}>
+        <CssBaseline />
+        <Nav
+          loggedIn={loggedIn}
+          displayForm={displayForm}
+          handleLogout={handleLogout}
+        />
+        {form}
+        <h3>
+          {loggedIn
+            ? `Hello, ${username}`
+            : 'Please Log In'}
+        </h3>
+        <Switch checked={darkMode} onChange={() => setDarkMode(!darkMode)} />
+        <NewOpportunityForm/>
+        <Route path='/contact'>
+          <ContactForm />
+        </Route>
+        </ThemeProvider>
+      </div>
+    </Router>
   );
 }
 
