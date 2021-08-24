@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-
+import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
 import styles from './ContactForm.module.css'
 
 function ContactForm(props) {
@@ -35,54 +36,75 @@ function ContactForm(props) {
                 onSubmit={handleSubmit}
                 className={styles.form}
             >
-                <label htmlFor="contact-name">Name</label>
-                <input
-                    id="contac-name"
-                    type="text"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    autoComplete="off"
-                    placeholder="contact name"
-                    required
-                />
-                <label htmlFor="contact-phone">Phone Number</label>
-                <input
-                    id="contact-phone"
-                    type="phone"
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleChange}
-                />
-                <label htmlFor="contact-email">Email</label>
-                <input
-                    id="contact-email"
-                    type="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                />
-                <label htmlFor="contact-department">Department</label>
-                <input
-                    id="contact-department"
-                    type="department"
-                    name="department"
-                    value={formData.department}
-                    onChange={handleChange}
-                />
-                <label htmlFor="contact-notes">Notes</label>
-                <textarea
-                    id="contact-notes"
-                    name="notes"
-                    value={formData.notes}
-                    onChange={handleChange}
-                    cols="30"
-                    rows="10"
-                    placeholder="type contact notes here"
-                ></textarea>
-                <button type="submit">
+            <TextField 
+                id="contact-name"
+                type="text" 
+                name="name"
+                label="Name"
+                value={formData.name}
+                onChange={handleChange}
+                autoComplete="off"
+                fullWidth
+                required
+                variant="outlined" 
+            />
+
+            <TextField 
+                id="contact-phone"
+                type="phone" 
+                name="phone"
+                label="Phone number"
+                value={formData.phone}
+                onChange={handleChange}
+                autoComplete="off"
+                fullWidth
+                required
+                variant="outlined" 
+            />
+
+            <TextField 
+                id="contact-email"
+                type="email" 
+                name="email"
+                label="Email"
+                value={formData.email}
+                onChange={handleChange}
+                autoComplete="off"
+                fullWidth
+                required
+                variant="outlined" 
+            />
+
+            <TextField 
+                id="contact-department"
+                type="department" 
+                name="department"
+                label="Department"
+                value={formData.department}
+                onChange={handleChange}
+                autoComplete="off"
+                fullWidth
+                required
+                variant="outlined" 
+            />
+ 
+            <TextField 
+                id="contact-notes"
+                type="notes" 
+                name="notes"
+                label="Notes"
+                value={formData.notes}
+                onChange={handleChange}
+                autoComplete="off"
+                multiline
+                rows={4}
+                fullWidth
+                required
+                variant="outlined" 
+            />
+                <Button type="submit" variant="contained" color="primary">
                     SUBMIT
-                </button>
+                </Button>
             </form>
         </div>
     )
