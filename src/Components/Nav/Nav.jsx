@@ -1,7 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+
 function Nav({ displayForm, handleLogout, loggedIn }) {
+  
   const loggedOutNav = (
     <ul>
       <li onClick={() => displayForm('login')}>login</li>
@@ -14,7 +16,7 @@ function Nav({ displayForm, handleLogout, loggedIn }) {
       <li onClick={handleLogout}>logout</li>
     </ul>
   );
-  return <div>{loggedIn ? loggedInNav : loggedOutNav}</div>;
+  return <div>{loggedIn ? loggedInNav : loggedOutNav} </div>;
 }
 
 export default Nav;
