@@ -147,7 +147,7 @@ const App = (props) => {
         </h3>
         <Switch checked={darkMode} onChange={() => setDarkMode(!darkMode)} />
         <Route path='/opportunities'>
-          <NewOpportunityForm/>
+          <NewOpportunityForm handleAddOpportunity={handleAddOpportunity}/>
         </Route>
         <Route path='/contact'>
           <ContactForm />
