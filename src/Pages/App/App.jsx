@@ -158,12 +158,9 @@ const App = (props) => {
           darkMode={darkMode}
           setDarkMode={setDarkMode}
         />
-          {loggedIn ?
-            <>
-
-            </>
-            :
-            form
+          {loggedIn 
+          ? <h1>Opportunities</h1>
+          : form
           }
           
         <Route path='/opportunities'>
