@@ -48,7 +48,7 @@ const SignupForm = ({ setDisplayedForm, handleSignup}) => {
         />
         <Button type="submit" variant="contained" color="primary">Submit</Button>
       </form>
-      <Button onClick={() => setDisplayedForm('login')}></Button>
+      <Button onClick={() => setDisplayedForm('login')}>Login</Button>
       </>
     );
 }
