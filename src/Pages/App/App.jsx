@@ -1,9 +1,15 @@
 import React, { useState, useEffect } from 'react';
 
+// Components
 import Nav from '../../Components/Nav/Nav'
 import LoginForm from '../../Components/LoginForm/LoginForm'
 import SignupForm from '../../Components/SignupForm/SignupForm'
+import NewOpportunityForm from '../../Components/NewOpportunityForm/NewOpportunityForm';
 
+
+// Services
+
+// Styles
 import './App.module.css';
 
 const App = (props) => {
@@ -93,6 +99,7 @@ const App = (props) => {
           ? `Hello, ${username}`
           : 'Please Log In'}
       </h3>
+      <NewOpportunityForm/>
     </div>
   );
 }
