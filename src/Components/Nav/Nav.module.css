@@ -1,0 +1,25 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    top: 0; 
+    left: 0; 
+    right: 0;
+}
+
+.menuButton {
+    margin-right: 2rem;
+}
+
+.title {
+    flex-grow: 1;
+}
+
+.toolBar {
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo {
+    height: 50px;
+}
