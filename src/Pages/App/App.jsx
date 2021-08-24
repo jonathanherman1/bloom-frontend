@@ -1,5 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import {
+  Switch,
+  createTheme,
+  ThemeProvider,
+  CssBaseline
+} from '@material-ui/core';
+import useMediaQuery from '@material-ui/core/useMediaQuery'
 
 // Components
 import Nav from '../../Components/Nav/Nav'
@@ -7,20 +14,37 @@ import LoginForm from '../../Components/LoginForm/LoginForm'
 import SignupForm from '../../Components/SignupForm/SignupForm'
 import NewOpportunityForm from '../../Components/NewOpportunityForm/NewOpportunityForm';
 
-
 // Services
 import * as opportunityService from '../../services/opportunityService.js'
 
 // Styles
-import './App.module.css';
+import './App.css';
 
 const App = (props) => {
-
+      const [ darkMode, setDarkMode ] = useState(false);
       const [ loggedIn, setLoggedIn ] = useState(localStorage.getItem('token') ? true : false)
       const [ displayedForm, setDisplayedForm ] = useState ('')
       const [ username, setUsername ] = useState ('')
 
       const [opportunities, setOpportunities] = useState([])
+      const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)')
+
+  useEffect(() => {
+      prefersDarkMode ? setDarkMode(true) : setDarkMode(false)
+    },[prefersDarkMode],
+  );
+
+  const theme = createTheme({
+    palette: {
+      primary:{
+        main: '#c8e6c9'
+      },
+      secondary:{
+        main: '#424444'
+      },
+      type: darkMode ? 'dark' : 'light',
+    },
+  });
 
   useEffect(() => {
     (async () => {
@@ -94,12 +118,19 @@ const App = (props) => {
     // const API_URL = 'http://localhost:8000/api/opportunities/'
     // const response = await axios.post(API_URL, formData)
     // console.log(response);
-    const newOpportunity = await opportunityService.create(formData)
-    setOpportunities([newOpportunity, ...opportunities])
+    try {
+      console.log(formData)
+      const newOpportunity = await opportunityService.create(formData)
+      setOpportunities([newOpportunity, ...opportunities])
+    } catch (error) {
+      throw error
+    }
   }
 
   return (
     <div className="App">
+      <ThemeProvider theme={theme}>
+      <CssBaseline />
       <Nav
         loggedIn={loggedIn}
         displayForm={displayForm}
@@ -114,6 +145,8 @@ const App = (props) => {
       <NewOpportunityForm 
         handleAddOpportunity={handleAddOpportunity}
       />
+      <Switch checked={darkMode} onChange={() => setDarkMode(!darkMode)} />
+      </ThemeProvider>
     </div>
   );
 }
