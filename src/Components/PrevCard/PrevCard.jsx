@@ -8,7 +8,7 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import classes from './PrevCard.module.css'
 
-export default function MediaCard(props) {
+export default function MediaCard({ name, date, notes }) {
   
     return (
       <Card className={classes.root}>
@@ -20,10 +20,11 @@ export default function MediaCard(props) {
           />
           <CardContent>
             <Typography gutterBottom variant="h5" component="h2">
-              title
+              {name}
             </Typography>
             <Typography variant="body2" color="textSecondary" component="p">
-              body text goes here!
+              {date} 
+              {notes}
             </Typography>
           </CardContent>
         </CardActionArea>

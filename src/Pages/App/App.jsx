@@ -14,6 +14,8 @@ import Nav from '../../Components/Nav/Nav'
 import LoginForm from '../../Components/LoginForm/LoginForm'
 import SignupForm from '../../Components/SignupForm/SignupForm'
 import NewOpportunityForm from '../../Components/NewOpportunityForm/NewOpportunityForm';
+import ContactForm from '../../Components/ContactForm/ContactForm';
+import OpportunityIndex from '../../Components/OpportunityIndex/OpportunityIndex';
 
 // Services
 import * as opportunityService from '../../services/opportunityService.js'
@@ -23,7 +25,7 @@ import * as contactService from '../../services/contactService.js'
 
 // Styles
 import './App.css';
-import ContactForm from '../../Components/ContactForm/ContactForm';
+
 
 const App = (props) => {
       const [ darkMode, setDarkMode ] = useState(false);
@@ -204,7 +206,7 @@ const App = (props) => {
           setDarkMode={setDarkMode}
         />
           {loggedIn 
-          ? <h1>Opportunities</h1>
+          ? <OpportunityIndex />
           : form
           }
           
