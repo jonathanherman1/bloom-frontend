@@ -12,11 +12,10 @@ import LoginForm from '../../Components/LoginForm/LoginForm'
 import SignupForm from '../../Components/SignupForm/SignupForm'
 import NewOpportunityForm from '../../Components/NewOpportunityForm/NewOpportunityForm';
 
-
 // Services
 
 // Styles
-import './App.module.css';
+import './App.css';
 
 const App = (props) => {
       const [ darkMode, setDarkMode ] = useState(false);
