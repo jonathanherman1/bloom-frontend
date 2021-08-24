@@ -7,6 +7,7 @@ import Button from '@material-ui/core/Button';
 import Switch from '@material-ui/core/Switch'
 import IconButton from '@material-ui/core/IconButton';
 import * as navStyles from './Nav.module.css';
+import { Link } from 'react-router-dom'
 
 function Nav({ displayForm, handleLogout, loggedIn, darkMode, setDarkMode }) {
   
@@ -18,9 +19,12 @@ function Nav({ displayForm, handleLogout, loggedIn, darkMode, setDarkMode }) {
         <div className={navStyles.leftMenu}>
           <IconButton edge="start" className={navStyles.menuButton} color="inherit" aria-label="menu">
           </IconButton>
-          <Typography variant="h6" className={navStyles.title}>
-            <img className={navStyles.logo} src="/Assets/images/bloom-logo-blk.png" alt="bloom logo"/>
-          </Typography>
+          <Link to ='/'>
+            <Typography
+              variant="h6" className={navStyles.title}>
+              <img className={navStyles.logo} src="/Assets/images/bloom-logo-blk.png" alt="bloom logo"/>
+            </Typography>
+          </Link>
           </div>
           <div className={navStyles.rightMenu}>
             {loggedIn &&
