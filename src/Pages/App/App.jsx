@@ -63,7 +63,13 @@ const App = (props) => {
     return () => { setUsername('') }
   }, [loggedIn]);
 
-
+  useEffect(() => {
+    (async () => {
+      const allOpportunities = await opportunityService.getAll()
+      setOpportunities(allOpportunities)
+      console.log(allOpportunities)
+    })()
+  }, [loggedIn]);
   const handleLogin = async (e, data) => {
     e.preventDefault();
     const res = await fetch('http://localhost:8000/token-auth/', {
