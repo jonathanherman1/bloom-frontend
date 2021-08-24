@@ -207,10 +207,7 @@ const App = (props) => {
         />
         <Switch>
           <Route exact path='/'>
-            {loggedIn 
-            ? <OpportunityIndex />
-            : form
-            }
+            { loggedIn ? <OpportunityIndex /> : form }
           </Route>
           <Route exact path='/opportunities/:opp_id'>
             <OpportunityDetail />
