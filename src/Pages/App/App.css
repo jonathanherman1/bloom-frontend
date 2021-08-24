@@ -1,14 +1,11 @@
-body {
+.App {
   margin: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-}
-
-.App {
-  margin-left: 20px;
+  width: 100vw;
 }
 
 input {
