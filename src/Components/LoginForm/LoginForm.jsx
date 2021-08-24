@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
+import Button from '@material-ui/core/Button'
 import PropTypes from 'prop-types';
 
-const LoginForm = (props) => {
+const LoginForm = ({ setDisplayedForm, handleLogin }) => {
   const [ state, setState ] = useState({
     username: '',
     password: ''
@@ -18,7 +19,8 @@ const LoginForm = (props) => {
   };
   
     return (
-      <form onSubmit={e => props.handleLogin(e, state)}>
+      <>
+      <form onSubmit={e => handleLogin(e, state)}>
         <h4>Log In</h4>
         <label htmlFor="username">Username</label>
         <input
@@ -36,6 +38,8 @@ const LoginForm = (props) => {
         />
         <input type="submit" />
       </form>
+      <Button onClick={() => setDisplayedForm('signup')}>Signup</Button>
+      </>
     );
   }
 

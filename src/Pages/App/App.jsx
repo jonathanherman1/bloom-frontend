@@ -124,13 +124,13 @@ const App = (props) => {
   let form;
   switch (displayedForm) {
     case 'login':
-      form = <LoginForm handleLogin={handleLogin} displayedForm={displayedForm} setDisplayedForm={setDisplayedForm} />;
+      form = <LoginForm handleLogin={handleLogin} setDisplayedForm={setDisplayedForm} />;
       break;
     case 'signup':
-      form = <SignupForm handleSignup={handleSignup} displayedForm={displayedForm} setDisplayedForm={setDisplayedForm} />;
+      form = <SignupForm handleSignup={handleSignup} setDisplayedForm={setDisplayedForm} />;
       break;
     default:
-      form = <SignupForm handleSignup={handleSignup} displayedForm={displayedForm} setDisplayedForm={setDisplayedForm} />;
+      form = <SignupForm handleSignup={handleSignup} setDisplayedForm={setDisplayedForm} />;
   }
 
   const handleAddOpportunity = async (formData) => {
