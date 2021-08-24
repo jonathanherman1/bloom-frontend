@@ -33,6 +33,12 @@ const App = (props) => {
 
   const theme = createTheme({
     palette: {
+      primary:{
+        main: '#c8e6c9'
+      },
+      secondary:{
+        main: '#424444'
+      },
       type: darkMode ? 'dark' : 'light',
     },
   });
