@@ -16,6 +16,7 @@ import NewOpportunityForm from '../../Components/NewOpportunityForm/NewOpportuni
 import ContactForm from '../../Components/ContactForm/ContactForm';
 import OpportunityIndex from '../../Components/OpportunityIndex/OpportunityIndex';
 import OpportunityDetail from '../../Components/OpportunityDetail/OpportunityDetail';
+import NewActivityForm from '../../Components/NewActivityForm/NewActivityForm';
 
 // Services
 import * as opportunityService from '../../services/opportunityService.js'
@@ -25,7 +26,6 @@ import * as contactService from '../../services/contactService.js'
 
 // Styles
 import './App.css';
-
 
 
 const App = (props) => {
@@ -207,13 +207,13 @@ const App = (props) => {
         />
         <Switch>
           <Route exact path='/'>
-            {loggedIn 
-            ? <OpportunityIndex />
-            : form
-            }
+            { loggedIn ? <OpportunityIndex /> : form }
           </Route>
           <Route exact path='/opportunities/:opp_id'>
             <OpportunityDetail />
+          </Route>
+          <Route exact path='/opportunities/:opp_id/new-activity'>
+            <NewActivityForm />
           </Route>
           <Route exact path='/opportunities'>
             <NewOpportunityForm handleAddOpportunity={handleAddOpportunity}/>

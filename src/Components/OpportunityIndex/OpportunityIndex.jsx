@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import PrevCard from '../PrevCard/PrevCard'
 
 const OpportunityIndex = () => {
-    const [ opportunities, setOpportunities ] = useState([{name: 'job', date: 'idk', notes: 'lets see!', id: '1'}])
+    const [ opportunities, setOpportunities ] = useState([{name: 'job', date: 'idk', notes: 'lets see! bfsigbwesogbweijgbsgbasgibarslgiardsbgijsrdabglasibglardibgadligbdalihgbealighbdslghibdrlgibralgihbdaglhadbgldihbgdlshbslbhidslb', id: '1'}])
 
     useEffect(() => {
         // service call

@@ -1,7 +1,12 @@
 .root {
-    max-width: 345;
+    max-width: 345px;
+    min-height: 200px;
 }
 
 .media {
-    height: 140;
+    height: 100px;
+}
+
+a {
+    text-decoration: none;
 }
