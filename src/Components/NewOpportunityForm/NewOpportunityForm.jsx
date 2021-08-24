@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 
 // Styles
 import styles from './NewOpportunityForm.module.css'
+import TextField from '@material-ui/core/TextField';
 
 function NewOpportunityForm(props) {
     const [formData, setFormData] = useState({
@@ -32,35 +33,43 @@ function NewOpportunityForm(props) {
              onSubmit={handleSubmit}
              className={styles.form}
           >
-            <label htmlFor="opportunity-name">Name</label>
-            <input
-              id="opportunity-name" 
+            <TextField 
+              id="opportunity-name"
               type="text" 
               name="name"
+              label="Name"
               value={formData.name}
               onChange={handleChange}
               autoComplete="off"
-              placeholder="opportunity name"
+              fullWidth
               required
+              variant="outlined" 
             />
-            <label htmlFor="opportunity-date">Date</label>
-            <input 
+  
+            <TextField
               id="opportunity-date"
               type="date"
               name="date"
+              label="Date"
               value={formData.date}
               onChange={handleChange}
+              autoComplete="off"
+              required
+              fullWidth
+              variant="outlined"
+              InputLabelProps={{ shrink: true }}
             />
-            <label htmlFor="opportunity-notes">Notes</label>
-            <textarea 
+
+            <TextField
               id="opportunity-notes"
               name="notes"
+              label="Notes"
               value={formData.notes}
               onChange={handleChange}
-              cols="30" 
-              rows="10" 
-              placeholder="type opportunity notes here"
-            ></textarea>
+              multiline
+              rows={4}
+              variant="outlined" 
+            />
             <button type="submit">
               Add Opportunity
             </button>
