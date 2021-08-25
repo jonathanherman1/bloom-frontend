@@ -8,7 +8,7 @@ const OpportunityDetail = (props) => {
 
     useEffect(() => {
         (async () => {
-            const newOpportunityDetail = await opportunityService.getOpportunityById(props.match.params.opp_id)
+            const newOpportunityDetail = await opportunityService.getOpportunityById(props.match.params.id)
             setOpportunityDetail(newOpportunityDetail)
         })()
     }, []);
