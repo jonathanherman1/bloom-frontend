@@ -10,6 +10,7 @@ import seedAnimation from '../../Assets/lottie-files/73344-seed.json';
 
 // Material UI
 import Button from '@material-ui/core/Button';
+import IconButton from '@material-ui/core/Button';
 import Box from '@material-ui/core/Box';
 import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
 
@@ -20,6 +21,19 @@ const OpportunityIndex = ({ opportunities }) => {
   const opportunitiesList = () => {
     return opportunities.map((o, i) => {
       return (
+        <>
+        <Box className={styles.addBtnContainer}>
+          <IconButton 
+            aria-label="add"
+            component={Link}
+            to='/opportunities/new'
+            startIcon={<AddCircleOutlineIcon />}
+            className={styles.addBtn}
+            variant="outlined"
+          >
+            New Opportunity
+          </IconButton>
+        </Box>
         <PrevCard
           key={i}
           name={o.name}
@@ -27,6 +41,7 @@ const OpportunityIndex = ({ opportunities }) => {
           notes={o.notes}
           id={o.id}
         />
+        </>
       );
     });
   };
