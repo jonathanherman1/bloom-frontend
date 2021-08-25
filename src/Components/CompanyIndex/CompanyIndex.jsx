@@ -26,6 +26,7 @@ const CompanyIndex = ({ companies }) => {
           date={o.date}
           notes={o.notes}
           id={o.id}
+          preRoute="companies"
         />
       );
     });

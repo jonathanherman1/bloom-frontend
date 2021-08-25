@@ -40,6 +40,8 @@ const OpportunityIndex = ({ opportunities }) => {
           date={o.date}
           notes={o.notes}
           id={o.id}
+          preRoute="opportunities"
+
         />
         </>
       );
