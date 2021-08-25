@@ -43,7 +43,7 @@ const OpportunityIndex = () => {
                 </Button>
             </>
         })())
-    }, [opportunities, opportunitiesList]);
+    }, []);
 
     return (
         <div className={styles.container}>
