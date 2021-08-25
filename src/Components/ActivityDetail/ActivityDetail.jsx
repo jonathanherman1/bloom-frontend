@@ -3,6 +3,9 @@ import { withRouter } from 'react-router-dom';
 
 import * as activityService from '../../services/activityService.js'
 
+import styles from "./ActivityDetail.module.css"
+
+
 const ActivityDetail = (props) => {
     const [activityDetail, setActivityDetail] = useState('')
     console.log(props)
