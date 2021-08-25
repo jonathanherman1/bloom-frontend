@@ -4,26 +4,31 @@ import Button from '@material-ui/core/Button';
 import styles from './NewContactForm.module.css'
 
 function NewContactForm(props) {
-    const [formData, setFormData] = useState([])
+    const [formData, setFormData] = useState({
+        name: '',
+        phone: '',
+        email: '',
+        department: '',
+        first_contact_through: '',
+        notes: ''
+    })
 
     const handleChange = (e) => {
         setFormData({ 
-            ...formData, 
-            // [e.target.name]: e.target.value,
-            // [e.target.phone]: e.target.value,
-            // [e.target.email]: e.target.value,
-            // [e.target.department]: e.target.value,
-            // [e.target.notes]: e.target.value,
+            ...formData,
+            [e.target.name]: e.target.value,
         })
     }
 
     const handleSubmit = (e) => {
         e.preventDefault()
+        props.handleAddContact(formData)
         setFormData({
             name: '',
             phone: '',
             email: '',
             department: '',
+            first_contact_through: '',
             notes: '',
         })
     }
@@ -77,7 +82,7 @@ function NewContactForm(props) {
 
             <TextField 
                 id="contact-department"
-                type="department" 
+                type="text" 
                 name="department"
                 label="Department"
                 value={formData.department}
@@ -87,10 +92,23 @@ function NewContactForm(props) {
                 required
                 variant="outlined" 
             />
+            
+            <TextField 
+                id="contact-first-contact-through"
+                type="text" 
+                name="first_contact_through"
+                label="first_contact_through"
+                value={formData.first_contact_through}
+                onChange={handleChange}
+                autoComplete="off"
+                fullWidth
+                required
+                variant="outlined" 
+            />
  
             <TextField 
                 id="contact-notes"
-                type="notes" 
+                type="text" 
                 name="notes"
                 label="Notes"
                 value={formData.notes}
