@@ -7,7 +7,7 @@ const ContactDetail = (props) => {
     const [contactDetail, setContactDetail] = useState('')
     useEffect(() => {
         (async () => {
-            const newContactDetail = await contactService.getContactById(props.match.params.contact_id)
+            const newContactDetail = await contactService.getContactById(props.match.params.id)
             setContactDetail(newContactDetail)
         })()
     }, []);
