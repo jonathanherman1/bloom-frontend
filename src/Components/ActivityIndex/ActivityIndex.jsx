@@ -26,6 +26,7 @@ const ActivityIndex = ({ activities }) => {
 					date={a.date}
 					notes={a.notes}
 					id={a.id}
+          preRoute="activities"
 				/>
 			)
 		})

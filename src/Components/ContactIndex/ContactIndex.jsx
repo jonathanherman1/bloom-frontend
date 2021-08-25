@@ -28,6 +28,7 @@ const ContactIndex = ({ contacts }) => {
                     department={c.department}
                     notes={c.notes}
                     id={c.id}
+                    preRoute="contacts"
                 />
             );
         });
