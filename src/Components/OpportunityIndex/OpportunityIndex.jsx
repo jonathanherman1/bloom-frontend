@@ -12,6 +12,9 @@ import seedAnimation from '../../Assets/lottie-files/73344-seed.json';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/Button';
 import Box from '@material-ui/core/Box';
+import Fab from '@material-ui/core/Fab';
+import Tooltip from '@material-ui/core/Tooltip';
+import AddIcon from '@material-ui/icons/Add';
 import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
 
 // Styles
@@ -52,7 +55,7 @@ const OpportunityIndex = ({ opportunities }) => {
 
   const button = (
     <Box className={styles.addBtnContainer}>
-      <IconButton
+      {/* <IconButton
         aria-label='add'
         component={Link}
         to='/opportunities/new'
@@ -61,7 +64,12 @@ const OpportunityIndex = ({ opportunities }) => {
         variant='outlined'
       >
         New Opportunity
-      </IconButton>
+      </IconButton> */}
+      <Tooltip title="Add Opportunity" aria-label="add" placement="right">
+          <Fab color="primary">
+            <AddIcon />
+          </Fab>
+        </Tooltip>
     </Box>
   );
 
