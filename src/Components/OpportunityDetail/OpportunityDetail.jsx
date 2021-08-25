@@ -14,6 +14,7 @@ const OpportunityDetail = (props) => {
     }, []);
     return ( 
     <div>
+        
         <p>details details details</p>
         <p>{opportunityDetail.name}</p>
         <p>{opportunityDetail.date}</p>
