@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
-import styles from './ContactForm.module.css'
+import styles from './NewContactForm.module.css'
 
-function ContactForm(props) {
+function NewContactForm(props) {
     const [formData, setFormData] = useState([])
 
     const handleChange = (e) => {
@@ -110,4 +110,4 @@ function ContactForm(props) {
     )
 }
 
-export default ContactForm
+export default NewContactForm
