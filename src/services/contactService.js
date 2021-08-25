@@ -47,7 +47,11 @@ async function getAll(){
 async function deleteOne(id){
   try {
       await fetch(`${BASE_URL}${id}`, {
-          method: 'DELETE'
+          method: 'DELETE',
+          headers: {
+              'content-type': 'application/json',
+              'Authorization': `JWT ${localStorage.getItem('token')}`
+          },
       })
   } catch (error) {
       throw error
@@ -61,6 +65,7 @@ async function update(contact, id){
           method: 'PUT',
           headers: {
               'content-type': 'application/json',
+              'Authorization': `JWT ${localStorage.getItem('token')}`
           },
           body: JSON.stringify(contact)
       })
