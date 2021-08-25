@@ -54,16 +54,6 @@ const OpportunityIndex = ({ opportunities }) => {
 
   const button = (
     <Box className={styles.addBtnContainer}>
-      {/* <IconButton
-        aria-label='add'
-        component={Link}
-        to='/opportunities/new'
-        startIcon={<AddCircleOutlineIcon />}
-        className={styles.addBtn}
-        variant='outlined'
-      >
-        New Opportunity
-      </IconButton> */}
        <Tooltip 
           title="Add Opportunity" 
           aria-label="add" 
