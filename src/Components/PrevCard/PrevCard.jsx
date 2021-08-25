@@ -28,13 +28,11 @@ export default function MediaCard({ name, date, notes, id, preRoute }) {
             title="placeholder"
           />
           <CardContent>
-            <Typography gutterBottom variant="h5" component="h2" noWrap={false}>
+            <Typography gutterBottom variant="h5" noWrap={false}>
               {name}
               <Divider />
             </Typography>
             <Typography variant="body2" color="textSecondary" component="p" noWrap={false}>
-              Created: {date}
-              <Divider />
               {notes}
             </Typography>
           </CardContent>
