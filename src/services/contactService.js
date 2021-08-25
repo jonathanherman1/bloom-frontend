@@ -47,7 +47,11 @@ async function getAll(){
 async function deleteOne(id){
   try {
       await fetch(`${BASE_URL}${id}`, {
-          method: 'DELETE'
+          method: 'DELETE',
+          headers: {
+              'content-type': 'application/json',
+              'Authorization': `JWT ${localStorage.getItem('token')}`
+          },
       })
   } catch (error) {
       throw error
@@ -61,6 +65,7 @@ async function update(contact, id){
           method: 'PUT',
           headers: {
               'content-type': 'application/json',
+              'Authorization': `JWT ${localStorage.getItem('token')}`
           },
           body: JSON.stringify(contact)
       })
@@ -73,10 +78,16 @@ async function update(contact, id){
 
 async function getContactById (id) {
   try {
-      const res = await fetch(`${BASE_URL}${id}`)
-      const data = await res.json()
-      return data
-  } catch (error) {
-      throw error
-  }
+    const res = await fetch(`${BASE_URL}${id}`, {
+        method: 'GET',
+        headers: {
+        'content-type': 'application/json',
+        'Authorization': `JWT ${localStorage.getItem('token')}`
+        }
+    })
+    const data = await res.json()
+    return data
+} catch (error) {
+    throw error
+}
 }
