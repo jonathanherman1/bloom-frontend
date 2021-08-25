@@ -12,13 +12,13 @@ import classes from './PrevCard.module.css'
 import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
 import VisibilityIcon from '@material-ui/icons/Visibility';
 
-export default function MediaCard({ name, date, notes, id }) {
+export default function MediaCard({ name, date, notes, id, preRoute }) {
   
     return (
       <Card className={classes.root}>
         <CardActionArea
         component={Link}
-        to={`/opportunities/${id}`}
+        to={`/${preRoute}/${id}`}
         >
           <CardMedia
             className={classes.media}
@@ -38,22 +38,25 @@ export default function MediaCard({ name, date, notes, id }) {
         <CardActions>
             <Button 
             component={Link}
-            to={`/opportunities/${id}`}
+            to={`/${preRoute}/${id}`}
             size="small" 
             color="primary"
             startIcon={<VisibilityIcon />}
             >
                 View
-            </Button>     
-            <Button 
-            component={Link}
-            to={`/opportunities/${id}/new-activity`}
-            size="small" 
-            color="primary"
-            startIcon={<AddCircleOutlineIcon />}
-            >
-              Add Activity 
             </Button>
+            {preRoute === "opportunities" ? 
+              <Button 
+              component={Link}
+              to={`/opportunities/${id}/new-activity`}
+              size="small" 
+              color="primary"
+              startIcon={<AddCircleOutlineIcon />}
+              >
+                Add Activity 
+              </Button>
+              : ""
+            }     
         </CardActions>
       </Card>
     );
