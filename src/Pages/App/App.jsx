@@ -161,7 +161,7 @@ const App = (props) => {
       form = <SignupForm handleSignup={handleSignup} setDisplayedForm={setDisplayedForm} />;
       break;
     default:
-      form = <SignupForm handleSignup={handleSignup} setDisplayedForm={setDisplayedForm} />;
+      form = <LoginForm handleLogin={handleLogin} setDisplayedForm={setDisplayedForm} />;
   }
 
   const handleAddOpportunity = async (formData) => {
@@ -211,10 +211,10 @@ const App = (props) => {
         />
         <Switch>
           <Route exact path='/'>
-            { loggedIn ? <OpportunityIndex /> : <> {form} <Animation animationData={plantAnimation}/> </> }
+            { loggedIn ? <OpportunityIndex opportunities={opportunities} /> : <> {form} <Animation animationData={plantAnimation}/> </> }
           </Route>
           <Route exact path='/opportunities'>
-            { loggedIn ? <OpportunityIndex /> : <Redirect to='/'/> }
+            { loggedIn ? <OpportunityIndex opportunities={opportunities} /> : <Redirect to='/'/> }
           </Route>
           <Route exact path='/opportunities/new'>
             <NewOpportunityForm handleAddOpportunity={handleAddOpportunity}/>
