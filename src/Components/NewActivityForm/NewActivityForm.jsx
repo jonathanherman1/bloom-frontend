@@ -9,7 +9,9 @@ function NewActivityForm(props) {
     const [formData, setFormData] = useState({
       name: '',
       date: '',
-      notes: ''
+      notes: '',
+      contact_method: '',
+      type: ''
     })
     
     const handleChange = (e) => {
@@ -22,7 +24,9 @@ function NewActivityForm(props) {
       setFormData({
         name: '',
         date: '',
-        notes: ''
+        notes: '',
+        contact_method: '',
+        type: ''
       })
     }
   
@@ -68,6 +72,24 @@ function NewActivityForm(props) {
               value={formData.notes}
               onChange={handleChange}
               multiline
+              rows={4}
+              variant="outlined" 
+            />
+            <TextField
+              id="activity-contact-method"
+              name="contact_method"
+              label="Contact Method"
+              value={formData.contact_method}
+              onChange={handleChange}
+              rows={4}
+              variant="outlined" 
+            />
+            <TextField
+              id="activity-type"
+              name="type"
+              label="Type"
+              value={formData.type}
+              onChange={handleChange}
               rows={4}
               variant="outlined" 
             />
