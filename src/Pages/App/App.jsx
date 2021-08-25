@@ -17,6 +17,10 @@ import ContactForm from '../../Components/ContactForm/ContactForm';
 import OpportunityIndex from '../../Components/OpportunityIndex/OpportunityIndex';
 import OpportunityDetail from '../../Components/OpportunityDetail/OpportunityDetail';
 import NewActivityForm from '../../Components/NewActivityForm/NewActivityForm';
+import Animation from '../../Components/Animation/Animation'
+
+// Content
+import plantAnimation from '../../Assets/lottie-files/57027-fondo-plantas-2.json'
 
 // Services
 import * as opportunityService from '../../services/opportunityService.js'
@@ -207,7 +211,7 @@ const App = (props) => {
         />
         <Switch>
           <Route exact path='/'>
-            { loggedIn ? <OpportunityIndex /> : form }
+            { loggedIn ? <OpportunityIndex /> : <> {form} <Animation animationData={plantAnimation}/> </> }
           </Route>
           <Route exact path='/opportunities'>
             { loggedIn ? <OpportunityIndex /> : <Redirect to='/'/> }
