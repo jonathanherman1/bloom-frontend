@@ -6,7 +6,7 @@ import {
   CssBaseline
 } from '@material-ui/core';
 import useMediaQuery from '@material-ui/core/useMediaQuery'
-import { BrowserRouter as Router, Route, Switch} from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch, Redirect} from 'react-router-dom'
 
 // Components
 import Nav from '../../Components/Nav/Nav'
@@ -205,23 +205,24 @@ const App = (props) => {
           darkMode={darkMode}
           setDarkMode={setDarkMode}
         />
-        
-          <Route exact path='/'>
-            { loggedIn ? <OpportunityIndex /> : form }
-          </Route>
-          <Route exact path='/opportunities/new'>
-            <NewOpportunityForm handleAddOpportunity={handleAddOpportunity}/>
-          </Route>
-          <Route exact path='/opportunities/:opp_id'>
-            <OpportunityDetail />
-          </Route>
-          <Route exact path='/opportunities/:opp_id/new-activity'>
-            <NewActivityForm />
-          </Route>
-          <Route exact path='/contact'>
-            <ContactForm handleAddContact={handleAddContact}/>
-          </Route>
-        
+        <Route exact path='/'>
+          { loggedIn ? <OpportunityIndex /> : form }
+        </Route>
+        <Route exact path='/opportunities'>
+          { loggedIn ? <OpportunityIndex /> : <Redirect to='/'/> }
+        </Route>
+        <Route exact path='/opportunities/new'>
+          <NewOpportunityForm handleAddOpportunity={handleAddOpportunity}/>
+        </Route>
+        <Route exact path='/opportunities/:opp_id'>
+          <OpportunityDetail />
+        </Route>
+        <Route exact path='/opportunities/:opp_id/new-activity'>
+          <NewActivityForm />
+        </Route>
+        <Route exact path='/contact'>
+          <ContactForm handleAddContact={handleAddContact}/>
+        </Route>
         </ThemeProvider>
       </div>
   );
