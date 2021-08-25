@@ -5,7 +5,7 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
-import Box from '@material-ui/core/Box';
+import Divider from '@material-ui/core/Divider'
 import Typography from '@material-ui/core/Typography';
 import { Link } from 'react-router-dom'
 import classes from './PrevCard.module.css'
@@ -28,11 +28,13 @@ export default function MediaCard({ name, date, notes, id, preRoute }) {
             title="placeholder"
           />
           <CardContent>
-            <Typography gutterBottom variant="h5" component="h2" noWrap='false'>
+            <Typography gutterBottom variant="h5" component="h2" noWrap={false}>
               {name}
+              <Divider />
             </Typography>
-            <Typography variant="body2" color="textSecondary" component="p" noWrap='false'>
-              {date} 
+            <Typography variant="body2" color="textSecondary" component="p" noWrap={false}>
+              Created: {date}
+              <Divider />
               {notes}
             </Typography>
           </CardContent>
