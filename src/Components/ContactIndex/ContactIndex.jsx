@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 // Components
 import PrevCard from '../PrevCard/PrevCard';
-import Animation from '../Animation/Animation';
+import Animation from '../Animation/AnimationNoCss';
 
 // Content
 import contactAnimation from '../../Assets/lottie-files/contact.json';
@@ -40,14 +40,15 @@ const ContactIndex = ({ contacts }) => {
                 
                 <div className={styles.boxContainer}>
                     <div>
-                        <Animation animationData={contactAnimation} />
+                        <Animation animData={contactAnimation} />
                     </div>
-                    <div id={styles.rightpart}>
+                    <div className={styles.rightpart}>
                         <h1>No Contacts. Would you like to add one?</h1>
                         <Button
                             component={Link}
-                            to='/contact/new'
-                            startIcon={<AddCircleOutlineIcon />}
+                            to='/contacts/new'
+                            startIcon={<AddCircleOutlineIcon 
+                            id={styles.btnAddContact}/>}
                         >
                             Add Contact
                         </Button>
