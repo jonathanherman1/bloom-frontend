@@ -1,38 +1,44 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Box from '@material-ui/core/Box'
-// import Rating from '@material-ui/lab/Rating'
-// import Typography from '@material-ui/core/Typography'
+import Paper from '@material-ui/core/Paper';
+import Typography from '@material-ui/core/Typography'
+import FullWidthTab from './FullWidthTab/FullWidthTab'
 import classes from './OpportunityDetailCard.module.css'
+import Table from './Table/Table'
 
 const OpportunityDetailCard = ({opportunityDetail}) => {
-
-
     return (
             <>
-            <p>{opportunityDetail.name} at Company</p>
+            <Box className={classes.titleContainer} >
+                <Typography variant="h5">
+                    {opportunityDetail.name} at Company
+                </Typography>
+                <p>status</p>
+            </Box>
             <Box 
                 component="fieldset" 
-                flexDirection="column"
                 className={classes.detailsContainer}
                 borderColor="white" 
-                display="flex" 
                 mt={3}
             >
-            <Box component="fieldset" mt={3} borderColor="white" display="flex" flexDirection="column">
-                <p>Activities</p>
-                <p>Contacts</p>
+            <Box component="fieldset" mt={3} borderColor="white" className={classes.container1}>
+                <Paper square>
+                    <FullWidthTab opportunityDetail={opportunityDetail}/>
+                </Paper>
             </Box>
-                <p>location</p>
 
-                <Box component="fieldset" mt={3} borderColor="white" display="flex">
+            <Box component="fieldset" mt={3} borderColor="white" className={classes.container2}>
+                <Box className={classes.container2left}>
                     <p>pros</p>
+                </Box>
+                <Box className={classes.container2right}>
                     <p>cons</p>
                 </Box>
-                
-                <p>salary</p>
-                <p>responsibilities</p>
-                <p>status</p>
-                <p>yrs exp req</p>
+            </Box>
+            <Box component="fieldset" mt={3} borderColor="white" className={classes.container3}>
+                <Table />
+            </Box>
+
             </Box>
             </>
   );
