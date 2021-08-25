@@ -6,6 +6,7 @@ import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import Switch from '@material-ui/core/Switch';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
+import { Typography } from '@material-ui/core';
 
 function NewCompanyForm(props) {
     const [formData, setFormData] = useState({
@@ -40,7 +41,7 @@ function NewCompanyForm(props) {
   
     return (
         <div className={styles.container}>
-          <h2>Add Company</h2>
+          <Typography variant="h4" mb={1}> Add Company </Typography>
           <form 
              id="add-company-form" 
              onSubmit={handleSubmit}
@@ -80,7 +81,7 @@ function NewCompanyForm(props) {
               value={formData.url}
               onChange={handleChange}
               multiline
-              rows={4}
+              rows={2}
               variant="outlined" 
               required
             />
@@ -96,18 +97,6 @@ function NewCompanyForm(props) {
                   />
                 }
                     
-            />
-                  
-            <TextField
-              id="company-glassdoor-rating"
-              type="number"
-              max={5}
-              name="glassdoor_rating"
-              label="Glassdoor Rating"
-              value={formData.glassdoor_rating}
-              onChange={handleChange}
-              variant="outlined" 
-              required
             />
             <TextField
               id="company-business-structure"
@@ -134,6 +123,17 @@ function NewCompanyForm(props) {
               required
             />
             <TextField
+              id="company-glassdoor-rating"
+              type="number"
+              max={5}
+              name="glassdoor_rating"
+              label="Glassdoor Rating"
+              value={formData.glassdoor_rating}
+              onChange={handleChange}
+              variant="outlined" 
+              required
+            />
+            <TextField
               id="company-notes"
               type="text"
               name="notes"
@@ -143,7 +143,6 @@ function NewCompanyForm(props) {
               multiline
               rows={4}
               variant="outlined" 
-              required
             />
             <Button type="submit" variant="contained" color="primary">
               Add Company
