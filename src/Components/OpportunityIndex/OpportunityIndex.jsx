@@ -21,19 +21,6 @@ const OpportunityIndex = ({ opportunities }) => {
   const opportunitiesList = () => {
     return opportunities.map((o, i) => {
       return (
-        <>
-        <Box className={styles.addBtnContainer}>
-          <IconButton 
-            aria-label="add"
-            component={Link}
-            to='/opportunities/new'
-            startIcon={<AddCircleOutlineIcon />}
-            className={styles.addBtn}
-            variant="outlined"
-          >
-            New Opportunity
-          </IconButton>
-        </Box>
         <PrevCard
           key={i}
           name={o.name}
@@ -41,30 +28,51 @@ const OpportunityIndex = ({ opportunities }) => {
           notes={o.notes}
           id={o.id}
         />
-        </>
       );
     });
   };
 
   const noOpportunities = () => {
     return (
-        <Box className={styles.noData}>
+      <Box className={styles.noData}>
         <Animation animationData={seedAnimation} />
         <h1>No opportunities. Would you like to add one?</h1>
         <Button
-            component={Link}
-            to='/opportunities/new'
-            startIcon={<AddCircleOutlineIcon />}
+          component={Link}
+          to='/opportunities/new'
+          startIcon={<AddCircleOutlineIcon />}
         >
-            Add Opportunity
+          Add Opportunity
         </Button>
-        </Box>
-    )
+      </Box>
+    );
   };
+
+  const button = (
+    <Box className={styles.addBtnContainer}>
+      <IconButton
+        aria-label='add'
+        component={Link}
+        to='/opportunities/new'
+        startIcon={<AddCircleOutlineIcon />}
+        className={styles.addBtn}
+        variant='outlined'
+      >
+        New Opportunity
+      </IconButton>
+    </Box>
+  );
 
   return (
     <div className={styles.container}>
-      {opportunities.length ? opportunitiesList() : noOpportunities()}
+      {opportunities.length ? (
+        <>
+          {button}
+          {opportunitiesList()}
+        </>
+      ) : (
+        noOpportunities()
+      )}
     </div>
   );
 };
