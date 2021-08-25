@@ -6,7 +6,7 @@ export {
   getContactById,
 }
 
-const BASE_URL = 'http://localhost:8000/api/opportunities/'
+const BASE_URL = 'http://localhost:8000/api/contacts/'
 
 async function create(contact){
   console.log("opp: ", contact)
