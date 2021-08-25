@@ -52,20 +52,20 @@ const ActivityIndex = ({ activities }) => {
 		)
 	}
 
-	const button = () => {
+	const button = (
 		<Box className={styles.addBtnContainer}>
 		<Tooltip 
 			title="Add Activity" 
 			aria-label="add" 
 			component={Link}
-			to='/activity/new'
+			to='/activities/new'
 			placement="right">
 			<Fab color="primary">
 				<AddIcon />
 			</Fab>
 			</Tooltip>
     	</Box>
-	}
+	)
 
 	return (
 		<div className={styles.container}>

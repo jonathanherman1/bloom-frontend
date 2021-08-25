@@ -13,3 +13,7 @@
   align-items: center;
   width: 80%;
 }
+
+.addBtnContainer {
+  margin: 2rem;
+}
