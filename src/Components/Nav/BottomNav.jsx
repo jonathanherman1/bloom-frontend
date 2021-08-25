@@ -11,7 +11,10 @@ import styles from './BottomNav.module.css'
 
 const useStyles = makeStyles({
     root: {
-        width: 500,
+        width: '100%',
+        position: 'fixed',
+        bottom: 0,
+        
     },
 });
 
@@ -24,11 +27,13 @@ export default function LabelBottomNavigation() {
     };
 
     return (
-        <BottomNavigation value={value} onChange={handleChange} className={styles.bottomNav}>
+        <div className={styles.bottomNav}>
+        <BottomNavigation value={value} onChange={handleChange} className={classes.root}>
             <BottomNavigationAction label="Opportunity" value="opportunity" icon={<EcoIcon />} component={Link} to={'/opportunities'}/>
             <BottomNavigationAction label="Activity" value="activity" icon={<LocalActivityIcon />} component={Link} to={'/activities'}/>
             <BottomNavigationAction label="Contact" value="contact" icon={<ContactsIcon />} component={Link} to={'/contacts'}/>
             <BottomNavigationAction label="Company" value="company" icon={<ApartmentIcon />} component={Link} to={'/companies'}/>
         </BottomNavigation>
+        </div>
     );
 }
