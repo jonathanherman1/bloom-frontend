@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { withRouter } from 'react-router-dom';
 import OpportunityDetailCard from './OpportunityDetailCard'
 import * as opportunityService from '../../services/opportunityService.js'
+import styles from './OpportunityDetailCard.module.css'
 
 const OpportunityDetail = (props) => {
     const [opportunityDetail, setOpportunityDetail] = useState('')
@@ -13,7 +14,7 @@ const OpportunityDetail = (props) => {
         })()
     }, []);
     return ( 
-    <div>
+    <div className={styles.outsideContainer}>
         <OpportunityDetailCard 
             opportunityDetail={opportunityDetail}
         />
