@@ -4,28 +4,32 @@
     align-items: center;
     margin-bottom: 0;
     flex-direction: column;
+    margin-top: 1.5rem;
 }
 
 .detailsContainer{
     display: flex;
     flex-direction: column;
-    width: 90vw;
+    border: none;
 }
 
 .container1{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    border: none;
 }
 
 .container2 {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    border: none;
 
 }
 
 .container3 {
     display: flex;
     flex-direction: column;
+    border: none;
 }
