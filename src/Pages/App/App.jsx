@@ -12,7 +12,6 @@ import { BrowserRouter as Router, Route, Switch, Redirect} from 'react-router-do
 import Nav from '../../Components/Nav/Nav'
 import LoginForm from '../../Components/LoginForm/LoginForm'
 import SignupForm from '../../Components/SignupForm/SignupForm'
-import NewContactForm from '../../Components/NewContactForm/NewContactForm';
 import NewOpportunityForm from '../../Components/NewOpportunityForm/NewOpportunityForm';
 import OpportunityIndex from '../../Components/OpportunityIndex/OpportunityIndex';
 import OpportunityDetail from '../../Components/OpportunityDetail/OpportunityDetail';
@@ -22,6 +21,10 @@ import NewCompanyForm from '../../Components/NewCompanyForm/NewCompanyForm';
 import ActivityIndex from '../../Components/ActivityIndex/ActivityIndex'
 import ActivityDetail from '../../Components/ActivityDetail/ActivityDetail'
 import NewActivityForm from '../../Components/NewActivityForm/NewActivityForm';
+import ContactIndex from '../../Components/ContactIndex/ContactIndex'
+import ContactDetail from '../../Components/ContactDetail/ContactDetail'
+import NewContactForm from '../../Components/NewContactForm/NewContactForm';
+
 
 
 
@@ -249,11 +252,21 @@ const App = (props) => {
           <Route exact path='/activities/:id'>
             <ActivityDetail />
           </Route>
+
+
+
+          <Route exact path='/contacts'>
+            { loggedIn ? <ContactIndex contacts={contacts} /> : <Redirect to='/'/> }
+          </Route>
+          <Route exact path='/contacts/new'>
+            <NewContactForm handleAddContact={handleAddContact}/>
+          </Route>
+          <Route exact path='/contacts/:id'>
+            <ContactDetail />
+          </Route>
+
           <Route exact path='/opportunities/:id/new-activity'>
             <NewActivityForm handleAddActivity={handleAddActivity}/>
-          </Route>
-          <Route exact path='/contact/new'>
-            <NewContactForm handleAddContact={handleAddContact}/>
           </Route>
         </Switch>
         </ThemeProvider>
