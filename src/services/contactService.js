@@ -73,10 +73,16 @@ async function update(contact, id){
 
 async function getContactById (id) {
   try {
-      const res = await fetch(`${BASE_URL}${id}`)
-      const data = await res.json()
-      return data
-  } catch (error) {
-      throw error
-  }
+    const res = await fetch(`${BASE_URL}${id}`, {
+        method: 'GET',
+        headers: {
+        'content-type': 'application/json',
+        'Authorization': `JWT ${localStorage.getItem('token')}`
+        }
+    })
+    const data = await res.json()
+    return data
+} catch (error) {
+    throw error
+}
 }
