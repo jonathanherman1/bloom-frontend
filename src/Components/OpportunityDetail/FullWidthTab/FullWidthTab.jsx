@@ -7,6 +7,7 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
+import List from '../List/List'
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -44,7 +45,7 @@ function a11yProps(index) {
 const useStyles = makeStyles((theme) => ({
   root: {
     backgroundColor: theme.palette.background.paper,
-    width: 500,
+    width: '100vw',
   },
 }));
 
@@ -82,14 +83,10 @@ export default function FullWidthTabs({ opportunityDetail }) {
         onChangeIndex={handleChangeIndex}
       >
         <TabPanel value={value} index={0} dir={theme.direction}>
-          Activities
-          placeholder
-          {opportunityDetail.name}
+          <List />
         </TabPanel>
         <TabPanel value={value} index={1} dir={theme.direction}>
-          Contacts
-          placeholder
-          {opportunityDetail.name}
+          <List />
         </TabPanel>
       </SwipeableViews>
     </div>
