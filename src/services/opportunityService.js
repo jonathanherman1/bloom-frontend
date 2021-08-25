@@ -73,7 +73,12 @@ async function update(opportunity, id){
 
 async function getOpportunityById (id) {
     try {
-        const res = await fetch(`${BASE_URL}${id}`)
+        const res = await fetch(`${BASE_URL}${id}`, {
+            headers: {
+            'content-type': 'application/json',
+            'Authorization': `JWT ${localStorage.getItem('token')}`
+            }
+        })
         const data = await res.json()
         return data
     } catch (error) {
