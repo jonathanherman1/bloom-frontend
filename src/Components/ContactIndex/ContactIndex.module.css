@@ -11,5 +11,15 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 80%;
+    width: 100%;
+}
+
+.boxContainer {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+#rightpart {
+    margin-top: 200px;
 }
