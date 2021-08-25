@@ -9,6 +9,7 @@ import IconButton from '@material-ui/core/IconButton';
 import * as navStyles from './Nav.module.css';
 import { Link } from 'react-router-dom'
 
+
 function Nav({ displayForm, handleLogout, loggedIn, darkMode, setDarkMode }) {
   
   return (
@@ -28,7 +29,15 @@ function Nav({ displayForm, handleLogout, loggedIn, darkMode, setDarkMode }) {
           </div>
           <div className={navStyles.rightMenu}>
             {loggedIn &&
-              <Button onClick={handleLogout}>Logout</Button>
+              <>
+                <span id={navStyles.navlinks}>
+                  <Link to='/opportunities'><Button>OPPORTUNITY</Button></Link>
+                  <Link to='/activities'><Button>ACTIVITY</Button></Link>
+                  <Link to='/contacts'><Button>CONTACT</Button></Link>
+                  <Link to='/companies'><Button>COMPANY</Button></Link>
+                </span>
+                <Button onClick={handleLogout}>Logout</Button>
+              </>
             }
             <Switch checked={darkMode} onChange={() => setDarkMode(!darkMode)} />
           </div>

@@ -13,10 +13,15 @@ input {
   margin: 5px 0 5px;
 }
 
+.bottom-nav {
+  position: sticky;
+  bottom: 0;
+  width: 100%;
+}
+
 @media only screen and (min-width: 768px) {
-
+  .bottom-nav {
+    display: none;
+  }
 }
 
-@media only screen and (min-width: 1024px) {
-
-}

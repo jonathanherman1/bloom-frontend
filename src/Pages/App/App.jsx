@@ -24,7 +24,7 @@ import NewActivityForm from '../../Components/NewActivityForm/NewActivityForm';
 import ContactIndex from '../../Components/ContactIndex/ContactIndex'
 import ContactDetail from '../../Components/ContactDetail/ContactDetail'
 import NewContactForm from '../../Components/NewContactForm/NewContactForm';
-
+import BottomNav from '../../Components/Nav/BottomNav'
 
 
 
@@ -266,6 +266,7 @@ const App = (props) => {
             <NewActivityForm handleAddActivity={handleAddActivity}/>
           </Route>
         </Switch>
+        <BottomNav className="bottom-nav" />
         </ThemeProvider>
       </div>
   );
