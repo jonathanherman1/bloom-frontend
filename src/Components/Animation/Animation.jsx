@@ -20,11 +20,11 @@ const Animation = (props) => {
     return (
         <div className={styles.animation}>
             <Lottie
+                className={styles.lottie}
                 loop
                 animationData={props.animationData}
                 play
-                speed={1}
-                style={{ width: '100%', height: '100%' }}
+                speed={0.25}
             />
         </div>
     )
