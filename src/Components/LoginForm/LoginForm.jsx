@@ -23,7 +23,7 @@ const LoginForm = ({ setDisplayedForm, handleLogin }) => {
     return (
       <>
       <form className={styles.form} onSubmit={e => handleLogin(e, state)}>
-        <h4>Log In</h4>
+          <h4 className={styles.loginText} ><i class="fas fa-seedling" id={styles.loginIcon}></i>Log In</h4>
 
         <TextField
           type="text"

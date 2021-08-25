@@ -25,7 +25,7 @@ const SignupForm = ({ setDisplayedForm, handleSignup}) => {
       <form 
         className={styles.form}
         onSubmit={e => handleSignup(e, state)}>
-        <h4>Sign Up</h4>
+          <h4 className={styles.signUpText}>Sign Up<i class="fas fa-leaf" id={styles.leafIcon}></i></h4>
 
         <TextField
           type="text"

@@ -4,3 +4,13 @@
     gap: 1rem;
 }
 
+.signUpText {
+    color: #E79C2A;
+    font-family: 'Abril Fatface', cursive;
+    font-size: 26px;
+    text-align: center;
+}
+
+#leafIcon {
+    color: #A2DE96;
+}

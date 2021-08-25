@@ -4,3 +4,13 @@
     gap: 1rem;
 }
 
+.loginText {
+    color: #E79C2A;
+    font-family: 'Abril Fatface', cursive;
+    font-size: 26px;
+    text-align: center;
+}
+
+#loginIcon {
+    color: #A2DE96;
+}
