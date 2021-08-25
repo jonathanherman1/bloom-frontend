@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom';
 
 // Components
 import PrevCard from '../PrevCard/PrevCard';
-import Animation from '../Animation/Animation';
+import Animation from '../Animation/AnimationNoCss';
 
 // Content
-import seedAnimation from '../../Assets/lottie-files/73344-seed.json';
+import contactAnimation from '../../Assets/lottie-files/contact.json';
 
 // Material UI
 import Button from '@material-ui/core/Button';
@@ -37,15 +37,24 @@ const ContactIndex = ({ contacts }) => {
     const noContacts = () => {
         return (
             <Box className={styles.noData}>
-                <Animation animationData={seedAnimation} />
-                <h1>No Contacts. Would you like to add one?</h1>
-                <Button
-                    component={Link}
-                    to='/contact/new'
-                    startIcon={<AddCircleOutlineIcon />}
-                >
-                    Add Contact
-                </Button>
+                
+                <div className={styles.boxContainer}>
+                    <div>
+                        <Animation animData={contactAnimation} />
+                    </div>
+                    <div className={styles.rightpart}>
+                        <h1>No Contacts. Would you like to add one?</h1>
+                        <Button
+                            component={Link}
+                            to='/contacts/new'
+                            startIcon={<AddCircleOutlineIcon 
+                            id={styles.btnAddContact}/>}
+                        >
+                            Add Contact
+                        </Button>
+                    </div>
+                </div>
+                
             </Box>
         )
     };
