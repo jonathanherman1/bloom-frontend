@@ -81,8 +81,8 @@ async function getOpportunityById (id) {
         const res = await fetch(`${BASE_URL}${id}`, {
             method: 'GET',
             headers: {
-            'content-type': 'application/json',
-            'Authorization': `JWT ${localStorage.getItem('token')}`
+                'content-type': 'application/json',
+                'Authorization': `JWT ${localStorage.getItem('token')}`
             }
         })
         const data = await res.json()

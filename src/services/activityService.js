@@ -47,7 +47,11 @@ async function getAll(){
 async function deleteOne(id){
   try {
       await fetch(`${BASE_URL}${id}`, {
-          method: 'DELETE'
+          method: 'DELETE',
+          headers: {
+              'content-type': 'application/json',
+              'Authorization': `JWT ${localStorage.getItem('token')}`
+          },
       })
   } catch (error) {
       throw error
@@ -61,6 +65,7 @@ async function update(opportunity, id){
           method: 'PUT',
           headers: {
               'content-type': 'application/json',
+              'Authorization': `JWT ${localStorage.getItem('token')}`
           },
           body: JSON.stringify(opportunity)
       })
@@ -72,8 +77,14 @@ async function update(opportunity, id){
 }
 
 async function getActivityById (id) {
-  try {
-      const res = await fetch(`${BASE_URL}${id}`)
+    try {
+      const res = await fetch(`${BASE_URL}${id}`, {
+          method: 'GET',
+          headers: {
+              'content-type': 'application/json',
+              'Authorization': `JWT ${localStorage.getItem('token')}`
+          }
+      })
       const data = await res.json()
       return data
   } catch (error) {
