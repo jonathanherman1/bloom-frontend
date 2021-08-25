@@ -20,6 +20,8 @@ const ActivityDetail = (props) => {
         <p>details details details</p>
         <p>{activityDetail.name}</p>
         <p>{activityDetail.date}</p>
+        <p>{activityDetail.type}</p>
+        <p>{activityDetail.contact_method}</p>
         <p>{activityDetail.notes}</p>
     </div> 
     );
