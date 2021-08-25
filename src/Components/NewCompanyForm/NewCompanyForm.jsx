@@ -15,7 +15,7 @@ function NewCompanyForm(props) {
       url: '',
       summary: '',
       interested: false,
-      glassdoor_rating: null,
+      glassdoor_rating: '',
       business_structure: '',
       notes: '',
     })
