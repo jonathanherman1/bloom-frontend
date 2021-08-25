@@ -8,8 +8,13 @@ import Button from '@material-ui/core/Button';
 function NewCompanyForm(props) {
     const [formData, setFormData] = useState({
       name: '',
-      date: '',
-      notes: ''
+      location: '',
+      url: '',
+      summary: '',
+      interested: '',
+      glassdoor_rating: '',
+      business_structure: '',
+      notes: '',
     })
     
     const handleChange = (e) => {
@@ -21,8 +26,13 @@ function NewCompanyForm(props) {
       props.handleAddCompany(formData)
       setFormData({
         name: '',
-        date: '',
-        notes: ''
+        location: '',
+        url: '',
+        summary: '',
+        interested: '',
+        glassdoor_rating: '',
+        business_structure: '',
+        notes: '',
       })
     }
   
@@ -43,26 +53,86 @@ function NewCompanyForm(props) {
               onChange={handleChange}
               autoComplete="off"
               fullWidth
-              required
               variant="outlined" 
+              required
             />
   
             <TextField
-              id="company-date"
-              type="date"
-              name="date"
-              label="Date"
-              value={formData.date}
+              id="company-location"
+              type="text"
+              name="location"
+              label="Location"
+              value={formData.location}
               onChange={handleChange}
               autoComplete="off"
-              required
               fullWidth
               variant="outlined"
-              InputLabelProps={{ shrink: true }}
+              required
             />
 
             <TextField
+              id="company-url"
+              type="text"
+              name="url"
+              label="URL"
+              value={formData.url}
+              onChange={handleChange}
+              multiline
+              rows={4}
+              variant="outlined" 
+              required
+            />
+            <TextField
+              id="company-summary"
+              type="text"
+              name="summary"
+              label="Summary"
+              value={formData.summary}
+              onChange={handleChange}
+              multiline
+              rows={4}
+              variant="outlined" 
+              required
+            />
+            <TextField
+              id="company-interested"
+              type="text"
+              name="interested"
+              label="Interested"
+              value={formData.interested}
+              onChange={handleChange}
+              multiline
+              rows={4}
+              variant="outlined" 
+              required
+            />
+            <TextField
+              id="company-glassdoor-rating"
+              type="text"
+              name="glassdoor_rating"
+              label="Glassdoor Rating"
+              value={formData.glassdoor_rating}
+              onChange={handleChange}
+              multiline
+              rows={4}
+              variant="outlined" 
+              required
+            />
+            <TextField
+              id="company-business-structure"
+              type="text"
+              name="business_structure"
+              label="Business Structure"
+              value={formData.business_structure}
+              onChange={handleChange}
+              multiline
+              rows={4}
+              variant="outlined" 
+              required
+            />
+            <TextField
               id="company-notes"
+              type="text"
               name="notes"
               label="Notes"
               value={formData.notes}
@@ -70,6 +140,7 @@ function NewCompanyForm(props) {
               multiline
               rows={4}
               variant="outlined" 
+              required
             />
             <Button type="submit" variant="contained" color="primary">
               Add Company
