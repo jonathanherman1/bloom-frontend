@@ -12,11 +12,17 @@ import { BrowserRouter as Router, Route, Switch, Redirect} from 'react-router-do
 import Nav from '../../Components/Nav/Nav'
 import LoginForm from '../../Components/LoginForm/LoginForm'
 import SignupForm from '../../Components/SignupForm/SignupForm'
-import NewOpportunityForm from '../../Components/NewOpportunityForm/NewOpportunityForm';
 import NewContactForm from '../../Components/NewContactForm/NewContactForm';
+import NewActivityForm from '../../Components/NewActivityForm/NewActivityForm';
+import NewOpportunityForm from '../../Components/NewOpportunityForm/NewOpportunityForm';
 import OpportunityIndex from '../../Components/OpportunityIndex/OpportunityIndex';
 import OpportunityDetail from '../../Components/OpportunityDetail/OpportunityDetail';
-import NewActivityForm from '../../Components/NewActivityForm/NewActivityForm';
+import CompanyIndex from '../../Components/CompanyIndex/CompanyIndex'
+import CompanyDetail from '../../Components/CompanyDetail/CompanyDetail'
+import NewCompanyForm from '../../Components/NewCompanyForm/NewCompanyForm';
+
+
+// Animation
 import Animation from '../../Components/Animation/Animation'
 
 // Content
@@ -221,6 +227,15 @@ const App = (props) => {
           </Route>
           <Route exact path='/opportunities/:id'>
             <OpportunityDetail />
+          </Route>
+          <Route exact path='/companies'>
+            { loggedIn ? <CompanyIndex companies={companies} /> : <Redirect to='/'/> }
+          </Route>
+          <Route exact path='/companies/new'>
+            <NewCompanyForm handleAddCompany={handleAddCompany}/>
+          </Route>
+          <Route exact path='/companies/:id'>
+            <CompanyDetail />
           </Route>
           <Route exact path='/opportunities/:id/new-activity'>
             <NewActivityForm handleAddActivity={handleAddActivity}/>
