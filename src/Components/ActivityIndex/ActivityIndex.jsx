@@ -9,8 +9,12 @@ import Animation from "../Animation/Animation"
 import seedAnimation from "../../Assets/lottie-files/73344-seed.json"
 
 // Material UI
-import Button from "@material-ui/core/Button"
+
 import Box from "@material-ui/core/Box"
+import Fab from '@material-ui/core/Fab';
+import AddIcon from '@material-ui/icons/Add';
+import Button from "@material-ui/core/Button"
+import Tooltip from '@material-ui/core/Tooltip';
 import AddCircleOutlineIcon from "@material-ui/icons/AddCircleOutline"
 
 // Styles
@@ -48,9 +52,31 @@ const ActivityIndex = ({ activities }) => {
 		)
 	}
 
+	const button = () => {
+		<Box className={styles.addBtnContainer}>
+		<Tooltip 
+			title="Add Activity" 
+			aria-label="add" 
+			component={Link}
+			to='/activity/new'
+			placement="right">
+			<Fab color="primary">
+				<AddIcon />
+			</Fab>
+			</Tooltip>
+    	</Box>
+	}
+
 	return (
 		<div className={styles.container}>
-			{activities.length ? activitiesList() : noActivities()}
+			{activities.length 
+			? 
+			 <>
+				{button}
+				{activitiesList()}
+		   	 </> 
+		   : 
+		   		noActivities()}
 		</div>
 	)
 }

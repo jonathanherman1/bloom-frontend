@@ -10,7 +10,6 @@ import seedAnimation from '../../Assets/lottie-files/73344-seed.json';
 
 // Material UI
 import Button from '@material-ui/core/Button';
-import IconButton from '@material-ui/core/Button';
 import Box from '@material-ui/core/Box';
 import Fab from '@material-ui/core/Fab';
 import Tooltip from '@material-ui/core/Tooltip';
@@ -65,7 +64,12 @@ const OpportunityIndex = ({ opportunities }) => {
       >
         New Opportunity
       </IconButton> */}
-      <Tooltip title="Add Opportunity" aria-label="add" placement="right">
+       <Tooltip 
+          title="Add Opportunity" 
+          aria-label="add" 
+          component={Link}
+          to='/opportunities/new'
+          placement="right">
           <Fab color="primary">
             <AddIcon />
           </Fab>
