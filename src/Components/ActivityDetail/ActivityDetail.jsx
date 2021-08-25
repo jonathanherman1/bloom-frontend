@@ -11,7 +11,7 @@ const ActivityDetail = (props) => {
     console.log(props)
     useEffect(() => {
         (async () => {
-            const newActivityDetail = await activityService.getActivityById(props.match.params.act_id)
+            const newActivityDetail = await activityService.getActivityById(props.match.params.id)
             setActivityDetail(newActivityDetail)
         })()
     }, []);
