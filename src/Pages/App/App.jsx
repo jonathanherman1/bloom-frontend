@@ -234,15 +234,6 @@ const App = (props) => {
           <Route exact path='/opportunities/:id'>
             <OpportunityDetail />
           </Route>
-          <Route exact path='/companies'>
-            { loggedIn ? <CompanyIndex companies={companies} /> : <Redirect to='/'/> }
-          </Route>
-          <Route exact path='/companies/new'>
-            <NewCompanyForm handleAddCompany={handleAddCompany}/>
-          </Route>
-          <Route exact path='/companies/:id'>
-            <CompanyDetail />
-          </Route>
           <Route exact path='/activities'>
             { loggedIn ? <ActivityIndex activities={activities} /> : <Redirect to='/'/> }
           </Route>
@@ -252,9 +243,6 @@ const App = (props) => {
           <Route exact path='/activities/:id'>
             <ActivityDetail />
           </Route>
-
-
-
           <Route exact path='/contacts'>
             { loggedIn ? <ContactIndex contacts={contacts} /> : <Redirect to='/'/> }
           </Route>
@@ -263,6 +251,15 @@ const App = (props) => {
           </Route>
           <Route exact path='/contacts/:id'>
             <ContactDetail />
+          </Route>
+          <Route exact path='/companies'>
+            { loggedIn ? <CompanyIndex companies={companies} /> : <Redirect to='/'/> }
+          </Route>
+          <Route exact path='/companies/new'>
+            <NewCompanyForm handleAddCompany={handleAddCompany}/>
+          </Route>
+          <Route exact path='/companies/:id'>
+            <CompanyDetail />
           </Route>
 
           <Route exact path='/opportunities/:id/new-activity'>
