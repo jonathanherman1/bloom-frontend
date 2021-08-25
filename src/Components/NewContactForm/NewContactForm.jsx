@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
-import styles from './ContactForm.module.css'
+import styles from './NewContactForm.module.css'
 
 function ContactForm(props) {
     const [formData, setFormData] = useState([])
