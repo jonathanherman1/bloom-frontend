@@ -6,6 +6,7 @@ import PrevCard from '../PrevCard/PrevCard'
 
 // Material UI
 import Button from '@material-ui/core/Button';
+import Box from '@material-ui/core/Box';
 import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
 
 // Styles
@@ -32,7 +33,7 @@ const OpportunityIndex = () => {
         // service call
         setViewOpps((() => {
             return opportunities.length > 0 ? opportunitiesList :
-            <>
+            <Box className={styles.noData}>
                 <h1>No opportunities. Would you like to add one?</h1>
                 <Button
                     component={Link}
@@ -41,7 +42,7 @@ const OpportunityIndex = () => {
                 >
                    Add Opportunity
                 </Button>
-            </>
+            </Box>
         })())
     }, []);
 
