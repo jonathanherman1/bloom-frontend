@@ -12,6 +12,8 @@ import classes from './PrevCard.module.css'
 import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
 import VisibilityIcon from '@material-ui/icons/Visibility';
 
+const flower = "/Assets/images/flower.png"
+
 export default function MediaCard({ name, date, notes, id, preRoute }) {
   
     return (
@@ -22,7 +24,7 @@ export default function MediaCard({ name, date, notes, id, preRoute }) {
         >
           <CardMedia
             className={classes.media}
-            image=""
+            image={flower}
             title="placeholder"
           />
           <CardContent>
