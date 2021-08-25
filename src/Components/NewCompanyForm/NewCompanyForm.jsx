@@ -4,6 +4,8 @@ import React, { useState } from 'react';
 import styles from './NewCompanyForm.module.css';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
+import Switch from '@material-ui/core/Switch';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
 
 function NewCompanyForm(props) {
     const [formData, setFormData] = useState({
@@ -11,8 +13,8 @@ function NewCompanyForm(props) {
       location: '',
       url: '',
       summary: '',
-      interested: '',
-      glassdoor_rating: '',
+      interested: false,
+      glassdoor_rating: null,
       business_structure: '',
       notes: '',
     })
@@ -29,8 +31,8 @@ function NewCompanyForm(props) {
         location: '',
         url: '',
         summary: '',
-        interested: '',
-        glassdoor_rating: '',
+        interested: formData.interested,
+        glassdoor_rating: formData.glassdoor_rating,
         business_structure: '',
         notes: '',
       })
@@ -82,39 +84,28 @@ function NewCompanyForm(props) {
               variant="outlined" 
               required
             />
-            <TextField
-              id="company-summary"
-              type="text"
-              name="summary"
-              label="Summary"
-              value={formData.summary}
-              onChange={handleChange}
-              multiline
-              rows={4}
-              variant="outlined" 
-              required
+            <FormControlLabel
+                label="Interested"
+                control={
+                  <Switch
+                    checked={formData.interested}
+                    value={formData.interested}
+                    onChange={() => setFormData({ ...formData, interested: !formData.interested })}
+                    name="interested"
+                    color="primary"
+                  />
+                }
+                    
             />
-            <TextField
-              id="company-interested"
-              type="text"
-              name="interested"
-              label="Interested"
-              value={formData.interested}
-              onChange={handleChange}
-              multiline
-              rows={4}
-              variant="outlined" 
-              required
-            />
+                  
             <TextField
               id="company-glassdoor-rating"
-              type="text"
+              type="number"
+              max={5}
               name="glassdoor_rating"
               label="Glassdoor Rating"
               value={formData.glassdoor_rating}
               onChange={handleChange}
-              multiline
-              rows={4}
               variant="outlined" 
               required
             />
@@ -124,6 +115,18 @@ function NewCompanyForm(props) {
               name="business_structure"
               label="Business Structure"
               value={formData.business_structure}
+              onChange={handleChange}
+              multiline
+              rows={2}
+              variant="outlined" 
+              required
+            />
+             <TextField
+              id="company-summary"
+              type="text"
+              name="summary"
+              label="Summary"
+              value={formData.summary}
               onChange={handleChange}
               multiline
               rows={4}
