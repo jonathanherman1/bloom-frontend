@@ -30,3 +30,7 @@
     color: orange;
     font-size: x-large;
 }
+
+.addBtnContainer {
+    margin: 2rem;
+}
