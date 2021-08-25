@@ -1,14 +1,22 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom'
+
+// Components
 import PrevCard from '../PrevCard/PrevCard'
 
+// Material UI
+import Button from '@material-ui/core/Button';
+import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
+
+// Styles
+import styles from './OpportunityIndex.module.css'
+
 const OpportunityIndex = () => {
-    const [ opportunities, setOpportunities ] = useState([{name: 'job', date: 'idk', notes: 'lets see! bfsigbwesogbweijgbsgbasgibarslgiardsbgijsrdabglasibglardibgadligbdalihgbealighbdslghibdrlgibralgihbdaglhadbgldihbgdlshbslbhidslb', id: '1'}])
+    const [ opportunities, setOpportunities ] = useState([])
 
-    useEffect(() => {
-        // service call
-    }, []);
+    const [viewOpps, setViewOpps] = useState('')
 
-    const opportunitiesList = opportunities.map((o, i) => {
+    const opportunitiesList = opportunities?.map((o, i) => {
         return (
         <PrevCard 
             key={i} 
@@ -20,9 +28,26 @@ const OpportunityIndex = () => {
         );
     })
 
+    useEffect(() => {
+        // service call
+        setViewOpps((() => {
+            return opportunities.length > 0 ? opportunitiesList :
+            <>
+                <h1>No opportunities. Would you like to add one?</h1>
+                <Button
+                    component={Link}
+                    to='/opportunities/new'
+                    startIcon={<AddCircleOutlineIcon />}
+                >
+                   Add Opportunity
+                </Button>
+            </>
+        })())
+    }, [opportunities, opportunitiesList]);
+
     return (
-        <div>
-            {opportunitiesList}
+        <div className={styles.container}>
+            {viewOpps}
         </div>
     );
 }
