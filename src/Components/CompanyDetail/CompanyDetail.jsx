@@ -8,7 +8,7 @@ const CompanyDetail = (props) => {
     console.log(props)
     useEffect(() => {
         (async () => {
-            const newCompanyDetail = await companyService.getCompanyById(props.match.params.opp_id)
+            const newCompanyDetail = await companyService.getCompanyById(props.match.params.id)
             setCompanyDetail(newCompanyDetail)
         })()
     }, []);

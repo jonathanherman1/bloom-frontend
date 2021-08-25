@@ -219,10 +219,10 @@ const App = (props) => {
           <Route exact path='/opportunities/new'>
             <NewOpportunityForm handleAddOpportunity={handleAddOpportunity}/>
           </Route>
-          <Route exact path='/opportunities/:opp_id'>
+          <Route exact path='/opportunities/:id'>
             <OpportunityDetail />
           </Route>
-          <Route exact path='/opportunities/:opp_id/new-activity'>
+          <Route exact path='/opportunities/:id/new-activity'>
             <NewActivityForm handleAddActivity={handleAddActivity}/>
           </Route>
           <Route exact path='/contact'>
