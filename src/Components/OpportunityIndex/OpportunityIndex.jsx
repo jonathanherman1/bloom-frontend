@@ -3,6 +3,10 @@ import { Link } from 'react-router-dom'
 
 // Components
 import PrevCard from '../PrevCard/PrevCard'
+import Animation from '../Animation/Animation';
+
+// Content
+import seedAnimation from '../../Assets/lottie-files/73344-seed.json'
 
 // Material UI
 import Button from '@material-ui/core/Button';
@@ -34,6 +38,7 @@ const OpportunityIndex = () => {
         setViewOpps((() => {
             return opportunities.length > 0 ? opportunitiesList :
             <Box className={styles.noData}>
+                <Animation animationData={seedAnimation}/>
                 <h1>No opportunities. Would you like to add one?</h1>
                 <Button
                     component={Link}
