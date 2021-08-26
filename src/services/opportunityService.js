@@ -1,3 +1,6 @@
+<pre>{process.env.REACT_APP_OPPORTUNITY}</pre>
+
+
 export {
     create,
     getAll,
@@ -6,7 +9,7 @@ export {
     getOpportunityById,
 }
 
-const BASE_URL = 'http://localhost:8000/api/opportunities/'
+const BASE_URL = `${process.env.REACT_APP_OPPORTUNITY}`
 
 async function create(opportunity){
     console.log("opp: ", opportunity)
