@@ -64,7 +64,8 @@ const App = (props) => {
   const theme = createTheme({
     palette: {
       primary:{
-        main: '#c8e6c9'
+        // main: '#c8e6c9'
+        main: '#9bb39c'
       },
       secondary:{
         main: '#424444'

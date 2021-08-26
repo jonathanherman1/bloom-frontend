@@ -1,6 +1,7 @@
 .root {
     width: 345px;
     min-height: 250px;
+    margin: .5rem;
 }
 
 .media {
