@@ -44,6 +44,11 @@ import './App.css';
 
 
 const App = (props) => {
+      <pre>
+        {process.env.REACT_APP_LOGGED_IN} 
+        {process.env.REACT_APP_LOGIN}
+        {process.env.REACT_APP_SIGNUP}
+      </pre>
       const [ darkMode, setDarkMode ] = useState(false);
       const [ loggedIn, setLoggedIn ] = useState(localStorage.getItem('token') ? true : false)
       const [ displayedForm, setDisplayedForm ] = useState ('')
