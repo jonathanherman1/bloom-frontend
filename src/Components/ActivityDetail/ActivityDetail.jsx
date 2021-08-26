@@ -7,7 +7,6 @@ import styles from "./ActivityDetail.module.css"
 
 const ActivityDetail = (props) => {
     const [activityDetail, setActivityDetail] = useState('')
-    console.log(props)
     useEffect(() => {
         (async () => {
             const newActivityDetail = await activityService.getActivityById(props.match.params.id)
