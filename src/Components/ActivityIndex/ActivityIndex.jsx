@@ -75,16 +75,16 @@ const ActivityIndex = ({ activities }) => {
 	)
 
 	return (
-		<div className={styles.container}>
+		<>
 			{activities.length 
 			? 
-			 <>
+			 <div className={styles.container}>
 				{button}
 				{activitiesList()}
-		   	 </> 
+		   	 </div> 
 		   : 
 		   		noActivities()}
-		</div>
+		</>
 	)
 }
 

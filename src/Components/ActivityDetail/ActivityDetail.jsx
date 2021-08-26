@@ -2,13 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { withRouter } from 'react-router-dom';
 
 import * as activityService from '../../services/activityService.js'
-
 import styles from "./ActivityDetail.module.css"
 
 
 const ActivityDetail = (props) => {
     const [activityDetail, setActivityDetail] = useState('')
-    console.log(props)
     useEffect(() => {
         (async () => {
             const newActivityDetail = await activityService.getActivityById(props.match.params.id)
@@ -16,8 +14,7 @@ const ActivityDetail = (props) => {
         })()
     }, []);
     return ( 
-    <div>
-        <p>details details details</p>
+    <div className={styles.container}>
         <p>{activityDetail.name}</p>
         <p>{activityDetail.date}</p>
         <p>{activityDetail.type}</p>
