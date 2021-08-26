@@ -12,7 +12,8 @@
 
 .loginText {
     color: #E79C2A;
-    font-family: 'Abril Fatface', cursive;
+    /* font-family: 'Abril Fatface', cursive; */
+    font-family: sans-serif;
     font-size: 26px;
     text-align: center;
 }
