@@ -4,12 +4,17 @@ import React, { useState } from 'react';
 import styles from './NewOpportunityForm.module.css';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
+import InputLabel from '@material-ui/core/InputLabel';
+import MenuItem from '@material-ui/core/MenuItem';
+import FormControl from '@material-ui/core/FormControl';
+import Select from '@material-ui/core/Select';
 
 function NewOpportunityForm(props) {
     const [formData, setFormData] = useState({
       name: '',
       date: '',
-      notes: ''
+      notes: '',
+      listing_source: '',
     })
     
     const handleChange = (e) => {
@@ -22,7 +27,8 @@ function NewOpportunityForm(props) {
       setFormData({
         name: '',
         date: '',
-        notes: ''
+        notes: '',
+        listing_source: '',
       })
     }
   
@@ -146,9 +152,21 @@ function NewOpportunityForm(props) {
               fullWidth
               variant="outlined"
             />
-
-            <p>Listing Source Dropdown</p>
-
+            <FormControl variant="outlined">
+              <InputLabel id="listing_source">Listing Source</InputLabel>
+              <Select
+                labelId="listing_source"
+                id="listing_source"
+                value={formData.listing_source}
+                onChange={(e) => setFormData({ ...formData, listing_source: e.target.value })}
+                label="listing_source"
+                defaultValue={""}
+              >
+                <MenuItem value={"Indeed"}>Indeed</MenuItem>
+                <MenuItem value={"LinkedIn"}>LinkedIn</MenuItem>
+                <MenuItem value={"Jen"}>Jen told me about this directly</MenuItem>
+              </Select>
+            </FormControl>
             <TextField
               id="opportunity-keywords"
               type="text"
