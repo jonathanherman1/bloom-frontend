@@ -20,6 +20,7 @@ import DeleteIcon from '@material-ui/icons/Delete'
 
 const ContactDetail = (props) => {
     const [contactDetail, setContactDetail] = useState('')
+
     useEffect(() => {
         (async () => {
             const newContactDetail = await contactService.getContactById(props.match.params.id)
@@ -29,6 +30,7 @@ const ContactDetail = (props) => {
 
 
     return (
+        contactDetail &&
         <Box className={classes.container} mt={4}>
             <Box className={classes.titleContainer}>
             <Paper elevation={10}  className={classes.titlePaper}>

@@ -11,12 +11,12 @@ import Paper from '@material-ui/core/Paper'
 import Divider from '@material-ui/core/Divider'
 import Typography from '@material-ui/core/Typography'
 import * as activityService from '../../services/activityService.js'
-import classes from "./ActivityDetail.module.css"
 import TodayIcon from '@material-ui/icons/Today'
 import LabelIcon from '@material-ui/icons/Label'
 import TocIcon from '@material-ui/icons/Toc'
 import DeleteIcon from '@material-ui/icons/Delete'
 import NoteIcon from '@material-ui/icons/Note'
+import classes from "./ActivityDetail.module.css"
 
 const ActivityDetail = (props) => {
     const [activityDetail, setActivityDetail] = useState(null)
