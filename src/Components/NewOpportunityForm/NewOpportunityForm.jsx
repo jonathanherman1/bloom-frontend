@@ -46,6 +46,8 @@ function NewOpportunityForm(props) {
               required
               variant="outlined" 
             />
+
+            <p> interest level rating </p>
   
             <TextField
               id="opportunity-date"
@@ -59,6 +61,105 @@ function NewOpportunityForm(props) {
               fullWidth
               variant="outlined"
               InputLabelProps={{ shrink: true }}
+            />
+
+            <TextField
+              id="opportunity-location"
+              type="location"
+              name="location"
+              label="Location"
+              value={formData.location}
+              onChange={handleChange}
+              autoComplete="off"
+              required
+              fullWidth
+              variant="outlined"
+            />
+
+            <TextField
+              id="opportunity-salary"
+              type="number"
+              name="salary"
+              label="Salary"
+              value={formData.salary}
+              onChange={handleChange}
+              autoComplete="off"
+              required
+              fullWidth
+              variant="outlined"
+            />
+
+            <TextField
+              id="opportunity-responsibilities"
+              type="test"
+              name="responsibilities"
+              label="Responsibilities"
+              value={formData.responsibilities}
+              onChange={handleChange}
+              autoComplete="off"
+              multiline
+              rows={2}
+              required
+              fullWidth
+              variant="outlined"
+            />
+
+            <TextField
+              id="opportunity-requirements"
+              type="test"
+              name="requirements"
+              label="Requirements"
+              value={formData.requirements}
+              onChange={handleChange}
+              autoComplete="off"
+              multiline
+              rows={2}
+              required
+              fullWidth
+              variant="outlined"
+            />
+
+            <TextField
+              id="opportunity-years-experience-required"
+              type="text"
+              name="years_experience_required"
+              label="Years Experience Required"
+              value={formData.years_experience_required}
+              onChange={handleChange}
+              autoComplete="off"
+              multiline
+              rows={2}
+              required
+              fullWidth
+              variant="outlined"
+            />
+
+            <TextField
+              id="opportunity-role_list_url"
+              type="text"
+              name="role_list_url"
+              label="Role Listing"
+              value={formData.role_list_url}
+              onChange={handleChange}
+              autoComplete="off"
+              required
+              fullWidth
+              variant="outlined"
+            />
+
+            <p>Listing Source Dropdown</p>
+
+            <TextField
+              id="opportunity-keywords"
+              type="text"
+              name="keywords"
+              label="Keywords"
+              value={formData.keywords}
+              onChange={handleChange}
+              autoComplete="off"
+              required
+              fullWidth
+              variant="outlined"
             />
 
             <TextField
