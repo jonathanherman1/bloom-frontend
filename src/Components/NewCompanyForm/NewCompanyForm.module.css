@@ -1,8 +1,8 @@
 .container {
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    width: 100%;
+    flex-direction: column;
     padding-top: 1rem;
     margin: 0 2rem;
 }
@@ -10,7 +10,10 @@
 .form {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 80%;
+    overflow: hidden;
     gap: 1rem;
     margin-top: 1rem;
+    padding: 1rem;
+    margin-bottom: 5rem;
 }

@@ -6,6 +6,10 @@ import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import Switch from '@material-ui/core/Switch';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
+import InputLabel from '@material-ui/core/InputLabel';
+import MenuItem from '@material-ui/core/MenuItem';
+import FormControl from '@material-ui/core/FormControl';
+import Select from '@material-ui/core/Select';
 import { Typography } from '@material-ui/core';
 
 function NewCompanyForm(props) {
@@ -16,12 +20,13 @@ function NewCompanyForm(props) {
       summary: '',
       interested: false,
       glassdoor_rating: '',
-      business_structure: '',
+      buisness_structure: '',
       notes: '',
     })
-    
+
     const handleChange = (e) => {
       setFormData({...formData, [e.target.name]: e.target.value})
+      console.log(formData)
     }
   
     const handleSubmit = (e) => {
@@ -34,7 +39,7 @@ function NewCompanyForm(props) {
         summary: '',
         interested: formData.interested,
         glassdoor_rating: formData.glassdoor_rating,
-        business_structure: '',
+        business_structure: formData.buisness_structure,
         notes: '',
       })
     }
@@ -96,19 +101,6 @@ function NewCompanyForm(props) {
                     color="primary"
                   />
                 }
-                    
-            />
-            <TextField
-              id="company-business-structure"
-              type="text"
-              name="business_structure"
-              label="Business Structure"
-              value={formData.business_structure}
-              onChange={handleChange}
-              multiline
-              rows={2}
-              variant="outlined" 
-              required
             />
              <TextField
               id="company-summary"
@@ -133,6 +125,21 @@ function NewCompanyForm(props) {
               variant="outlined" 
               required
             />
+             <FormControl variant="outlined">
+              <InputLabel id="buisness_structure">Buisness Structure</InputLabel>
+              <Select
+                labelId="buisness_structure"
+                id="buisness_structure"
+                value={formData.business_structure}
+                onChange={(e) => setFormData({ ...formData, buisness_structure: e.target.value })}
+                label="buisness_structure"
+                defaultValue={""}
+              >
+                <MenuItem value={"Public"}>Public</MenuItem>
+                <MenuItem value={"Private"}>Private</MenuItem>
+                <MenuItem value={"Non_Profit"}>Non Profit</MenuItem>
+              </Select>
+            </FormControl>
             <TextField
               id="company-notes"
               type="text"
