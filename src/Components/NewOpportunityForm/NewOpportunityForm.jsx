@@ -7,6 +7,7 @@ import Button from '@material-ui/core/Button';
 import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
 import FormControl from '@material-ui/core/FormControl';
+import Typography from '@material-ui/core/Typography'
 import Select from '@material-ui/core/Select';
 import Rating from '@material-ui/lab/Rating'
 import Box from '@material-ui/core/Box'
@@ -60,6 +61,7 @@ function NewOpportunityForm(props) {
             />
 
             <Box component="fieldset" mt={1} borderColor="transparent" display="flex">
+            <Typography> Interest: </Typography>
             <Rating
                 name="stars"
                 value={formData.stars}
