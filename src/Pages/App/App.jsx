@@ -82,7 +82,7 @@ const App = (props) => {
   useEffect(() => {
     (async () => {
       if (loggedIn) {
-        const res = await fetch(process.env.REACT_APP_LOGGED_IN, {
+        const res = await fetch(`${process.env.REACT_APP_LOGGED_IN}`, {
           headers: {
             Authorization: `JWT ${ localStorage.getItem('token') }`
           }
@@ -132,7 +132,7 @@ const App = (props) => {
 
   const handleLogin = async (e, data) => {
     e.preventDefault();
-    const res = await fetch(process.env.REACT_APP_LOGIN, {
+    const res = await fetch(`${process.env.REACT_APP_LOGIN}`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -148,7 +148,7 @@ const App = (props) => {
 
   const handleSignup = async (e, data) => {
     e.preventDefault();
-    const res = await fetch(process.env.REACT_APP_SIGNUP, {
+    const res = await fetch(`${process.env.REACT_APP_SIGNUP}`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
