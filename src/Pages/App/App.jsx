@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
 import {
   createTheme,
   ThemeProvider,
   CssBaseline
 } from '@material-ui/core';
 import useMediaQuery from '@material-ui/core/useMediaQuery'
-import { BrowserRouter as Router, Route, Switch, Redirect} from 'react-router-dom'
+import { BrowserRouter as Route, Switch, Redirect} from 'react-router-dom'
 
 // Components
 import Nav from '../../Components/Nav/Nav'
