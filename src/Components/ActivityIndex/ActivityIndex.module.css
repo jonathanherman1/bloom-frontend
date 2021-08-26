@@ -1,19 +1,45 @@
 .container {
-  display: flex;
+  /* display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 50px;
+  margin: 50px; */
 }
 
 .noData {
-  display: flex;
+  /* display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 80%;
+  width: 80%; */
 }
 
 .addBtnContainer {
   margin: 2rem;
+}
+
+#btnAddActivity {
+  color: orange;
+  font-size: x-large;
+}
+
+.animationBox {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.activityAction {
+  flex-grow: 1;
+  margin-left: 20%;
+}
+
+@media only screen and (max-width: 767px) {
+  .animationBox {
+    flex-wrap: wrap;
+  }
+  .activityAction {
+    width: 100%;
+  }
 }
