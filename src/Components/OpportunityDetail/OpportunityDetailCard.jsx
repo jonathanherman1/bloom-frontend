@@ -30,7 +30,7 @@ const OpportunityDetailCard = ({ opportunityDetail }) => {
           </Box>
         </Box>
         <Box  mt={1} className={classes.container3}>
-          <Table />
+          <Table opportunityDetail={opportunityDetail} />
         </Box>
       </Box>
     </>

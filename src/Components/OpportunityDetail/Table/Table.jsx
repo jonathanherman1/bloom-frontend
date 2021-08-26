@@ -7,23 +7,23 @@ import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import classes from './Table.module.css'
 
-export default function BasicTable() {
+export default function BasicTable({ opportunityDetail }) {
   
     return (
       <TableContainer component={Paper}>
         <Table className={classes.table} aria-label="table">
           <TableBody>
               <TableRow>
-                <TableCell align="left">salary</TableCell>
+                <TableCell align="left">{opportunityDetail.salary}</TableCell>
               </TableRow>
               <TableRow>
-                <TableCell align="left">location</TableCell>
+                <TableCell align="left">{opportunityDetail.location}</TableCell>
               </TableRow>
               <TableRow>
-                <TableCell align="left">yrs exp req</TableCell>
+                <TableCell align="left">{opportunityDetail.yrs_exp_req}</TableCell>
               </TableRow>
               <TableRow>
-                <TableCell align="left">responsibilities</TableCell>
+                <TableCell align="left">{opportunityDetail.responsibilities}</TableCell>
               </TableRow>
           </TableBody>
         </Table>
