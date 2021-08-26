@@ -1,3 +1,6 @@
+<pre>{process.env.REACT_APP_CONTACT}</pre>
+
+
 export {
   create,
   getAll,
@@ -6,7 +9,7 @@ export {
   getContactById,
 }
 
-const BASE_URL = 'http://localhost:8000/api/contacts/'
+const BASE_URL = `${process.env.REACT_APP_CONTACT}`
 
 async function create(contact){
   console.log("opp: ", contact)

@@ -1,3 +1,5 @@
+<pre>{process.env.REACT_APP_ACTIVITY}</pre>
+
 export {
   create,
   getAll,
@@ -6,7 +8,7 @@ export {
   getActivityById,
 }
 
-const BASE_URL = 'http://localhost:8000/api/activities/'
+const BASE_URL = `${process.env.REACT_APP_ACTIVITY}`
 
 async function create(activity){
   console.log("opp: ", activity)
