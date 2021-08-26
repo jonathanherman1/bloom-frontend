@@ -68,28 +68,12 @@ const App = (props) => {
   const theme = createTheme({
     palette: {
       primary:{
-        // main: '#c8e6c9'
-        main: '#9bb39c'
+        main: '#7fc8a9'
       },
       secondary:{
         main: '#424444'
       },
       type: darkMode ? 'dark' : 'light',
-    },
-    components: {
-      MuiFab: {
-        variants: [
-          {
-            props: { variant: 'warning' },
-            style: {
-              backgroundColor: '#f48fb1',
-              "&hover": {
-                backgroundColor: '#aa647b'
-              }
-            }
-          }
-        ]
-      }
     }
   });
 
