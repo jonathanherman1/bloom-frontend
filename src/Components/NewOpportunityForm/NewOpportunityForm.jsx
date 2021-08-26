@@ -8,13 +8,18 @@ import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
+import Rating from '@material-ui/lab/Rating'
+import Box from '@material-ui/core/Box'
 
 function NewOpportunityForm(props) {
+    const [ hover, setHover] = useState(-1)
+
     const [formData, setFormData] = useState({
       name: '',
       date: '',
       notes: '',
       listing_source: '',
+      stars: 4
     })
     
     const handleChange = (e) => {
@@ -29,6 +34,7 @@ function NewOpportunityForm(props) {
         date: '',
         notes: '',
         listing_source: '',
+        stars: '',
       })
     }
   
@@ -53,7 +59,15 @@ function NewOpportunityForm(props) {
               variant="outlined" 
             />
 
-            <p> interest level rating </p>
+            <Box component="fieldset" mt={1} borderColor="transparent" display="flex">
+            <Rating
+                name="stars"
+                value={formData.stars}
+                onChange={(event, newValue) => setFormData({ ...formData, stars: newValue })}
+                onChangeActive={(event, newHover) => {setHover(newHover);}}
+            />
+            {formData.stars !== null && <Box ml={2} mt={1.5}>{[hover !== -1 ? hover : formData.stars]}</Box>}
+            </Box>
   
             <TextField
               id="opportunity-date"
