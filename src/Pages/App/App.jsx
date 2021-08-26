@@ -4,8 +4,9 @@ import {
   ThemeProvider,
   CssBaseline
 } from '@material-ui/core';
+import axios from 'axios'
 import useMediaQuery from '@material-ui/core/useMediaQuery'
-import { BrowserRouter as Route, Switch, Redirect} from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch, Redirect} from 'react-router-dom'
 
 // Components
 import Nav from '../../Components/Nav/Nav'
@@ -44,11 +45,11 @@ import './App.css';
 
 
 const App = (props) => {
-      <pre>
-        {process.env.REACT_APP_LOGGED_IN}
-        {process.env.REACT_APP_LOGIN}
-        {process.env.REACT_APP_SIGNUP}
-      </pre>
+      // <pre>
+      //   {process.env.REACT_APP_LOGGED_IN}
+      //   {process.env.REACT_APP_LOGIN}
+      //   {process.env.REACT_APP_SIGNUP}
+      // </pre>
 
       const [ darkMode, setDarkMode ] = useState(false);
       const [ loggedIn, setLoggedIn ] = useState(localStorage.getItem('token') ? true : false)

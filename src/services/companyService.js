@@ -1,4 +1,4 @@
-<pre>{process.env.REACT_APP_COMPANY}</pre>
+{/* <pre>{process.env.REACT_APP_COMPANY}</pre> */}
 
 
 export {

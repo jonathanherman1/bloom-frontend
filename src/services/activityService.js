@@ -1,4 +1,4 @@
-<pre>{process.env.REACT_APP_ACTIVITY}</pre>
+{/* <pre>{process.env.REACT_APP_ACTIVITY}</pre> */}
 
 export {
   create,
