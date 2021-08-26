@@ -14,17 +14,21 @@
     width: 100%;
 }
 
-.boxContainer {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
+
+@media only screen and (min-width: 767px) {
+    .boxContainer {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .rightpart {
+        width: 65%;
+    }
 }
 
-.rightpart {
-    width: 65%;
-}
 
 #btnAddContact{
     color: orange;
