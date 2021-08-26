@@ -1,3 +1,6 @@
+<pre>{process.env.REACT_APP_COMPANY}</pre>
+
+
 export {
   create,
   getAll,
@@ -6,7 +9,7 @@ export {
   getCompanyById,
 }
 
-const BASE_URL = 'http://localhost:8000/api/companies/'
+const BASE_URL = `${process.env.REACT_APP_COMPANY}`
 
 async function create(company){
     console.log("opp: ", company)
