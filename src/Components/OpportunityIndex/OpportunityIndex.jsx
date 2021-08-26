@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 // Components
 import PrevCard from '../PrevCard/PrevCard';
-import Animation from '../Animation/Animation';
+import Animation from '../Animation/AnimationNoCss';
 
 // Content
 import seedAnimation from '../../Assets/lottie-files/73344-seed.json';
@@ -39,7 +39,7 @@ const OpportunityIndex = ({ opportunities }) => {
   const noOpportunities = () => {
     return (
       <Box className={styles.noData}>
-        <Animation animationData={seedAnimation} />
+        <Animation animData={seedAnimation} />
         <h1>No opportunities. Would you like to add one?</h1>
         <Button
           component={Link}

@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom';
 
 // Components
 import PrevCard from '../PrevCard/PrevCard';
-import Animation from '../Animation/Animation';
+import Animation from '../Animation/AnimationNoCss';
 
 // Content
-import seedAnimation from '../../Assets/lottie-files/73344-seed.json';
+import companyAnimation from '../../Assets/lottie-files/71205-company-discussion.json';
 
 // Material UI
 import Fab from '@material-ui/core/Fab';
@@ -38,12 +38,12 @@ const CompanyIndex = ({ companies }) => {
   const noCompanies = () => {
     return (
         <Box className={styles.noData}>
-            <Animation animationData={seedAnimation} />
+        <Animation animData={companyAnimation} />
             <h1>No companies. Would you like to add one?</h1>
             <Button
                 component={Link}
                 to='/companies/new'
-                startIcon={<AddCircleOutlineIcon />}
+                startIcon={<AddCircleOutlineIcon id={styles.btnAddCompany}/>}
             >
                 Add Company
             </Button>

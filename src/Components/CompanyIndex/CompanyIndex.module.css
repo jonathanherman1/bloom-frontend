@@ -17,3 +17,8 @@
 .addBtnContainer {
     margin: 2rem;
 }
+
+#btnAddCompany {
+    color: orange;
+    font-size: x-large;
+}
