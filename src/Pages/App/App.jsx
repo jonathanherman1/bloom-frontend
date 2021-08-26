@@ -26,8 +26,6 @@ import ContactDetail from '../../Components/ContactDetail/ContactDetail'
 import NewContactForm from '../../Components/NewContactForm/NewContactForm';
 import BottomNav from '../../Components/Nav/BottomNav'
 
-
-
 // Animation
 import Animation from '../../Components/Animation/Animation'
 
@@ -236,40 +234,40 @@ const App = (props) => {
             { loggedIn ? <OpportunityIndex opportunities={opportunities} /> : <Redirect to='/'/> }
           </Route>
           <Route exact path='/opportunities/new'>
-          { loggedIn ? <NewOpportunityForm handleAddOpportunity={handleAddOpportunity}/> : <Redirect to='/'/> }
+            { loggedIn ? <NewOpportunityForm handleAddOpportunity={handleAddOpportunity}/> : <Redirect to='/'/> }
           </Route>
           <Route exact path='/opportunities/:id'>
-          { loggedIn ? <OpportunityDetail /> : <Redirect to='/'/> }
+            { loggedIn ? <OpportunityDetail /> : <Redirect to='/'/> }
           </Route>
           <Route exact path='/activities'>
             { loggedIn ? <ActivityIndex activities={activities} /> : <Redirect to='/'/> }
           </Route>
           <Route exact path='/activities/new'>
-          { loggedIn ? <NewActivityForm handleAddActivity={handleAddActivity}/> : <Redirect to='/'/> }
+            { loggedIn ? <NewActivityForm handleAddActivity={handleAddActivity}/> : <Redirect to='/'/> }
           </Route>
           <Route exact path='/activities/:id'>
-          { loggedIn ?  <ActivityDetail /> : <Redirect to='/'/> }
+            { loggedIn ?  <ActivityDetail /> : <Redirect to='/'/> }
           </Route>
           <Route exact path='/contacts'>
             { loggedIn ? <ContactIndex contacts={contacts} /> : <Redirect to='/'/> }
           </Route>
           <Route exact path='/contacts/new'>
-          { loggedIn ? <NewContactForm handleAddContact={handleAddContact}/> : <Redirect to='/'/> }
+            { loggedIn ? <NewContactForm handleAddContact={handleAddContact}/> : <Redirect to='/'/> }
           </Route>
           <Route exact path='/contacts/:id'>
-          { loggedIn ? <ContactDetail /> : <Redirect to='/'/> }
+            { loggedIn ? <ContactDetail /> : <Redirect to='/'/> }
           </Route>
           <Route exact path='/companies'>
             { loggedIn ? <CompanyIndex companies={companies} /> : <Redirect to='/'/> }
           </Route>
           <Route exact path='/companies/new'>
-          { loggedIn ?  <NewCompanyForm handleAddCompany={handleAddCompany}/> : <Redirect to='/'/> }
+            { loggedIn ?  <NewCompanyForm handleAddCompany={handleAddCompany}/> : <Redirect to='/'/> }
           </Route>
           <Route exact path='/companies/:id'>
-          { loggedIn ? <CompanyDetail /> : <Redirect to='/'/> }
+            { loggedIn ? <CompanyDetail /> : <Redirect to='/'/> }
           </Route>
           <Route exact path='/opportunities/:id/new-activity'>
-          { loggedIn ? <NewActivityForm handleAddActivity={handleAddActivity}/> : <Redirect to='/'/> }
+            { loggedIn ? <NewActivityForm handleAddActivity={handleAddActivity}/> : <Redirect to='/'/> }
           </Route>
         </Switch>
         <BottomNav className="bottom-nav" />
