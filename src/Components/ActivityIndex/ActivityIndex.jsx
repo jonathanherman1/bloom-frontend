@@ -3,10 +3,10 @@ import { Link } from "react-router-dom"
 
 // Components
 import PrevCard from "../PrevCard/PrevCard"
-import Animation from "../Animation/Animation"
+import Animation from "../Animation/AnimationNoCss"
 
 // Content
-import seedAnimation from "../../Assets/lottie-files/73344-seed.json"
+import plantAnimation from "../../Assets/lottie-files/38193-relaxing-floral-animation.json"
 
 // Material UI
 
@@ -39,15 +39,22 @@ const ActivityIndex = ({ activities }) => {
 	const noActivities = () => {
 		return (
 			<Box className={styles.noData}>
-				<Animation animationData={seedAnimation} />
-				<h1>No activities. Would you like to add one?</h1>
-				<Button
-					component={Link}
-					to="/activities/new"
-					startIcon={<AddCircleOutlineIcon />}
-				>
-					Add Activity
-				</Button>
+				<div className={styles.animationBox}>
+					<div className={styles.activityAction}>
+						<h1>No activities. Would you like to add one?</h1>
+						<Button
+							component={Link}
+							to="/activities/new"
+							startIcon={<AddCircleOutlineIcon id={styles.btnAddActivity} />}
+						>
+							Add Activity
+						</Button>
+					</div>
+					<div className={styles.plantanim}>
+						<Animation animData={plantAnimation} />
+					</div>
+					
+				</div>
 			</Box>
 		)
 	}
