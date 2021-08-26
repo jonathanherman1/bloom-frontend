@@ -72,6 +72,21 @@ const App = (props) => {
       },
       type: darkMode ? 'dark' : 'light',
     },
+    components: {
+      MuiFab: {
+        variants: [
+          {
+            props: { variant: 'warning' },
+            style: {
+              backgroundColor: '#f48fb1',
+              "&hover": {
+                backgroundColor: '#aa647b'
+              }
+            }
+          }
+        ]
+      }
+    }
   });
 
   useEffect(() => {
