@@ -9,7 +9,7 @@ const AnimationNoCss = (props) => {
                 loop
                 animationData={props.animData}
                 play
-                speed={1}
+                speed={0.5}
                 style={{ width: '100%', height: '100%' }}
             />
         </div>

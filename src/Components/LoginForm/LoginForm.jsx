@@ -49,7 +49,9 @@ const LoginForm = ({ setDisplayedForm, handleLogin }) => {
        
        <Button type="submit" variant="contained" color="primary">Submit</Button>
       </form>
-      <Button onClick={() => setDisplayedForm('signup')}>Signup</Button>
+      <div className={styles.signUpContainer}>
+        <Button onClick={() => setDisplayedForm('signup')}>Signup</Button>
+      </div>
       </>
     );
   }
