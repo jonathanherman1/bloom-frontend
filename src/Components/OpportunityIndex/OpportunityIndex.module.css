@@ -21,3 +21,8 @@
 .addBtn {
     font-size: 2rem;
 }
+
+#btnAddOpp {
+    color: orange;
+    font-size: x-large;
+}

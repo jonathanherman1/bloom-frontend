@@ -44,7 +44,7 @@ const OpportunityIndex = ({ opportunities }) => {
         <Button
           component={Link}
           to='/opportunities/new'
-          startIcon={<AddCircleOutlineIcon />}
+          startIcon={<AddCircleOutlineIcon id={styles.btnAddOpp}/>}
         >
           Add Opportunity
         </Button>
