@@ -13,6 +13,7 @@ function NewContactForm(props) {
         department: '',
         first_contact_through: '',
         notes: '',
+        company: '',
         owner: props.currentUser.id
     })
 

@@ -12,6 +12,9 @@ function NewActivityForm(props) {
       notes: '',
       contact_method: '',
       type: '',
+      contacts: '',
+      company: '',
+      opportunity: '',
       owner: props.currentUser.id
     })
     
