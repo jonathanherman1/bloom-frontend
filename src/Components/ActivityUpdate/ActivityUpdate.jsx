@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { withRouter } from 'react-router-dom';
+import { withRouter, useHistory } from 'react-router-dom';
 import * as activityService from '../../services/activityService.js'
-
-
 
 // Styles
 import styles from './ActivityUpdate.module.css';
@@ -11,7 +9,7 @@ import Button from '@material-ui/core/Button';
 
 function ActivityUpdate(props) {
     const [formData, setFormData] = useState('')
-
+    const history = useHistory()
     useEffect(() => {
       (async () => {
           const activityDetail = await activityService.getActivityById(props.match.params.id)
@@ -23,9 +21,10 @@ function ActivityUpdate(props) {
       setFormData({...formData, [e.target.name]: e.target.value})
     }
   
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
       e.preventDefault()
-        props.handleUpdateActivity(formData, props.match.params.id)
+        await props.handleUpdateActivity(formData, props.match.params.id)
+        history.push('/activities')
     }
   
     return (

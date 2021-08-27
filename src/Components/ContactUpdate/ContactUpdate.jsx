@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { withRouter } from 'react-router-dom'
+import { withRouter, useHistory } from 'react-router-dom'
 import * as contactService from '../../services/contactService.js'
 
 import TextField from '@material-ui/core/TextField';
@@ -11,7 +11,7 @@ import MuiPhoneNumber from 'material-ui-phone-number'
 function ContactUpdate(props) {
     const [ phoneNum, setPhoneNum ] = useState()
     const [formData, setFormData] = useState('')
-
+    const history = useHistory()
     useEffect(() => {
       (async () => {
           const contactDetail = await contactService.getContactById(props.match.params.id)
@@ -31,9 +31,10 @@ function ContactUpdate(props) {
         setPhoneNum(value)
     }
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault()
-        props.handleUpdateContact(formData, props.match.params.id)
+        await props.handleUpdateContact(formData, props.match.params.id)
+        history.push('/contacts')
     }
 
     return (

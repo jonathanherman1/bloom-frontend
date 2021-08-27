@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { withRouter } from 'react-router-dom';
+import { withRouter, useHistory } from 'react-router-dom';
 
 import styles from './OpportunityUpdate.module.css';
 import TextField from '@material-ui/core/TextField';
@@ -18,7 +18,7 @@ import * as opportunityService from '../../services/opportunityService.js'
 const OpportunityUpdate = (props) => {
     const [ hover, setHover ] = useState(-1)
     const [ formData, setFormData ] = useState('')
-
+    const history = useHistory()
     useEffect(() => {
       (async () => {
           const opportunityDetail = await opportunityService.getOpportunityById(props.match.params.id)
@@ -30,9 +30,10 @@ const OpportunityUpdate = (props) => {
         setFormData({...formData, [e.target.name]: e.target.value})
       }
 
-      const handleSubmit = (e) => {
+      const handleSubmit = async (e) => {
         e.preventDefault()
-        props.handleUpdateOpportunity(formData, props.match.params.id)
+        await props.handleUpdateOpportunity(formData, props.match.params.id)
+        history.push('/opportunities')
       }
 
     return (  <div className={styles.container}>
