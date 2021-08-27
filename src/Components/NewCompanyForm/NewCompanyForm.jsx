@@ -1,17 +1,16 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
-
-// Styles
 import styles from './NewCompanyForm.module.css';
-import TextField from '@material-ui/core/TextField';
+
 import Button from '@material-ui/core/Button';
-import Switch from '@material-ui/core/Switch';
+import FormControl from '@material-ui/core/FormControl';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
-import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
-import { Typography } from '@material-ui/core';
+import Switch from '@material-ui/core/Switch';
+import TextField from '@material-ui/core/TextField';
+import Typography from '@material-ui/core/Typography';
 
 function NewCompanyForm(props) {
     const [formData, setFormData] = useState({

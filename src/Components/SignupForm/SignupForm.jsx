@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
-import TextField from '@material-ui/core/TextField';
-import Button from '@material-ui/core/Button'
+
 import * as styles from "./SignupForm.module.css"
 import PropTypes from 'prop-types';
+
+import Button from '@material-ui/core/Button'
+import TextField from '@material-ui/core/TextField';
 
 const SignupForm = ({ setDisplayedForm, handleSignup}) => {
   const [ state, setState ] = useState({
