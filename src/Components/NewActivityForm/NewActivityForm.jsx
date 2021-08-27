@@ -24,15 +24,15 @@ function NewActivityForm(props) {
   
     const handleSubmit = (e) => {
       e.preventDefault()
-      props.handleAddActivity(formData)
-      setFormData({
-        name: '',
-        date: '',
-        notes: '',
-        contact_method: '',
-        type: '',
-        owner: props.currentUser.id
-      })
+        props.handleAddActivity(formData)
+        setFormData({
+          name: '',
+          date: '',
+          notes: '',
+          contact_method: '',
+          type: '',
+          owner: props.currentUser.id
+        })
     }
   
     return (
