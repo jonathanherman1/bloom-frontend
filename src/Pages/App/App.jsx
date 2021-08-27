@@ -4,9 +4,8 @@ import {
   ThemeProvider,
   CssBaseline
 } from '@material-ui/core';
-import axios from 'axios'
 import useMediaQuery from '@material-ui/core/useMediaQuery'
-import { BrowserRouter as Router, Route, Switch, Redirect} from 'react-router-dom'
+import { Route, Switch, Redirect} from 'react-router-dom'
 
 // Components
 import Nav from '../../Components/Nav/Nav'
