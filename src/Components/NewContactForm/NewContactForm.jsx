@@ -46,7 +46,8 @@ function NewContactForm(props) {
                 opportunity: id ? id : '', 
                 owner: props.currentUser.id
             })
-        history.push('/contacts');
+        
+        id ? history.push(`/opportunities/${id}`) : history.push('/contacts')
     }
 
     return (
