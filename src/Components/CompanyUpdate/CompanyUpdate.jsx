@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { withRouter } from 'react-router-dom';
 
 // Styles
 import styles from './CompanyUpdate.module.css';
@@ -12,8 +13,19 @@ import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import { Typography } from '@material-ui/core';
 
+import * as companyService from '../../services/companyService.js'
+
+
 function CompanyUpdate(props) {
     const [formData, setFormData] = useState(props)
+
+    useEffect(() => {
+      (async () => {
+          const companyDetail = await companyService.getCompanyById(props.match.params.id)
+          setFormData(companyDetail)
+      })()
+    }, [props.match.params.id]);
+
 
     const handleChange = (e) => {
       setFormData({...formData, [e.target.name]: e.target.value})
@@ -139,4 +151,4 @@ function CompanyUpdate(props) {
     )
 }
 
-export default CompanyUpdate
+export default withRouter(CompanyUpdate)
