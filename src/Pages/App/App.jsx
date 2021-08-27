@@ -338,7 +338,7 @@ const App = (props) => {
             { loggedIn ? <OpportunityDetail /> : <Redirect to='/'/> }
           </Route>
           <Route exact path='/opportunities/:id/update'>
-            { loggedIn ? <OpportunityUpdate /> : <Redirect to='/'/> }
+            { loggedIn ? <OpportunityUpdate handleUpdateOpportunity={handleUpdateOpportunity} /> : <Redirect to='/'/> }
           </Route>
           <Route exact path='/activities'>
             { loggedIn ? <ActivityIndex activities={activities} /> : <Redirect to='/'/> }
@@ -371,7 +371,7 @@ const App = (props) => {
             { loggedIn ? <ContactDetail /> : <Redirect to='/'/> }
           </Route>
           <Route exact path='/contacts/:id/update'>
-            { loggedIn ? <ContactUpdate /> : <Redirect to='/'/> }
+            { loggedIn ? <ContactUpdate handleUpdateContact={handleUpdateContact} /> : <Redirect to='/'/> }
           </Route>
           <Route exact path='/companies'>
             { loggedIn ? <CompanyIndex companies={companies} /> : <Redirect to='/'/> }
@@ -383,7 +383,7 @@ const App = (props) => {
             { loggedIn ? <CompanyDetail /> : <Redirect to='/'/> }
           </Route>
           <Route exact path='/companies/:id/update'>
-            { loggedIn ? <CompanyUpdate /> : <Redirect to='/'/> }
+            { loggedIn ? <CompanyUpdate handleUpdateCompany={handleUpdateCompany} /> : <Redirect to='/'/> }
           </Route>
           <Route exact path='/opportunities/:id/new-activity'>
             { loggedIn ? <NewActivityForm handleAddActivity={handleAddActivity} currentUser={currentUser}/> : <Redirect to='/'/> }
