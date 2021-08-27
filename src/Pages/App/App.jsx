@@ -282,7 +282,9 @@ const App = (props) => {
   const handleAddActivity = async (formData) => {
     try {
       const newActivity = await activityService.create(formData)
-      setActivities([newActivity, ...activities])
+      if (newActivity.id){
+        setActivities([newActivity, ...activities])
+      }
     } catch (error) {
       throw error
     }
