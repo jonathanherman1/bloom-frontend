@@ -306,7 +306,12 @@ const App = (props) => {
             }
           </Route>
           <Route exact path='/opportunities/:id'>
-            { loggedIn ? <OpportunityDetail /> : <Redirect to='/'/> }
+            { loggedIn ? 
+                <OpportunityDetail 
+                    handleDelete={opportunityHandlers.handleDeleteOpportunity}
+                    opportunities={opportunities}
+                    setOpportunities={setOpportunities}
+                /> : <Redirect to='/'/> }
           </Route>
           <Route exact path='/opportunities/:id/update'>
             { loggedIn ? <OpportunityUpdate handleUpdateOpportunity={handleUpdateOpportunity} /> : <Redirect to='/'/> }
@@ -345,7 +350,12 @@ const App = (props) => {
                  }
           </Route>
           <Route exact path='/contacts/:id'>
-            { loggedIn ? <ContactDetail /> : <Redirect to='/'/> }
+            { loggedIn ? 
+               <ContactDetail 
+                  handleDelete={contactHandlers.handleDeleteContact}
+                  contacts={contacts}
+                  setContacts={setContacts}
+               /> : <Redirect to='/'/> }
           </Route>
           <Route exact path='/contacts/:id/update'>
             { loggedIn ? <ContactUpdate handleUpdateContact={handleUpdateContact} /> : <Redirect to='/'/> }
@@ -357,7 +367,12 @@ const App = (props) => {
             { loggedIn ?  <NewCompanyForm handleAddCompany={handleAddCompany} currentUser={currentUser}/> : <Redirect to='/'/> }
           </Route>
           <Route exact path='/companies/:id'>
-            { loggedIn ? <CompanyDetail /> : <Redirect to='/'/> }
+            { loggedIn ? 
+                <CompanyDetail
+                    handleDelete={companyHandlers.handleDeleteCompany}
+                    companies={companies}
+                    setCompanies={setCompanies}
+                /> : <Redirect to='/'/> }
           </Route>
           <Route exact path='/companies/:id/update'>
             { loggedIn ? <CompanyUpdate handleUpdateCompany={handleUpdateCompany} /> : <Redirect to='/'/> }
