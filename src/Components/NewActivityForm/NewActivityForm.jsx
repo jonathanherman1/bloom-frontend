@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useHistory, useParams } from 'react-router-dom';
 
 // Styles
 import styles from './NewActivityForm.module.css';
@@ -7,6 +7,7 @@ import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 
 function NewActivityForm(props) {
+    const { id } = useParams()
     const [formData, setFormData] = useState({
       name: '',
       date: '',
@@ -15,7 +16,7 @@ function NewActivityForm(props) {
       type: '',
       contacts: [],
       company: '',
-      opportunity: '',
+      opportunity: id ? id : '',
       owner: props.currentUser.id
     })
     
@@ -33,6 +34,9 @@ function NewActivityForm(props) {
           notes: '',
           contact_method: '',
           type: '',
+          contacts: [],
+          company: '',
+          opportunity: id ? id : '',
           owner: props.currentUser.id
         })
       history.push('/activities');
