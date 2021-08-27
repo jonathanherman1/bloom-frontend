@@ -12,9 +12,7 @@ import Typography from '@material-ui/core/Typography'
 import classes from './CompanyDetail.module.css'
 import BuisnessIcon from '@material-ui/icons/Business'
 import NoteIcon from '@material-ui/icons/Note'
-import Fab from '@material-ui/core/Fab'
-
-import DeleteIcon from '@material-ui/icons/Delete'
+import EditDeleteBtn from '../EditDeleteBtn/EditDeleteBtn'
 import MeetingRoomIcon from '@material-ui/icons/MeetingRoom';
 import LanguageIcon from '@material-ui/icons/Language';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
@@ -39,9 +37,15 @@ const CompanyDetail = (props) => {
             <Box className={classes.titleContainer}>
             <Paper elevation={10}  className={classes.titlePaper}>
                 <Typography variant="h3"> {companyDetail.name} </Typography>
-                <Fab variant="warning" aria-label="delete contact" className={classes.deleteFab}>
-                    <DeleteIcon />
-                </Fab>
+                <Box>
+                <EditDeleteBtn 
+                    model='companies'
+                    id={props.match.params.id}
+                    handleDelete={props.handleDelete}
+                    state={props.companies}
+                    setState={props.setCompanies}
+                    />
+            </Box>
             </Paper>
             </Box>
          <Box className={classes.listContainer}>
