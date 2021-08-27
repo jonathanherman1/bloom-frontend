@@ -32,7 +32,7 @@ function NewOpportunityForm(props) {
       listing_source: '',
       keywords: '',
       company: '',
-      contacts: '',
+      contacts: [],
       owner: props.currentUser.id 
     })
     
