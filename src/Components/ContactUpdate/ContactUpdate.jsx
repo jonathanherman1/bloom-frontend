@@ -1,12 +1,24 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react'
+import { withRouter } from 'react-router-dom'
+import * as contactService from '../../services/contactService.js'
+
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
-import styles from './NewContactForm.module.css'
+import styles from './ContactUpdate.module.css'
 import MuiPhoneNumber from 'material-ui-phone-number'
 
+
 function ContactUpdate(props) {
-    const [ phoneNum, setPhoneNum ] = useState(props.phone)
-    const [formData, setFormData] = useState(props)
+    const [ phoneNum, setPhoneNum ] = useState('')
+    const [formData, setFormData] = useState('')
+
+    useEffect(() => {
+      (async () => {
+          const contactDetail = await contactService.getContactById(props.match.params.id)
+          setFormData(contactDetail)
+          setPhoneNum(contactDetail.phone)
+      })()
+    }, [props.match.params.id]);
 
     const handleChange = (e) => {
         setFormData({ 
@@ -106,11 +118,11 @@ function ContactUpdate(props) {
                 variant="outlined" 
             />
                 <Button type="submit" variant="contained" color="primary">
-                    SUBMIT
+                    Update Contact
                 </Button>
             </form>
         </div>
     )
 }
 
-export default ContactUpdate
+export default withRouter(ContactUpdate)
