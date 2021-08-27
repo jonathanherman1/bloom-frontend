@@ -32,7 +32,7 @@ const OpportunityUpdate = (props) => {
 
       const handleSubmit = (e) => {
         e.preventDefault()
-        props.handleUpdateOpportunity(formData)
+        props.handleUpdateOpportunity(formData, props.match.params.id)
       }
 
     return (  <div className={styles.container}>
