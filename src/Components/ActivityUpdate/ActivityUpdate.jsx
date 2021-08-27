@@ -5,7 +5,7 @@ import * as activityService from '../../services/activityService.js'
 
 
 // Styles
-import styles from './UpdateActivityForm.module.css';
+import styles from './ActivityUpdate.module.css';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 

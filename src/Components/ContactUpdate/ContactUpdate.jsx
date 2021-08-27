@@ -4,7 +4,7 @@ import * as contactService from '../../services/contactService.js'
 
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
-import styles from './NewContactForm.module.css'
+import styles from './ContactUpdate.module.css'
 import MuiPhoneNumber from 'material-ui-phone-number'
 
 
