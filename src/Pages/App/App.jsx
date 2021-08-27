@@ -19,6 +19,7 @@ import CompanyDetail from '../../Components/CompanyDetail/CompanyDetail'
 import NewCompanyForm from '../../Components/NewCompanyForm/NewCompanyForm';
 import ActivityIndex from '../../Components/ActivityIndex/ActivityIndex'
 import ActivityDetail from '../../Components/ActivityDetail/ActivityDetail'
+import ActivityUpdate from '../../Components/ActivityUpdate/ActivityUpdate'
 import NewActivityForm from '../../Components/NewActivityForm/NewActivityForm';
 import ContactIndex from '../../Components/ContactIndex/ContactIndex'
 import ContactDetail from '../../Components/ContactDetail/ContactDetail'
@@ -225,36 +226,36 @@ const App = (props) => {
       throw error
     }
   }
-  const handleDeleteOpportunity = async (formData, id) => {
+  const handleDeleteOpportunity = async (id) => {
     try {
-      const deletedOpportunity = await opportunityService.deleteOne(formData, id)
+      const deletedOpportunity = await opportunityService.deleteOne(id)
       let oppArray = opportunities.filter(opp => opp.id !== id)
       setOpportunities(oppArray)
     } catch (error) {
       throw error
     }
   }
-  const handleDeleteContact = async (formData, id) => {
+  const handleDeleteContact = async (id) => {
     try {
-      const deletedContact = await contactService.deleteOne(formData, id)
+      const deletedContact = await contactService.deleteOne(id)
       let conArray = contacts.filter(con => con.id !== id)
       setContacts(conArray)
     } catch (error) {
       throw error
     }
   }
-  const handleDeleteActivity = async (formData, id) => {
+  const handleDeleteActivity = async (id) => {
     try {
-      const deletedActivity = await activityService.deleteOne(formData, id)
+      const deletedActivity = await activityService.deleteOne(id)
       let actArray = activities.filter(act => act.id !== id)
       setActivities(actArray)
     } catch (error) {
       throw error
     }
   }
-  const handleDeleteCompany = async (formData, id) => {
+  const handleDeleteCompany = async (id) => {
     try {
-      const deletedCompany = await companyService.deleteOne(formData, id)
+      const deletedCompany = await companyService.deleteOne(id)
       let comArray = companies.filter(com => com.id !== id)
       setCompanies(comArray)
     } catch (error) {
@@ -344,6 +345,9 @@ const App = (props) => {
           </Route>
           <Route exact path='/activities/:id'>
             { loggedIn ?  <ActivityDetail /> : <Redirect to='/'/> }
+          </Route>
+          <Route exact path='/activities/:id/update'>
+            { loggedIn ?  <ActivityUpdate /> : <Redirect to='/'/> }
           </Route>
           <Route exact path='/contacts'>
             { loggedIn ? <ContactIndex contacts={contacts} /> : <Redirect to='/'/> }
