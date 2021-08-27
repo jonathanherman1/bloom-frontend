@@ -49,7 +49,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function FullWidthTabs({ opportunityDetail }) {
+export default function FullWidthTabs({ opportunityDetail, oppActivities, oppContacts }) {
   const classes = useStyles();
   const theme = useTheme();
   const [value, setValue] = React.useState(0);
@@ -83,10 +83,10 @@ export default function FullWidthTabs({ opportunityDetail }) {
         onChangeIndex={handleChangeIndex}
       >
         <TabPanel value={value} index={0} dir={theme.direction}>
-          <List />
+             <List items={oppActivities} />
         </TabPanel>
         <TabPanel value={value} index={1} dir={theme.direction}>
-          <List />
+          <List items={oppContacts} />
         </TabPanel>
       </SwipeableViews>
     </div>

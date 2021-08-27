@@ -10,16 +10,25 @@ import { withRouter } from 'react-router-dom'
 
 const OpportunityDetailCard = ( props ) => {
   const [oppActivities, setOppActivities] = useState([])
+  const [oppContacts, setOppContacts] = useState([])
 
-  
   useEffect(() => {
     const getActivities = () => {
-      const filteredActivities = props.activities.filter(activity => parseInt(activity.opportunity) === parseInt(props.match.params.id))
+      const filteredActivities = props.activities?.filter(activity => parseInt(activity.opportunity) === parseInt(props.match.params.id))
       setOppActivities(filteredActivities)
     }
     getActivities()
     return () => {setOppActivities([])}
   }, [props.activities, props.match.params.id]);
+
+  useEffect(() => {
+    const getContacts = () => {
+      const filteredContacts = props.contacts?.filter(contact => parseInt(contact.opportunity) === parseInt(props.match.params.id))
+      setOppContacts(filteredContacts)
+    }
+    getContacts()
+    return () => {setOppContacts([])}
+  }, [props.contacts, props.match.params.id]);
 
 
   return (
@@ -42,7 +51,11 @@ const OpportunityDetailCard = ( props ) => {
       <Box className={classes.detailsContainer} mt={1}>
         <Box  mt={1} className={classes.container1}>
           <Paper square>
-            <FullWidthTab opportunityDetail={props.opportunityDetail} />
+            <FullWidthTab 
+              opportunityDetail={props.opportunityDetail} 
+              oppActivities={oppActivities}
+              oppContacts={oppContacts}
+            />
           </Paper>
         </Box>
         <Box  mt={1} className={classes.container2}>

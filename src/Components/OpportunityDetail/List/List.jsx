@@ -22,12 +22,16 @@ export default function SimpleList(props) {
   return (
     <div className={classes.root}>
       <List component="nav" aria-label="prop name list">
-        <ListItem button>
-          <ListItemIcon>
-            <AssignmentTurnedInIcon />
-          </ListItemIcon>
-          <ListItemText primary="prop name" />
-        </ListItem>
+        {
+          props.items.map(item => (
+            <ListItem button>
+              <ListItemIcon>
+                <AssignmentTurnedInIcon />
+              </ListItemIcon>
+              <ListItemText primary={item.name} />
+            </ListItem>
+          ))
+        }
       </List>
     </div>
   );
