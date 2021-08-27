@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { withRouter } from 'react-router-dom';
+import { withRouter, useHistory } from 'react-router-dom';
 
 // Styles
 import styles from './CompanyUpdate.module.css';
@@ -18,7 +18,7 @@ import * as companyService from '../../services/companyService.js'
 
 function CompanyUpdate(props) {
     const [formData, setFormData] = useState(props)
-
+    const history = useHistory()
     useEffect(() => {
       (async () => {
           const companyDetail = await companyService.getCompanyById(props.match.params.id)
@@ -31,9 +31,10 @@ function CompanyUpdate(props) {
       setFormData({...formData, [e.target.name]: e.target.value})
     }
   
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
       e.preventDefault()
-      props.handleUpdateCompany(formData, props.match.params.id)
+      await props.handleUpdateCompany(formData, props.match.params.id)
+      history.push('/companies')
     }
   
     return (
