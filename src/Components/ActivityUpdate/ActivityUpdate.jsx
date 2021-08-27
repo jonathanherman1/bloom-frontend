@@ -14,12 +14,12 @@ function ActivityUpdate(props) {
   
     const handleSubmit = (e) => {
       e.preventDefault()
-        props.handleAddActivity(formData)
+        props.handleUpdateActivity(formData)
     }
   
     return (
         <div className={styles.container}>
-          <h2>Add Activity</h2>
+          <h2>Edit Activity</h2>
           <form 
              id="add-activity-form" 
              onSubmit={handleSubmit}
