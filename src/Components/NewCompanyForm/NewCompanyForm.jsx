@@ -22,6 +22,7 @@ function NewCompanyForm(props) {
       glassdoor_rating: '',
       buisness_structure: '',
       notes: '',
+      archived: false,
       owner: props.currentUser.id
     })
 
