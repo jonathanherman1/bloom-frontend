@@ -5,20 +5,31 @@ import Typography from "@material-ui/core/Typography";
 import FullWidthTab from "./FullWidthTab/FullWidthTab";
 import classes from "./OpportunityDetailCard.module.css";
 import Table from "./Table/Table";
+import EditDeleteBtn from "../EditDeleteBtn/EditDeleteBtn";
+import { withRouter } from 'react-router-dom'
 
-const OpportunityDetailCard = ({ opportunityDetail }) => {
+const OpportunityDetailCard = ( props ) => {
   return (
     <>
       <Box className={classes.titleContainer}>
         <Typography variant="h5">
-          {opportunityDetail.name} at Company
+          {props.opportunityDetail.name} at Company
         </Typography>
+        <Box>
+                <EditDeleteBtn 
+                    model='opportunities'
+                    id={props.match.params.id}
+                    handleDelete={props.handleDelete}
+                    state={props.opportunities}
+                    setState={props.setOpportunities}
+                    />
+            </Box>
         <p>Status</p>
       </Box>
       <Box className={classes.detailsContainer} mt={1}>
         <Box  mt={1} className={classes.container1}>
           <Paper square>
-            <FullWidthTab opportunityDetail={opportunityDetail} />
+            <FullWidthTab opportunityDetail={props.opportunityDetail} />
           </Paper>
         </Box>
         <Box  mt={1} className={classes.container2}>
@@ -30,11 +41,11 @@ const OpportunityDetailCard = ({ opportunityDetail }) => {
           </Box>
         </Box>
         <Box  mt={1} className={classes.container3}>
-          <Table opportunityDetail={opportunityDetail} />
+          <Table opportunityDetail={props.opportunityDetail} />
         </Box>
       </Box>
     </>
   );
 };
 
-export default OpportunityDetailCard;
+export default withRouter(OpportunityDetailCard);
