@@ -6,17 +6,7 @@ import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 
 function UpdateActivityForm(props) {
-    const [formData, setFormData] = useState({
-      name: '',
-      date: '',
-      notes: '',
-      contact_method: '',
-      type: '',
-      contacts: '',
-      company: '',
-      opportunity: '',
-      owner: props.currentUser.id
-    })
+    const [formData, setFormData] = useState(props)
     
     const handleChange = (e) => {
       setFormData({...formData, [e.target.name]: e.target.value})
@@ -25,23 +15,15 @@ function UpdateActivityForm(props) {
     const handleSubmit = (e) => {
       e.preventDefault()
         props.handleUpdateActivity(formData)
-        setFormData({
-          name: '',
-          date: '',
-          notes: '',
-          contact_method: '',
-          type: '',
-          owner: props.currentUser.id
-        })
     }
   
     return (
         <div className={styles.container}>
           <h2>Edit Activity</h2>
           <form 
-             id="add-activity-form" 
-             onSubmit={handleSubmit}
-             className={styles.form}
+              id="update-activity-form" 
+              onSubmit={handleSubmit}
+              className={styles.form}
           >
             <TextField 
               id="activity-name"
