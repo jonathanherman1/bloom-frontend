@@ -38,7 +38,7 @@ function CompanyUpdate(props) {
   
     return (
         <div className={styles.container}>
-          <Typography variant="h4" mb={1}> {`Update ${props.name}`} </Typography>
+          <Typography variant="h4" mb={1}> {props.name ? `Update ${props.name}` : 'Update Company'} </Typography>
           <form 
              id="update-company-form" 
              onSubmit={handleSubmit}
