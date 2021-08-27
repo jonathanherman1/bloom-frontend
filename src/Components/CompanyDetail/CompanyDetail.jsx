@@ -10,8 +10,6 @@ import Paper from '@material-ui/core/Paper'
 import Divider from '@material-ui/core/Divider'
 import Typography from '@material-ui/core/Typography'
 import classes from './CompanyDetail.module.css'
-import PhoneIcon from '@material-ui/icons/Phone'
-import EmailIcon from '@material-ui/icons/Email'
 import BuisnessIcon from '@material-ui/icons/Business'
 import NoteIcon from '@material-ui/icons/Note'
 import Fab from '@material-ui/core/Fab'
@@ -21,6 +19,7 @@ import MeetingRoomIcon from '@material-ui/icons/MeetingRoom';
 import LanguageIcon from '@material-ui/icons/Language';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
 import ThumbUpAltIcon from '@material-ui/icons/ThumbUpAlt';
+import ThumbDownAltIcon from '@material-ui/icons/ThumbDownAlt';
 import AssignmentIcon from '@material-ui/icons/Assignment';
 
 import * as companyService from '../../services/companyService.js'
@@ -87,10 +86,17 @@ const CompanyDetail = (props) => {
                 <ListItem>
                     <ListItemAvatar>
                     <Avatar>
+                        {companyDetail.interested === true ? 
                         <ThumbUpAltIcon />
+                        :
+                        <ThumbDownAltIcon />
+                        }
                     </Avatar>
                     </ListItemAvatar>
-                    <ListItemText primary="Interested" secondary={companyDetail.interested} />
+                    <ListItemText 
+                        primary={companyDetail.interested === true ? "Interested" : "Not Interested"} 
+                        secondary={companyDetail.interested} 
+                    />
                 </ListItem>
                 <Divider variant="inset" component="li" />
                 <ListItem>
