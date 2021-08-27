@@ -15,6 +15,7 @@ import LabelIcon from "@material-ui/icons/Label";
 import TocIcon from "@material-ui/icons/Toc";
 import NoteIcon from "@material-ui/icons/Note";
 import classes from "./ActivityDetail.module.css";
+import EditDeleteBtn from "../EditDeleteBtn/EditDeleteBtn"
 
 const ActivityDetail = (props) => {
   const [activityDetail, setActivityDetail] = useState(null);
@@ -35,6 +36,13 @@ const ActivityDetail = (props) => {
           <Paper elevation={10} className={classes.titlePaper}>
             <Typography variant="h3"> {activityDetail.name} </Typography>
             <Box>
+                <EditDeleteBtn 
+                    model='activities'
+                    id={props.match.params.id}
+                    handleDelete={props.handleDelete}
+                    state={props.activities}
+                    setState={props.setActivities}
+                    />
             </Box>
           </Paper>
         </Box>

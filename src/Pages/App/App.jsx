@@ -325,6 +325,8 @@ const App = (props) => {
             { loggedIn ?  
                 <ActivityDetail 
                     handleDelete={activityHandlers.handleDeleteActivity}
+                    activities={activities}
+                    setActivities={setActivities}
                 /> 
                 : <Redirect to='/'/> }
           </Route>
