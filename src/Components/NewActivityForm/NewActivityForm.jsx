@@ -40,7 +40,7 @@ function NewActivityForm(props) {
           opportunity: id ? id : '',
           owner: props.currentUser.id
         })
-      history.push('/activities');
+      id ? history.push(`/opportunities/${id}`) : history.push('/activities')
     }
   
     return (
