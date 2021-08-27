@@ -38,6 +38,7 @@ import * as activityService from '../../services/activityService.js'
 import * as companyService from '../../services/companyService.js'
 import * as contactService from '../../services/contactService.js'
 import * as currentUserService from '../../services/currentUserService.js'
+import * as authService from '../../services/authService.js'
 // Styles
 import './App.css';
 
