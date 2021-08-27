@@ -309,7 +309,9 @@ const App = (props) => {
             { loggedIn ? 
                 <OpportunityDetail 
                     handleDelete={opportunityHandlers.handleDeleteOpportunity}
+                    activities={activities}
                     opportunities={opportunities}
+                    contacts={contacts}
                     setOpportunities={setOpportunities}
                 /> : <Redirect to='/'/> }
           </Route>
