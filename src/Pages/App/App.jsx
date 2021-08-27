@@ -189,15 +189,6 @@ const App = (props) => {
       form = <LoginForm handleLogin={handleLogin} setDisplayedForm={setDisplayedForm} />;
   }
 
-  const handleAddOpportunity = async (formData) => {
-    try {
-      const newOpportunity = await opportunityService.create(formData)
-      console.log(newOpportunity)
-      setOpportunities([newOpportunity, ...opportunities])
-    } catch (error) {
-      throw error
-    }
-  }
   const handleUpdateOpportunity = async (formData, id) => {
     try {
       const updatedOpportunity = await opportunityService.update(formData, id)
@@ -270,10 +261,22 @@ const App = (props) => {
       throw error
     }
   }
+  const handleAddOpportunity = async (formData) => {
+    try {
+      const newOpportunity = await opportunityService.create(formData)
+      if (newOpportunity.id){
+        setOpportunities([newOpportunity, ...opportunities])
+      }
+    } catch (error) {
+      throw error
+    }
+  }
   const handleAddContact = async (formData) => {
     try {
       const newContact = await contactService.create(formData)
-      setContacts([newContact, ...contacts])
+      if (newContact.id){
+        setContacts([newContact, ...contacts])
+      }
     } catch (error) {
       throw error
     }
@@ -281,16 +284,19 @@ const App = (props) => {
   const handleAddActivity = async (formData) => {
     try {
       const newActivity = await activityService.create(formData)
-      setActivities([newActivity, ...activities])
+      if (newActivity.id){
+        setActivities([newActivity, ...activities])
+      }
     } catch (error) {
       throw error
     }
   }
-
   const handleAddCompany = async (formData) => {
     try {
       const newCompany = await companyService.create(formData)
-      setCompanies([newCompany, ...companies])
+      if (newCompany.id){
+        setCompanies([newCompany, ...companies])
+      }
     } catch (error) {
       throw error
     }
