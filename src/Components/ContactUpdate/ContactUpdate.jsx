@@ -106,7 +106,7 @@ function ContactUpdate(props) {
                 variant="outlined" 
             />
                 <Button type="submit" variant="contained" color="primary">
-                    SUBMIT
+                    Update Contact
                 </Button>
             </form>
         </div>

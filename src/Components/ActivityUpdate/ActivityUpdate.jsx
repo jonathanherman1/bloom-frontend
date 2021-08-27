@@ -1,13 +1,24 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { withRouter } from 'react-router-dom';
+import * as activityService from '../../services/activityService.js'
+
+
 
 // Styles
-import styles from './NewActivityForm.module.css';
+import styles from './UpdateActivityForm.module.css';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 
 function ActivityUpdate(props) {
-    const [formData, setFormData] = useState(props)
-    
+    const [formData, setFormData] = useState('')
+
+    useEffect(() => {
+      (async () => {
+          const activityDetail = await activityService.getActivityById(props.match.params.id)
+          setFormData(activityDetail)
+      })()
+    }, [props.match.params.id]);
+
     const handleChange = (e) => {
       setFormData({...formData, [e.target.name]: e.target.value})
     }
@@ -21,9 +32,9 @@ function ActivityUpdate(props) {
         <div className={styles.container}>
           <h2>Edit Activity</h2>
           <form 
-             id="add-activity-form" 
-             onSubmit={handleSubmit}
-             className={styles.form}
+              id="update-activity-form" 
+              onSubmit={handleSubmit}
+              className={styles.form}
           >
             <TextField 
               id="activity-name"
@@ -81,11 +92,11 @@ function ActivityUpdate(props) {
               variant="outlined" 
             />
             <Button type="submit" variant="contained" color="primary">
-              Add Activity
+              Update Activity
             </Button>
           </form>
         </div>
     )
 }
 
-export default ActivityUpdate
+export default withRouter(ActivityUpdate)
