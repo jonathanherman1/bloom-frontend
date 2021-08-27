@@ -13,7 +13,7 @@ import * as contactService from '../../services/contactService.js'
 import classes from './ContactDetail.module.css'
 import PhoneIcon from '@material-ui/icons/Phone'
 import EmailIcon from '@material-ui/icons/Email'
-import BuisnessIcon from '@material-ui/icons/Business'
+import BusinessIcon from '@material-ui/icons/Business'
 import NoteIcon from '@material-ui/icons/Note'
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import EditDeleteBtn from '../EditDeleteBtn/EditDeleteBtn.jsx'
@@ -70,7 +70,7 @@ const ContactDetail = (props) => {
                 <ListItem>
                     <ListItemAvatar>
                     <Avatar>
-                        <BuisnessIcon />
+                        <BusinessIcon />
                     </Avatar>
                     </ListItemAvatar>
                     <ListItemText primary="Department" secondary={contactDetail.department} />

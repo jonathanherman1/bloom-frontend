@@ -124,7 +124,7 @@ function CompanyUpdate(props) {
               required
             />
              <FormControl variant="outlined">
-              <InputLabel id="business_structure">Buisness Structure</InputLabel>
+              <InputLabel id="business_structure">Business Structure</InputLabel>
               <Select
                 labelId="business_structure"
                 id="business_structure"

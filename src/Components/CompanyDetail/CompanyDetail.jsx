@@ -10,7 +10,7 @@ import Paper from '@material-ui/core/Paper'
 import Divider from '@material-ui/core/Divider'
 import Typography from '@material-ui/core/Typography'
 import classes from './CompanyDetail.module.css'
-import BuisnessIcon from '@material-ui/icons/Business'
+import BusinessIcon from '@material-ui/icons/Business'
 import NoteIcon from '@material-ui/icons/Note'
 import EditDeleteBtn from '../EditDeleteBtn/EditDeleteBtn'
 import MeetingRoomIcon from '@material-ui/icons/MeetingRoom';
@@ -72,10 +72,10 @@ const CompanyDetail = (props) => {
                 <ListItem>
                     <ListItemAvatar>
                     <Avatar>
-                        <BuisnessIcon />
+                        <BusinessIcon />
                     </Avatar>
                     </ListItemAvatar>
-                    <ListItemText primary="Buisness Structure" secondary={companyDetail.business_structure} />
+                    <ListItemText primary="Business Structure" secondary={companyDetail.business_structure} />
                 </ListItem>
                 <Divider variant="inset" component="li" />
                 <ListItem>
