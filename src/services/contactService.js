@@ -45,7 +45,7 @@ async function getAll(){
 
 async function deleteOne(id){
   try {
-      await fetch(`${BASE_URL}${id}`, {
+      await fetch(`${BASE_URL}${id}/`, {
           method: 'DELETE',
           headers: {
               'content-type': 'application/json',
@@ -60,7 +60,7 @@ async function deleteOne(id){
 async function update(contact, id){
   console.log(contact)
   try{
-      const res = await fetch(`${BASE_URL}${id}`, {
+      const res = await fetch(`${BASE_URL}${id}/`, {
           method: 'PUT',
           headers: {
               'content-type': 'application/json',
@@ -77,7 +77,7 @@ async function update(contact, id){
 
 async function getContactById (id) {
   try {
-    const res = await fetch(`${BASE_URL}${id}`, {
+    const res = await fetch(`${BASE_URL}${id}/`, {
         method: 'GET',
         headers: {
         'content-type': 'application/json',
