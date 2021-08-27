@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 
 import Menu from "@material-ui/core/Menu";
 import EditIcon from "@material-ui/icons/Edit";
@@ -8,17 +9,22 @@ import IconButton from "@material-ui/core/IconButton";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 
-
-const EditDeleteBtn = ({model, id, handleDelete}) => {
+const EditDeleteBtn = ({model, id, handleDelete, state, setState}) => {
     const [anchorEl, setAnchorEl] = useState(null);
+    const history = useHistory();
 
-    const handleClick = (event) => {
+    const handleClick = event => {
         setAnchorEl(event.currentTarget);
     };
 
     const handleClose = () => {
         setAnchorEl(null);
     };
+
+    const handleClickDelete = async () => {
+        await handleDelete(state, setState, id)
+        history.push(`/${model}`);
+    }
 
     return ( 
     <>
@@ -41,15 +47,14 @@ const EditDeleteBtn = ({model, id, handleDelete}) => {
             <EditIcon /> Edit
           </ListItemIcon>
         </MenuItem>
-
-        <MenuItem onClick={handleDelete}>
+        <MenuItem onClick={handleClickDelete}>
           <ListItemIcon>
             <DeleteIcon /> Delete
           </ListItemIcon>
         </MenuItem>
       </Menu> 
      </> 
-      );
+    );
 }
  
 export default EditDeleteBtn;
