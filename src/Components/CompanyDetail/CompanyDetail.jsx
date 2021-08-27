@@ -75,7 +75,7 @@ const CompanyDetail = (props) => {
                         <BuisnessIcon />
                     </Avatar>
                     </ListItemAvatar>
-                    <ListItemText primary="Buisness Structure" secondary={companyDetail.buisness_structure} />
+                    <ListItemText primary="Buisness Structure" secondary={companyDetail.business_structure} />
                 </ListItem>
                 <Divider variant="inset" component="li" />
                 <ListItem>

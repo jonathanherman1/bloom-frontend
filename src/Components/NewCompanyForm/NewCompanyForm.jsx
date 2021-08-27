@@ -21,7 +21,7 @@ function NewCompanyForm(props) {
       summary: '',
       interested: false,
       glassdoor_rating: '',
-      buisness_structure: '',
+      business_structure: '',
       notes: '',
       archived: false,
       owner: props.currentUser.id
@@ -43,7 +43,7 @@ function NewCompanyForm(props) {
         summary: '',
         interested: formData.interested,
         glassdoor_rating: formData.glassdoor_rating,
-        business_structure: formData.buisness_structure,
+        business_structure: formData.business_structure,
         notes: '',
         owner: props.currentUser.id
       })
@@ -132,13 +132,13 @@ function NewCompanyForm(props) {
               required
             />
              <FormControl variant="outlined">
-              <InputLabel id="buisness_structure">Buisness Structure</InputLabel>
+              <InputLabel id="business_structure">Buisness Structure</InputLabel>
               <Select
-                labelId="buisness_structure"
-                id="buisness_structure"
+                labelId="business_structure"
+                id="business_structure"
                 value={formData.business_structure}
-                onChange={(e) => setFormData({ ...formData, buisness_structure: e.target.value })}
-                label="buisness_structure"
+                onChange={(e) => setFormData({ ...formData, business_structure: e.target.value })}
+                label="business_structure"
                 defaultValue={""}
               >
                 <MenuItem value={"Public"}>Public</MenuItem>
