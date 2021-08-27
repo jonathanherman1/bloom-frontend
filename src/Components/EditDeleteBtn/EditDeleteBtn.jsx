@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 import Menu from "@material-ui/core/Menu";
 import EditIcon from "@material-ui/icons/Edit";
@@ -42,7 +42,7 @@ const EditDeleteBtn = ({model, id, handleDelete, state, setState}) => {
         open={Boolean(anchorEl)}
         onClose={handleClose}
       >
-        <MenuItem onClick={`${model}/${id}/edit`}>
+        <MenuItem component={Link} to={`/${model}/${id}/edit`}>
           <ListItemIcon>
             <EditIcon /> Edit
           </ListItemIcon>
