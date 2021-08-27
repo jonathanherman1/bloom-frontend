@@ -1,5 +1,7 @@
-import React, { useState } from 'react';
-import styles from './NewOpportunityForm.module.css';
+import React, { useState, useEffect } from 'react';
+import { withRouter } from 'react-router-dom';
+
+import styles from './OpportunityUpdate.module.css';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import InputLabel from '@material-ui/core/InputLabel';
@@ -10,9 +12,20 @@ import Select from '@material-ui/core/Select';
 import Rating from '@material-ui/lab/Rating'
 import Box from '@material-ui/core/Box'
 
+import * as opportunityService from '../../services/opportunityService.js'
+
+
 const OpportunityUpdate = (props) => {
     const [ hover, setHover ] = useState(-1)
-    const [ formData, setFormData ] = useState(props)
+    const [ formData, setFormData ] = useState('')
+
+    useEffect(() => {
+      (async () => {
+          const opportunityDetail = await opportunityService.getOpportunityById(props.match.params.id)
+          setFormData(opportunityDetail)
+      })()
+    }, [props.match.params.id]);
+
 
     const handleChange = (e) => {
         setFormData({...formData, [e.target.name]: e.target.value})
@@ -179,4 +192,4 @@ const OpportunityUpdate = (props) => {
       </div> );
 }
  
-export default OpportunityUpdate;
+export default withRouter(OpportunityUpdate);
