@@ -193,7 +193,80 @@ const App = (props) => {
   const handleAddOpportunity = async (formData) => {
     try {
       const newOpportunity = await opportunityService.create(formData)
+      console.log(newOpportunity)
       setOpportunities([newOpportunity, ...opportunities])
+    } catch (error) {
+      throw error
+    }
+  }
+  const handleUpdateOpportunity = async (formData, id) => {
+    try {
+      const updatedOpportunity = await opportunityService.update(formData, id)
+      let oppArray = opportunities.filter(opp => opp.id !== id)
+      setOpportunities([updatedOpportunity, ...oppArray])
+    } catch (error) {
+      throw error
+    }
+  }
+  const handleUpdateContact = async (formData, id) => {
+    try {
+      const updatedContact = await contactService.update(formData, id)
+      let conArray = contacts.filter(con => con.id !== id)
+      setContacts([updatedContact, ...conArray])
+    } catch (error) {
+      throw error
+    }
+  }
+  const handleUpdateActivity = async (formData, id) => {
+    try {
+      const updatedActivity = await activityService.update(formData, id)
+      let actArray = activities.filter(act => act.id !== id)
+      setActivities([updatedActivity, ...actArray])
+    } catch (error) {
+      throw error
+    }
+  }
+  const handleUpdateCompany = async (formData, id) => {
+    try {
+      const updatedCompany = await companyService.update(formData, id)
+      let comArray = companies.filter(com => com.id !== id)
+      setCompanies([updatedCompany, ...comArray])
+    } catch (error) {
+      throw error
+    }
+  }
+  const handleDeleteOpportunity = async (formData, id) => {
+    try {
+      const deletedOpportunity = await opportunityService.delete(formData, id)
+      let oppArray = opportunities.filter(opp => opp.id !== id)
+      setOpportunities(oppArray)
+    } catch (error) {
+      throw error
+    }
+  }
+  const handleDeleteContact = async (formData, id) => {
+    try {
+      const deletedContact = await contactService.delete(formData, id)
+      let conArray = contacts.filter(con => con.id !== id)
+      setContacts(conArray)
+    } catch (error) {
+      throw error
+    }
+  }
+  const handleDeleteActivity = async (formData, id) => {
+    try {
+      const deletedActivity = await activityService.delete(formData, id)
+      let actArray = activities.filter(act => act.id !== id)
+      setActivities(actArray)
+    } catch (error) {
+      throw error
+    }
+  }
+  const handleDeleteCompany = async (formData, id) => {
+    try {
+      const deletedCompany = await companyService.delete(formData, id)
+      let comArray = companies.filter(com => com.id !== id)
+      setCompanies(comArray)
     } catch (error) {
       throw error
     }
