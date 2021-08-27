@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from 'react';
 import Box from "@material-ui/core/Box";
 import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
@@ -9,6 +9,19 @@ import EditDeleteBtn from "../EditDeleteBtn/EditDeleteBtn";
 import { withRouter } from 'react-router-dom'
 
 const OpportunityDetailCard = ( props ) => {
+  const [oppActivities, setOppActivities] = useState([])
+
+  
+  useEffect(() => {
+    const getActivities = () => {
+      const filteredActivities = props.activities.filter(activity => parseInt(activity.opportunity) === parseInt(props.match.params.id))
+      setOppActivities(filteredActivities)
+    }
+    getActivities()
+    return () => {setOppActivities([])}
+  }, [props.activities, props.match.params.id]);
+
+
   return (
     <>
       <Box className={classes.titleContainer}>
