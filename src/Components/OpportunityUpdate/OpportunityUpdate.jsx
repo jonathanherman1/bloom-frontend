@@ -20,7 +20,7 @@ const OpportunityUpdate = (props) => {
 
       const handleSubmit = (e) => {
         e.preventDefault()
-        props.handleAddOpportunity(formData)
+        props.handleUpdateOpportunity(formData)
       }
 
     return (  <div className={styles.container}>
