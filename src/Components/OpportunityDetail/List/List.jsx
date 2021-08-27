@@ -25,7 +25,10 @@ export default function SimpleList(props) {
       <List component="nav" aria-label="prop name list">
         {
           props.items.map(item => (
-            <ListItem button>
+            <ListItem 
+              key={item.id}
+              button
+            >
               <ListItemIcon>
                 <AssignmentTurnedInIcon />
               </ListItemIcon>
