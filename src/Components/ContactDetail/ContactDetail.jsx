@@ -27,7 +27,7 @@ const ContactDetail = (props) => {
             const newContactDetail = await contactService.getContactById(props.match.params.id)
             setContactDetail(newContactDetail)
         })()
-    }, []);
+    }, [props.match.params.id]);
 
 
     return (

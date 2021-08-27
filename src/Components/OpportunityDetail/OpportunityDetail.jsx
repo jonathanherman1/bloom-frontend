@@ -12,7 +12,8 @@ const OpportunityDetail = (props) => {
             const newOpportunityDetail = await opportunityService.getOpportunityById(props.match.params.id)
             setOpportunityDetail(newOpportunityDetail)
         })()
-    }, []);
+    }, [props.match.params.id]);
+    
     return ( 
     <div className={styles.outsideContainer}>
         <OpportunityDetailCard 

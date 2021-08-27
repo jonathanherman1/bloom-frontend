@@ -26,7 +26,7 @@ const ActivityDetail = (props) => {
             const newActivityDetail = await activityService.getActivityById(props.match.params.id)
             setActivityDetail(newActivityDetail)
         })()
-    }, []);
+    }, [props.match.params.id]);
 
     return ( 
         activityDetail &&

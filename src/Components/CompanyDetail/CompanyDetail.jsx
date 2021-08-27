@@ -26,13 +26,13 @@ import * as companyService from '../../services/companyService.js'
 
 const CompanyDetail = (props) => {
     const [companyDetail, setCompanyDetail] = useState('')
-    console.log(props)
     useEffect(() => {
         (async () => {
             const newCompanyDetail = await companyService.getCompanyById(props.match.params.id)
             setCompanyDetail(newCompanyDetail)
         })()
-    }, []);
+    }, [props.match.params.id]);
+
     return ( 
         companyDetail &&
         <Box className={classes.container} mt={4}>

@@ -14,12 +14,6 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function ListItemLink(props) {
-  return <ListItem button component="a" {...props} />;
-}
-
-{/* <ListItemLink href="#simple-list">
-</ListItemLink> */}
 
 export default function SimpleList(props) {
   const classes = useStyles();
