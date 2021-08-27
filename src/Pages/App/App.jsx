@@ -32,6 +32,12 @@ import Animation from '../../Components/Animation/Animation'
 // Content
 import plantAnimation from '../../Assets/lottie-files/57027-fondo-plantas-2.json'
 
+// Handlers
+import * as opportunityHandlers from '../../handlers/opportunityHandlers'
+import * as activityHandlers from '../../handlers/activityHandlers'
+import * as contactHandlers from '../../handlers/contactHandlers'
+import * as companyHandlers from '../../handlers/companyHandlers'
+
 // Services
 import * as opportunityService from '../../services/opportunityService.js'
 import * as activityService from '../../services/activityService.js'
@@ -316,7 +322,11 @@ const App = (props) => {
                /> : <Redirect to='/'/> }
           </Route>
           <Route exact path='/activities/:id'>
-            { loggedIn ?  <ActivityDetail /> : <Redirect to='/'/> }
+            { loggedIn ?  
+                <ActivityDetail 
+                    handleDelete={activityHandlers.handleDeleteActivity}
+                /> 
+                : <Redirect to='/'/> }
           </Route>
           <Route exact path='/activities/:id/update'>
             { loggedIn ?  <ActivityUpdate handleUpdateActivity={handleUpdateActivity}/> : <Redirect to='/'/> }
