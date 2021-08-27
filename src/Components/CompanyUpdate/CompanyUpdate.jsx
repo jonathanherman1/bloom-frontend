@@ -33,7 +33,7 @@ function CompanyUpdate(props) {
   
     const handleSubmit = (e) => {
       e.preventDefault()
-      props.handleUpdateCompany(formData)
+      props.handleUpdateCompany(formData, props.match.params.id)
     }
   
     return (

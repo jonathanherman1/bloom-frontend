@@ -33,7 +33,7 @@ function ContactUpdate(props) {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        props.handleUpdateContact(formData)
+        props.handleUpdateContact(formData, props.match.params.id)
     }
 
     return (
