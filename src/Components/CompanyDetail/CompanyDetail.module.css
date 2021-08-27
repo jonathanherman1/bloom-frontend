@@ -1,0 +1,30 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 0;
+}
+
+.listContainer {
+    width: 360px;
+}
+
+.titleContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.titlePaper {
+    display: flex;
+    width: 360px;
+    justify-content: center;
+}
+
+.deleteFab {
+    background-color :'#f48fb1';
+}
+
+.deleteFab:hover {
+    background-color: '#aa647b';
+}

@@ -22,6 +22,7 @@ function NewCompanyForm(props) {
       glassdoor_rating: '',
       buisness_structure: '',
       notes: '',
+      archived: false,
       owner: props.currentUser.id
     })
 
@@ -119,7 +120,7 @@ function NewCompanyForm(props) {
             <TextField
               id="company-glassdoor-rating"
               type="number"
-              max={5}
+              max="5"
               name="glassdoor_rating"
               label="Glassdoor Rating"
               value={formData.glassdoor_rating}

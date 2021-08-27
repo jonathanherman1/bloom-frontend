@@ -19,8 +19,20 @@ function NewOpportunityForm(props) {
       name: '',
       date: '',
       notes: '',
+      rating: 4,
+      location: '',
+      pros: '',
+      cons: '',
+      salary: '',
+      responsibilities: '',
+      requirements: '',
+      status: '',
+      years_experience_required: '',
+      role_list_url: '',
       listing_source: '',
-      stars: 4,
+      keywords: '',
+      company: '',
+      contacts: '',
       owner: props.currentUser.id 
     })
     
@@ -35,9 +47,20 @@ function NewOpportunityForm(props) {
         name: '',
         date: '',
         notes: '',
+        rating: 4,
+        location: '',
+        pros: '',
+        cons: '',
+        salary: '',
+        responsibilities: '',
+        requirements: '',
+        status: '',
+        years_experience_required: '',
+        role_list_url: '',
         listing_source: '',
-        stars: '',
-        owner: props.currentUser.id 
+        keywords: '',
+        company: '',
+        contacts: '',
       })
     }
   
@@ -66,11 +89,11 @@ function NewOpportunityForm(props) {
             <Typography> Interest: </Typography>
             <Rating
                 name="stars"
-                value={formData.stars}
-                onChange={(event, newValue) => setFormData({ ...formData, stars: newValue })}
+                value={formData.rating}
+                onChange={(event, newValue) => setFormData({ ...formData, rating: newValue })}
                 onChangeActive={(event, newHover) => {setHover(newHover);}}
             />
-            {formData.stars !== null && <Box ml={2} mt={1.5}>{[hover !== -1 ? hover : formData.stars]}</Box>}
+            {formData.stars !== null && <Box ml={2} mt={1.5}>{[hover !== -1 ? hover : formData.rating]}</Box>}
             </Box>
   
             <TextField

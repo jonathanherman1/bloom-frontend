@@ -12,6 +12,9 @@ function NewActivityForm(props) {
       notes: '',
       contact_method: '',
       type: '',
+      contacts: '',
+      company: '',
+      opportunity: '',
       owner: props.currentUser.id
     })
     
@@ -44,7 +47,7 @@ function NewActivityForm(props) {
               id="activity-name"
               type="text" 
               name="name"
-              label="Name"
+              label="Activity"
               value={formData.name}
               onChange={handleChange}
               autoComplete="off"

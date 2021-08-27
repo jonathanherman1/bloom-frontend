@@ -13,6 +13,7 @@ function NewContactForm(props) {
         department: '',
         first_contact_through: '',
         notes: '',
+        company: '',
         owner: props.currentUser.id
     })
 
@@ -69,7 +70,6 @@ function NewContactForm(props) {
             label="Phone number"
             />
 
-
             <TextField 
                 id="contact-email"
                 type="email" 
@@ -100,7 +100,7 @@ function NewContactForm(props) {
                 id="contact-first-contact-through"
                 type="text" 
                 name="first_contact_through"
-                label="first_contact_through"
+                label="First Contact Through (Name)"
                 value={formData.first_contact_through}
                 onChange={handleChange}
                 autoComplete="off"

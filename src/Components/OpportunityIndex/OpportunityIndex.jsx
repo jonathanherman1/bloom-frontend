@@ -20,13 +20,13 @@ import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
 import styles from './OpportunityIndex.module.css';
 
 const OpportunityIndex = ({ opportunities }) => {
+
   const opportunitiesList = () => {
     return opportunities.map((o, i) => {
       return (
         <PrevCard
           key={i}
           name={o.name}
-          date={o.date}
           notes={o.notes}
           id={o.id}
           preRoute="opportunities"
