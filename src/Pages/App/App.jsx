@@ -37,7 +37,7 @@ import * as opportunityService from '../../services/opportunityService.js'
 import * as activityService from '../../services/activityService.js'
 import * as companyService from '../../services/companyService.js'
 import * as contactService from '../../services/contactService.js'
-
+import * as currentUserService from '../../services/currentUserService.js'
 // Styles
 import './App.css';
 
@@ -53,6 +53,7 @@ const App = (props) => {
       const [ loggedIn, setLoggedIn ] = useState(localStorage.getItem('token') ? true : false)
       const [ displayedForm, setDisplayedForm ] = useState ('')
       const [ username, setUsername ] = useState ('')
+      const [ currentUser, setCurrentUser ] = useState('')
 
       const [activities, setActivities] = useState([])
       const [contacts, setContacts] = useState([])
@@ -99,6 +100,15 @@ const App = (props) => {
       console.log(allOpportunities)
     })()
     return () => { setOpportunities('') }
+  }, [loggedIn]);
+
+  useEffect(() => {
+    (async () => {
+      const newCurrentUser = await currentUserService.getCurrentUser()
+      setCurrentUser(newCurrentUser)
+      console.log(newCurrentUser)
+    })()
+    return () => { setCurrentUser('') }
   }, [loggedIn]);
 
   useEffect(() => {
