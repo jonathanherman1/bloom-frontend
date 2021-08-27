@@ -15,9 +15,8 @@ import PhoneIcon from '@material-ui/icons/Phone'
 import EmailIcon from '@material-ui/icons/Email'
 import BuisnessIcon from '@material-ui/icons/Business'
 import NoteIcon from '@material-ui/icons/Note'
-import Fab from '@material-ui/core/Fab'
-import DeleteIcon from '@material-ui/icons/Delete'
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
+import EditDeleteBtn from '../EditDeleteBtn/EditDeleteBtn.jsx'
 
 const ContactDetail = (props) => {
     const [contactDetail, setContactDetail] = useState('')
@@ -36,9 +35,15 @@ const ContactDetail = (props) => {
             <Box className={classes.titleContainer}>
             <Paper elevation={10}  className={classes.titlePaper}>
                 <Typography variant="h3"> {contactDetail.name} </Typography>
-                <Fab variant="warning" aria-label="delete contact" className={classes.deleteFab}>
-                    <DeleteIcon />
-                </Fab>
+                <Box>
+                <EditDeleteBtn 
+                    model='contacts'
+                    id={props.match.params.id}
+                    handleDelete={props.handleDelete}
+                    state={props.contacts}
+                    setState={props.setContacts}
+                    />
+            </Box>
             </Paper>
             </Box>
          <Box className={classes.listContainer}>
