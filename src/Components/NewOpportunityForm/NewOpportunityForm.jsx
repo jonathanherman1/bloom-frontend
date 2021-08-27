@@ -14,10 +14,11 @@ import Typography from '@material-ui/core/Typography'
 
 function NewOpportunityForm(props) {
     const [ hover, setHover] = useState(-1)
-
+    const todaysDate = new Date().getFullYear()+"-"+((new Date().getMonth()+1) < 10 ? '0' : '')+(new Date().getMonth()+1)+"-"+(new Date().getDate() < 10 ? '0' : '')+(new Date().getDate())
+    
     const [formData, setFormData] = useState({
       name: '',
-      date: '',
+      date: todaysDate,
       notes: '',
       rating: 4,
       location: '',
@@ -35,7 +36,7 @@ function NewOpportunityForm(props) {
       contacts: [],
       owner: props.currentUser.id 
     })
-    
+    console.log(formData.date)
     const handleChange = (e) => {
       setFormData({...formData, [e.target.name]: e.target.value})
     }
@@ -104,6 +105,7 @@ function NewOpportunityForm(props) {
               name="date"
               label="Date"
               value={formData.date}
+              defaultValue={new Date().getDate()+"-"+(new Date().getMonth()+1)+"-"+new Date().getFullYear()}
               onChange={handleChange}
               autoComplete="off"
               required
