@@ -17,6 +17,7 @@ import BuisnessIcon from '@material-ui/icons/Business'
 import NoteIcon from '@material-ui/icons/Note'
 import Fab from '@material-ui/core/Fab'
 import DeleteIcon from '@material-ui/icons/Delete'
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 
 const ContactDetail = (props) => {
     const [contactDetail, setContactDetail] = useState('')
@@ -68,6 +69,15 @@ const ContactDetail = (props) => {
                     </Avatar>
                     </ListItemAvatar>
                     <ListItemText primary="Department" secondary={contactDetail.department} />
+                </ListItem>
+                <Divider variant="inset" component="li" />
+                <ListItem>
+                    <ListItemAvatar>
+                    <Avatar>
+                        <AccountCircleIcon />
+                    </Avatar>
+                    </ListItemAvatar>
+                    <ListItemText primary="First Contact Through" secondary={contactDetail.first_contact_through} />
                 </ListItem>
                 <Divider variant="inset" component="li" />
                 <ListItem>
