@@ -26,7 +26,6 @@ const OpportunityUpdate = (props) => {
       })()
     }, [props.match.params.id]);
 
-
     const handleChange = (e) => {
         setFormData({...formData, [e.target.name]: e.target.value})
       }

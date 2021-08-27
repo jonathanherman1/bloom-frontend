@@ -25,7 +25,7 @@ function ActivityUpdate(props) {
   
     const handleSubmit = (e) => {
       e.preventDefault()
-        props.handleUpdateActivity(formData)
+        props.handleUpdateActivity(formData, props.match.params.id)
     }
   
     return (

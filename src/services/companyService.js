@@ -49,7 +49,7 @@ async function getAll(){
 
 async function deleteOne(id){
     try {
-        await fetch(`${BASE_URL}${id}`, {
+        await fetch(`${BASE_URL}${id}/`, {
             method: 'DELETE',
             headers: {
                 'content-type': 'application/json',
@@ -64,7 +64,7 @@ async function deleteOne(id){
 async function update(company, id){
     console.log(company)
     try{
-        const res = await fetch(`${BASE_URL}${id}`, {
+        const res = await fetch(`${BASE_URL}${id}/`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json',
@@ -81,7 +81,7 @@ async function update(company, id){
 
 async function getCompanyById (id) {
     try {
-        const res = await fetch(`${BASE_URL}${id}`, {
+        const res = await fetch(`${BASE_URL}${id}/`, {
             method: 'GET',
             headers: {
                 'content-type': 'application/json',

@@ -353,7 +353,7 @@ const App = (props) => {
             { loggedIn ?  <ActivityDetail /> : <Redirect to='/'/> }
           </Route>
           <Route exact path='/activities/:id/update'>
-            { loggedIn ?  <ActivityUpdate /> : <Redirect to='/'/> }
+            { loggedIn ?  <ActivityUpdate handleUpdateActivity={handleUpdateActivity}/> : <Redirect to='/'/> }
           </Route>
           <Route exact path='/contacts'>
             { loggedIn ? <ContactIndex contacts={contacts} /> : <Redirect to='/'/> }
