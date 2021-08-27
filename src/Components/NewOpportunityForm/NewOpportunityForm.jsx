@@ -28,7 +28,7 @@ function NewOpportunityForm(props) {
       requirements: '',
       status: '',
       years_experience_required: '',
-      role_list_url: '',
+      role_list_url: 'http://',
       listing_source: '',
       keywords: '',
       company: '',
@@ -57,7 +57,7 @@ function NewOpportunityForm(props) {
         requirements: '',
         status: '',
         years_experience_required: '',
-        role_list_url: '',
+        role_list_url: 'http://',
         listing_source: '',
         keywords: '',
         company: '',
@@ -176,18 +176,6 @@ function NewOpportunityForm(props) {
               variant="outlined"
             />
 
-            <TextField
-              id="opportunity-role_list_url"
-              type="text"
-              name="role_list_url"
-              label="Role Listing"
-              value={formData.role_list_url}
-              helperText="Enter as valid URL"
-              onChange={handleChange}
-              autoComplete="off"
-              required
-              variant="outlined"
-            />
             <FormControl variant="outlined">
               <InputLabel id="listing_source">Listing Source</InputLabel>
               <Select
@@ -203,6 +191,17 @@ function NewOpportunityForm(props) {
                 <MenuItem value={"Jen"}>Jen told me about this directly</MenuItem>
               </Select>
             </FormControl>
+            <TextField
+              id="opportunity-role_list_url"
+              type="text"
+              name="role_list_url"
+              label="Role Listing (URL)"
+              value={formData.role_list_url}
+              onChange={handleChange}
+              autoComplete="off"
+              required
+              variant="outlined"
+            />
             <TextField
               id="opportunity-keywords"
               type="text"
