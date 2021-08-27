@@ -95,7 +95,7 @@ function NewContactForm(props) {
                 id="contact-department"
                 type="text" 
                 name="department"
-                label="Department"
+                label="Department/Role"
                 value={formData.department}
                 onChange={handleChange}
                 autoComplete="off"
@@ -108,7 +108,7 @@ function NewContactForm(props) {
                 id="contact-first-contact-through"
                 type="text" 
                 name="first_contact_through"
-                label="First Contact Through (Name)"
+                label="Initial Point of Contact"
                 value={formData.first_contact_through}
                 onChange={handleChange}
                 autoComplete="off"

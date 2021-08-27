@@ -14,10 +14,11 @@ import Typography from '@material-ui/core/Typography'
 
 function NewOpportunityForm(props) {
     const [ hover, setHover] = useState(-1)
-
+    const todaysDate = new Date().getFullYear()+"-"+((new Date().getMonth()+1) < 10 ? '0' : '')+(new Date().getMonth()+1)+"-"+(new Date().getDate() < 10 ? '0' : '')+(new Date().getDate())
+    
     const [formData, setFormData] = useState({
       name: '',
-      date: '',
+      date: todaysDate,
       notes: '',
       rating: 4,
       location: '',
@@ -28,14 +29,14 @@ function NewOpportunityForm(props) {
       requirements: '',
       status: '',
       years_experience_required: '',
-      role_list_url: '',
+      role_list_url: 'http://',
       listing_source: '',
       keywords: '',
       company: '',
       contacts: [],
       owner: props.currentUser.id 
     })
-    
+    console.log(formData.date)
     const handleChange = (e) => {
       setFormData({...formData, [e.target.name]: e.target.value})
     }
@@ -57,7 +58,7 @@ function NewOpportunityForm(props) {
         requirements: '',
         status: '',
         years_experience_required: '',
-        role_list_url: '',
+        role_list_url: 'http://',
         listing_source: '',
         keywords: '',
         company: '',
@@ -104,6 +105,7 @@ function NewOpportunityForm(props) {
               name="date"
               label="Date"
               value={formData.date}
+              defaultValue={new Date().getDate()+"-"+(new Date().getMonth()+1)+"-"+new Date().getFullYear()}
               onChange={handleChange}
               autoComplete="off"
               required
@@ -176,18 +178,6 @@ function NewOpportunityForm(props) {
               variant="outlined"
             />
 
-            <TextField
-              id="opportunity-role_list_url"
-              type="text"
-              name="role_list_url"
-              label="Role Listing"
-              value={formData.role_list_url}
-              helperText="Enter as valid URL"
-              onChange={handleChange}
-              autoComplete="off"
-              required
-              variant="outlined"
-            />
             <FormControl variant="outlined">
               <InputLabel id="listing_source">Listing Source</InputLabel>
               <Select
@@ -203,6 +193,17 @@ function NewOpportunityForm(props) {
                 <MenuItem value={"Jen"}>Jen told me about this directly</MenuItem>
               </Select>
             </FormControl>
+            <TextField
+              id="opportunity-role_list_url"
+              type="text"
+              name="role_list_url"
+              label="Role Listing (URL)"
+              value={formData.role_list_url}
+              onChange={handleChange}
+              autoComplete="off"
+              required
+              variant="outlined"
+            />
             <TextField
               id="opportunity-keywords"
               type="text"

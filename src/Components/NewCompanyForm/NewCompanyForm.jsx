@@ -16,7 +16,7 @@ function NewCompanyForm(props) {
     const [formData, setFormData] = useState({
       name: '',
       location: '',
-      url: '',
+      url: 'http://',
       summary: '',
       interested: false,
       glassdoor_rating: '',
@@ -38,7 +38,7 @@ function NewCompanyForm(props) {
       setFormData({
         name: '',
         location: '',
-        url: '',
+        url: 'http://',
         summary: '',
         interested: formData.interested,
         glassdoor_rating: formData.glassdoor_rating,
