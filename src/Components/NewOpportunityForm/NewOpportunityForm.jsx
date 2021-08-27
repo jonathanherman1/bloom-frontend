@@ -180,6 +180,7 @@ function NewOpportunityForm(props) {
               name="role_list_url"
               label="Role Listing"
               value={formData.role_list_url}
+              helperText="Enter as valid URL"
               onChange={handleChange}
               autoComplete="off"
               required

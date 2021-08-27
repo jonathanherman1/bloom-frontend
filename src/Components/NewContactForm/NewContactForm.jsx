@@ -30,16 +30,16 @@ function NewContactForm(props) {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        props.handleAddContact(formData)
-        setFormData({
-            name: '',
-            phone: '',
-            email: '',
-            department: '',
-            first_contact_through: '',
-            notes: '',
-            owner: props.currentUser.id
-        })
+            props.handleAddContact(formData)
+            setFormData({
+                name: '',
+                phone: '',
+                email: '',
+                department: '',
+                first_contact_through: '',
+                notes: '',
+                owner: props.currentUser.id
+            })
     }
 
     return (

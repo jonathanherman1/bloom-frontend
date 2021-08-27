@@ -12,8 +12,6 @@ export {
 const BASE_URL = `${process.env.REACT_APP_CONTACT}`
 
 async function create(contact){
-  console.log("opp: ", contact)
-  console.log(localStorage.getItem('token'))
   try {
       const res = await fetch(BASE_URL, {
           method: 'POST',
@@ -23,9 +21,7 @@ async function create(contact){
           },
           body: JSON.stringify(contact)
       })
-      console.log("res: ", res)
       const data = await res.json()
-      console.log("data: ", data)
       return data
   } catch (error) {
       throw error
