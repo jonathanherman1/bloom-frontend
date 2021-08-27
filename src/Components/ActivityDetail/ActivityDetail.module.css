@@ -13,10 +13,9 @@
 .titlePaper {
     display: flex;
     width: 360px;
-    justify-content: center;
+    justify-content: space-between;
 }
 
 .listContainer {
     width: 360px;
 }
-
