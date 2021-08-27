@@ -2,11 +2,12 @@ import React, { useState, useEffect } from 'react';
 import Box from "@material-ui/core/Box";
 import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
-import FullWidthTab from "./FullWidthTab/FullWidthTab";
+import { withRouter } from 'react-router-dom'
 import classes from "./OpportunityDetailCard.module.css";
+import FullWidthTab from "./FullWidthTab/FullWidthTab";
 import Table from "./Table/Table";
 import EditDeleteBtn from "../EditDeleteBtn/EditDeleteBtn";
-import { withRouter } from 'react-router-dom'
+
 
 const OpportunityDetailCard = ( props ) => {
   const [oppActivities, setOppActivities] = useState([])

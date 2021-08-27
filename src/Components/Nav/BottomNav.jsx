@@ -1,13 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
+import styles from './BottomNav.module.css'
 import { makeStyles } from '@material-ui/core/styles';
+
+import ApartmentIcon from '@material-ui/icons/Apartment';
 import BottomNavigation from '@material-ui/core/BottomNavigation';
 import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
-import LocalActivityIcon from '@material-ui/icons/LocalActivity';
 import ContactsIcon from '@material-ui/icons/Contacts';
-import ApartmentIcon from '@material-ui/icons/Apartment';
 import EcoIcon from '@material-ui/icons/Eco';
-import styles from './BottomNav.module.css'
+import LocalActivityIcon from '@material-ui/icons/LocalActivity';
+
 
 const useStyles = makeStyles({
     root: {

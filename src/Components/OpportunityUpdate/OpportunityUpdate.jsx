@@ -1,19 +1,17 @@
-import React, { useState, useEffect } from 'react';
-import { withRouter, useHistory } from 'react-router-dom';
-
-import styles from './OpportunityUpdate.module.css';
-import TextField from '@material-ui/core/TextField';
-import Button from '@material-ui/core/Button';
-import InputLabel from '@material-ui/core/InputLabel';
-import MenuItem from '@material-ui/core/MenuItem';
-import FormControl from '@material-ui/core/FormControl';
-import Typography from '@material-ui/core/Typography'
-import Select from '@material-ui/core/Select';
-import Rating from '@material-ui/lab/Rating'
-import Box from '@material-ui/core/Box'
-
+import React, { useState, useEffect } from 'react'
+import { withRouter, useHistory } from 'react-router-dom'
 import * as opportunityService from '../../services/opportunityService.js'
+import styles from './OpportunityUpdate.module.css'
 
+import Box from '@material-ui/core/Box'
+import Button from '@material-ui/core/Button'
+import FormControl from '@material-ui/core/FormControl'
+import InputLabel from '@material-ui/core/InputLabel'
+import MenuItem from '@material-ui/core/MenuItem'
+import Rating from '@material-ui/lab/Rating'
+import Select from '@material-ui/core/Select'
+import TextField from '@material-ui/core/TextField'
+import Typography from '@material-ui/core/Typography'
 
 const OpportunityUpdate = (props) => {
     const [ hover, setHover ] = useState(-1)
