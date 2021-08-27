@@ -2,8 +2,10 @@ import React, { useState } from 'react';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import styles from './NewContactForm.module.css'
+import MuiPhoneNumber from 'material-ui-phone-number'
 
 function NewContactForm(props) {
+    const [ phoneNum, setPhoneNum ] = useState('')
     const [formData, setFormData] = useState({
         name: '',
         phone: '',
@@ -18,6 +20,10 @@ function NewContactForm(props) {
             ...formData,
             [e.target.name]: e.target.value,
         })
+    }
+
+    const handleInput = (value) => {
+        setPhoneNum(value)
     }
 
     const handleSubmit = (e) => {
@@ -53,19 +59,14 @@ function NewContactForm(props) {
                 required
                 variant="outlined" 
             />
-
-            <TextField 
-                id="contact-phone"
-                type="phone" 
-                name="phone"
-                label="Phone number"
-                value={formData.phone}
-                onChange={handleChange}
-                autoComplete="off"
-                fullWidth
-                required
-                variant="outlined" 
+            <MuiPhoneNumber 
+            defaultCountry={'us'} 
+            onChange={handleInput} 
+            value={phoneNum}
+            name="phone"
+            label="Phone number"
             />
+
 
             <TextField 
                 id="contact-email"
