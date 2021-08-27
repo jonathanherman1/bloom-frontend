@@ -257,7 +257,11 @@ const App = (props) => {
             { loggedIn ? <ActivityIndex activities={activities} /> : <Redirect to='/'/> }
           </Route>
           <Route exact path='/activities/new'>
-            { loggedIn ? <NewActivityForm handleAddActivity={handleAddActivity}/> : <Redirect to='/'/> }
+            { loggedIn ? 
+               <NewActivityForm 
+                 handleAddActivity={handleAddActivity}
+                 currentUser={currentUser}
+               /> : <Redirect to='/'/> }
           </Route>
           <Route exact path='/activities/:id'>
             { loggedIn ?  <ActivityDetail /> : <Redirect to='/'/> }
@@ -266,7 +270,12 @@ const App = (props) => {
             { loggedIn ? <ContactIndex contacts={contacts} /> : <Redirect to='/'/> }
           </Route>
           <Route exact path='/contacts/new'>
-            { loggedIn ? <NewContactForm handleAddContact={handleAddContact}/> : <Redirect to='/'/> }
+            { loggedIn ? 
+                 <NewContactForm 
+                 handleAddContact={handleAddContact}
+                 currentUser={currentUser}
+                 /> : <Redirect to='/'/> 
+                 }
           </Route>
           <Route exact path='/contacts/:id'>
             { loggedIn ? <ContactDetail /> : <Redirect to='/'/> }
@@ -275,13 +284,13 @@ const App = (props) => {
             { loggedIn ? <CompanyIndex companies={companies} /> : <Redirect to='/'/> }
           </Route>
           <Route exact path='/companies/new'>
-            { loggedIn ?  <NewCompanyForm handleAddCompany={handleAddCompany}/> : <Redirect to='/'/> }
+            { loggedIn ?  <NewCompanyForm handleAddCompany={handleAddCompany} currentUser={currentUser}/> : <Redirect to='/'/> }
           </Route>
           <Route exact path='/companies/:id'>
             { loggedIn ? <CompanyDetail /> : <Redirect to='/'/> }
           </Route>
           <Route exact path='/opportunities/:id/new-activity'>
-            { loggedIn ? <NewActivityForm handleAddActivity={handleAddActivity}/> : <Redirect to='/'/> }
+            { loggedIn ? <NewActivityForm handleAddActivity={handleAddActivity} currentUser={currentUser}/> : <Redirect to='/'/> }
           </Route>
         </Switch>
         <BottomNav className="bottom-nav" />
