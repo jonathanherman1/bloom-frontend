@@ -22,6 +22,7 @@ function NewCompanyForm(props) {
       glassdoor_rating: '',
       buisness_structure: '',
       notes: '',
+      owner: props.currentUser.id
     })
 
     const handleChange = (e) => {
@@ -41,6 +42,7 @@ function NewCompanyForm(props) {
         glassdoor_rating: formData.glassdoor_rating,
         business_structure: formData.buisness_structure,
         notes: '',
+        owner: props.currentUser.id
       })
     }
   

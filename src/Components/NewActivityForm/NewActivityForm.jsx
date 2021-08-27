@@ -11,7 +11,8 @@ function NewActivityForm(props) {
       date: '',
       notes: '',
       contact_method: '',
-      type: ''
+      type: '',
+      owner: props.currentUser.id
     })
     
     const handleChange = (e) => {
@@ -26,7 +27,8 @@ function NewActivityForm(props) {
         date: '',
         notes: '',
         contact_method: '',
-        type: ''
+        type: '',
+        owner: props.currentUser.id
       })
     }
   
