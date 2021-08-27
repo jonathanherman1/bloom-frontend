@@ -17,6 +17,7 @@ const OpportunityDetail = (props) => {
     return ( 
     <div className={styles.outsideContainer}>
         <OpportunityDetailCard 
+            {...props}
             opportunityDetail={opportunityDetail}
         />
     </div> 
