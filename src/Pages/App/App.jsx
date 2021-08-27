@@ -54,7 +54,6 @@ const App = (props) => {
       const [ displayedForm, setDisplayedForm ] = useState ('')
       const [ username, setUsername ] = useState ('')
       const [ currentUser, setCurrentUser ] = useState('')
-
       const [activities, setActivities] = useState([])
       const [contacts, setContacts] = useState([])
       const [companies, setCompanies] = useState([])
@@ -243,7 +242,13 @@ const App = (props) => {
             { loggedIn ? <OpportunityIndex opportunities={opportunities} /> : <Redirect to='/'/> }
           </Route>
           <Route exact path='/opportunities/new'>
-            { loggedIn ? <NewOpportunityForm handleAddOpportunity={handleAddOpportunity}/> : <Redirect to='/'/> }
+            { loggedIn ? 
+              <NewOpportunityForm 
+                handleAddOpportunity={handleAddOpportunity}
+                currentUser={currentUser}
+              /> 
+              : <Redirect to='/'/> 
+            }
           </Route>
           <Route exact path='/opportunities/:id'>
             { loggedIn ? <OpportunityDetail /> : <Redirect to='/'/> }
