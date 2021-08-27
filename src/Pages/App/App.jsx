@@ -32,6 +32,12 @@ import Animation from '../../Components/Animation/Animation'
 // Content
 import plantAnimation from '../../Assets/lottie-files/57027-fondo-plantas-2.json'
 
+// Handlers
+import * as opportunityHandlers from '../../handlers/opportunityHandlers'
+import * as activityHandlers from '../../handlers/activityHandlers'
+import * as contactHandlers from '../../handlers/contactHandlers'
+import * as companyHandlers from '../../handlers/companyHandlers'
+
 // Services
 import * as opportunityService from '../../services/opportunityService.js'
 import * as activityService from '../../services/activityService.js'
@@ -230,42 +236,7 @@ const App = (props) => {
       throw error
     }
   }
-  const handleDeleteOpportunity = async (id) => {
-    try {
-      const deletedOpportunity = await opportunityService.deleteOne(id)
-      let oppArray = opportunities.filter(opp => opp.id !== id)
-      setOpportunities(oppArray)
-    } catch (error) {
-      throw error
-    }
-  }
-  const handleDeleteContact = async (id) => {
-    try {
-      const deletedContact = await contactService.deleteOne(id)
-      let conArray = contacts.filter(con => con.id !== id)
-      setContacts(conArray)
-    } catch (error) {
-      throw error
-    }
-  }
-  const handleDeleteActivity = async (id) => {
-    try {
-      const deletedActivity = await activityService.deleteOne(id)
-      let actArray = activities.filter(act => act.id !== id)
-      setActivities(actArray)
-    } catch (error) {
-      throw error
-    }
-  }
-  const handleDeleteCompany = async (id) => {
-    try {
-      const deletedCompany = await companyService.deleteOne(id)
-      let comArray = companies.filter(com => com.id !== id)
-      setCompanies(comArray)
-    } catch (error) {
-      throw error
-    }
-  }
+ 
   const handleAddOpportunity = async (formData) => {
     try {
       const newOpportunity = await opportunityService.create(formData)
@@ -351,7 +322,11 @@ const App = (props) => {
                /> : <Redirect to='/'/> }
           </Route>
           <Route exact path='/activities/:id'>
-            { loggedIn ?  <ActivityDetail /> : <Redirect to='/'/> }
+            { loggedIn ?  
+                <ActivityDetail 
+                    handleDelete={activityHandlers.handleDeleteActivity}
+                /> 
+                : <Redirect to='/'/> }
           </Route>
           <Route exact path='/activities/:id/update'>
             { loggedIn ?  <ActivityUpdate handleUpdateActivity={handleUpdateActivity}/> : <Redirect to='/'/> }
