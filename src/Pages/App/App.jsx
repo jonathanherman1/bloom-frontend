@@ -230,42 +230,7 @@ const App = (props) => {
       throw error
     }
   }
-  const handleDeleteOpportunity = async (id) => {
-    try {
-      const deletedOpportunity = await opportunityService.deleteOne(id)
-      let oppArray = opportunities.filter(opp => opp.id !== id)
-      setOpportunities(oppArray)
-    } catch (error) {
-      throw error
-    }
-  }
-  const handleDeleteContact = async (id) => {
-    try {
-      const deletedContact = await contactService.deleteOne(id)
-      let conArray = contacts.filter(con => con.id !== id)
-      setContacts(conArray)
-    } catch (error) {
-      throw error
-    }
-  }
-  const handleDeleteActivity = async (id) => {
-    try {
-      const deletedActivity = await activityService.deleteOne(id)
-      let actArray = activities.filter(act => act.id !== id)
-      setActivities(actArray)
-    } catch (error) {
-      throw error
-    }
-  }
-  const handleDeleteCompany = async (id) => {
-    try {
-      const deletedCompany = await companyService.deleteOne(id)
-      let comArray = companies.filter(com => com.id !== id)
-      setCompanies(comArray)
-    } catch (error) {
-      throw error
-    }
-  }
+ 
   const handleAddOpportunity = async (formData) => {
     try {
       const newOpportunity = await opportunityService.create(formData)
