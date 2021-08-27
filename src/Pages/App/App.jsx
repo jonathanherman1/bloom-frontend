@@ -41,6 +41,7 @@ import * as currentUserService from '../../services/currentUserService.js'
 import * as authService from '../../services/authService.js'
 // Styles
 import './App.css';
+import ContactUpdate from '../../Components/ContactUpdate/ContactUpdate';
 
 
 const App = (props) => {
@@ -362,6 +363,9 @@ const App = (props) => {
           </Route>
           <Route exact path='/contacts/:id'>
             { loggedIn ? <ContactDetail /> : <Redirect to='/'/> }
+          </Route>
+          <Route exact path='/contacts/:id/update'>
+            { loggedIn ? <ContactUpdate /> : <Redirect to='/'/> }
           </Route>
           <Route exact path='/companies'>
             { loggedIn ? <CompanyIndex companies={companies} /> : <Redirect to='/'/> }

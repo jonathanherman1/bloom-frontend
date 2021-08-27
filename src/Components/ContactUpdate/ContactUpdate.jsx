@@ -9,7 +9,7 @@ import MuiPhoneNumber from 'material-ui-phone-number'
 
 
 function ContactUpdate(props) {
-    const [ phoneNum, setPhoneNum ] = useState('')
+    const [ phoneNum, setPhoneNum ] = useState()
     const [formData, setFormData] = useState('')
 
     useEffect(() => {
