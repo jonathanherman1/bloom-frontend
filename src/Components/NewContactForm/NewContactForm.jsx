@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useHistory } from 'react-router-dom'
+import { useHistory, useParams } from 'react-router-dom'
 import styles from './NewContactForm.module.css'
 
 import Button from '@material-ui/core/Button'
@@ -7,6 +7,7 @@ import MuiPhoneNumber from 'material-ui-phone-number'
 import TextField from '@material-ui/core/TextField'
 
 function NewContactForm(props) {
+    const { id } = useParams()
     const [ phoneNum, setPhoneNum ] = useState('')
     const [formData, setFormData] = useState({
         name: '',
@@ -16,6 +17,7 @@ function NewContactForm(props) {
         first_contact_through: '',
         notes: '',
         company: '',
+        opportunity: id ? id : '', 
         owner: props.currentUser.id
     })
 
@@ -41,9 +43,11 @@ function NewContactForm(props) {
                 department: '',
                 first_contact_through: '',
                 notes: '',
+                opportunity: id ? id : '', 
                 owner: props.currentUser.id
             })
-        history.push('/contacts');
+        
+        id ? history.push(`/opportunities/${id}`) : history.push('/contacts')
     }
 
     return (

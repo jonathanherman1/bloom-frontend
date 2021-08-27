@@ -13,10 +13,72 @@ import Typography from '@material-ui/core/Typography';
 
 import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
 import VisibilityIcon from '@material-ui/icons/Visibility';
+import DeleteIcon from '@material-ui/icons/Delete';
+import PersonAddIcon from '@material-ui/icons/PersonAdd';
 
 const flower = "/Assets/images/flower.png"
 
 export default function PrevCard({ name, notes, id, preRoute }){
+  const determineOptionalButtons = () => {
+    switch(preRoute){
+      case 'opportunities':
+        return (
+          <>
+            <Button 
+              component={Link}
+              to={`/opportunities/${id}/new-activity`}
+              size="small" 
+              color="primary"
+              startIcon={<AddCircleOutlineIcon />}
+            >
+              Add Activity 
+            </Button>
+            <Button 
+              component={Link}
+              to={`/opportunities/${id}/new-contact`}
+              size="small" 
+              color="primary"
+              startIcon={<PersonAddIcon />}
+            >
+              Add Contact 
+            </Button>
+          </>
+        )
+      case 'activities':
+        return (
+          <Button 
+          size="small" 
+          color="warning"
+          startIcon={<DeleteIcon />}
+          >
+            Delete
+          </Button>
+        )
+      case 'companies':
+        return (
+          <Button 
+          size="small" 
+          color="warning"
+          startIcon={<DeleteIcon />}
+          >
+            Delete
+          </Button>
+        )
+      case 'contacts':
+        return (
+          <Button 
+          size="small" 
+          color="warning"
+          startIcon={<DeleteIcon />}
+          >
+            Delete 
+          </Button>
+        )
+      default:
+        return ''
+    }      
+  }
+
     return (
       <Card className={classes.root}>
         <CardActionArea
@@ -48,18 +110,7 @@ export default function PrevCard({ name, notes, id, preRoute }){
             >
                 View
             </Button>
-            {preRoute === "opportunities" ? 
-              <Button 
-              component={Link}
-              to={`/opportunities/${id}/new-activity`}
-              size="small" 
-              color="primary"
-              startIcon={<AddCircleOutlineIcon />}
-              >
-                Add Activity 
-              </Button>
-              : ""
-            }     
+            {determineOptionalButtons()}     
         </CardActions>
       </Card>
     );

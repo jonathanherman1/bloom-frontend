@@ -382,6 +382,14 @@ const App = (props) => {
           <Route exact path='/opportunities/:id/new-activity'>
             { loggedIn ? <NewActivityForm handleAddActivity={handleAddActivity} currentUser={currentUser}/> : <Redirect to='/'/> }
           </Route>
+          <Route exact path='/opportunities/:id/new-contact'>
+                { loggedIn ? 
+                    <NewContactForm 
+                    handleAddContact={handleAddContact}
+                    currentUser={currentUser}
+                  /> : <Redirect to='/'/> 
+                }
+          </Route>          
         </Switch>
         <BottomNav className="bottom-nav" />
         </ThemeProvider>
