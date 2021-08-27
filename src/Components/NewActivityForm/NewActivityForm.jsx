@@ -44,7 +44,7 @@ function NewActivityForm(props) {
               id="activity-name"
               type="text" 
               name="name"
-              label="Name"
+              label="Activity"
               value={formData.name}
               onChange={handleChange}
               autoComplete="off"

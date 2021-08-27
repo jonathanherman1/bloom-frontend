@@ -14,7 +14,7 @@ import VisibilityIcon from '@material-ui/icons/Visibility';
 
 const flower = "/Assets/images/flower.png"
 
-export default function MediaCard({ name, notes, id, preRoute }) {
+export default function PrevCard({ name, notes, id, preRoute }){
     return (
       <Card className={classes.root}>
         <CardActionArea
