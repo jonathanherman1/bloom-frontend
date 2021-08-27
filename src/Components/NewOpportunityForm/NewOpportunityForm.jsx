@@ -80,7 +80,6 @@ function NewOpportunityForm(props) {
               onChange={handleChange}
               autoComplete="off"
               required
-              fullWidth
               variant="outlined"
               InputLabelProps={{ shrink: true }}
             />
@@ -94,7 +93,6 @@ function NewOpportunityForm(props) {
               onChange={handleChange}
               autoComplete="off"
               required
-              fullWidth
               variant="outlined"
             />
 
@@ -107,7 +105,6 @@ function NewOpportunityForm(props) {
               onChange={handleChange}
               autoComplete="off"
               required
-              fullWidth
               variant="outlined"
             />
 
@@ -122,7 +119,6 @@ function NewOpportunityForm(props) {
               multiline
               rows={2}
               required
-              fullWidth
               variant="outlined"
             />
 
@@ -149,10 +145,7 @@ function NewOpportunityForm(props) {
               value={formData.years_experience_required}
               onChange={handleChange}
               autoComplete="off"
-              multiline
-              rows={2}
               required
-              fullWidth
               variant="outlined"
             />
 
@@ -165,7 +158,6 @@ function NewOpportunityForm(props) {
               onChange={handleChange}
               autoComplete="off"
               required
-              fullWidth
               variant="outlined"
             />
             <FormControl variant="outlined">
@@ -192,7 +184,6 @@ function NewOpportunityForm(props) {
               onChange={handleChange}
               autoComplete="off"
               required
-              fullWidth
               variant="outlined"
             />
 
