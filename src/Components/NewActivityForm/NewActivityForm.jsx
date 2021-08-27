@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
-// Styles
 import styles from './NewActivityForm.module.css';
-import TextField from '@material-ui/core/TextField';
+
 import Button from '@material-ui/core/Button';
+import TextField from '@material-ui/core/TextField';
+
 
 function NewActivityForm(props) {
     const [formData, setFormData] = useState({

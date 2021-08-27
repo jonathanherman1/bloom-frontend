@@ -1,12 +1,14 @@
 import React from "react";
+import { withRouter } from 'react-router-dom'
+import classes from "./OpportunityDetailCard.module.css";
+import FullWidthTab from "./FullWidthTab/FullWidthTab";
+import Table from "./Table/Table";
+import EditDeleteBtn from "../EditDeleteBtn/EditDeleteBtn";
+
 import Box from "@material-ui/core/Box";
 import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
-import FullWidthTab from "./FullWidthTab/FullWidthTab";
-import classes from "./OpportunityDetailCard.module.css";
-import Table from "./Table/Table";
-import EditDeleteBtn from "../EditDeleteBtn/EditDeleteBtn";
-import { withRouter } from 'react-router-dom'
+
 
 const OpportunityDetailCard = ( props ) => {
   return (
