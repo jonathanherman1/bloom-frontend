@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 
 // Styles
 import styles from './NewOpportunityForm.module.css';
@@ -40,6 +41,7 @@ function NewOpportunityForm(props) {
       setFormData({...formData, [e.target.name]: e.target.value})
     }
   
+    const history = useHistory()
     const handleSubmit = (e) => {
       e.preventDefault()
       props.handleAddOpportunity(formData)
@@ -62,6 +64,7 @@ function NewOpportunityForm(props) {
         company: '',
         contacts: '',
       })
+      history.push('/opportunities');
     }
   
     return (

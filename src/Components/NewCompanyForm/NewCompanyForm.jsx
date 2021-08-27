@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 
 // Styles
 import styles from './NewCompanyForm.module.css';
@@ -31,6 +32,7 @@ function NewCompanyForm(props) {
       console.log(formData)
     }
   
+    const history = useHistory()
     const handleSubmit = (e) => {
       e.preventDefault()
       props.handleAddCompany(formData)
@@ -45,6 +47,7 @@ function NewCompanyForm(props) {
         notes: '',
         owner: props.currentUser.id
       })
+      history.push('/companies');
     }
   
     return (

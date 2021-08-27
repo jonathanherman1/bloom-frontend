@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import styles from './NewContactForm.module.css'
@@ -28,6 +29,7 @@ function NewContactForm(props) {
         setPhoneNum(value)
     }
 
+    const history = useHistory()
     const handleSubmit = (e) => {
         e.preventDefault()
             props.handleAddContact(formData)
@@ -40,6 +42,7 @@ function NewContactForm(props) {
                 notes: '',
                 owner: props.currentUser.id
             })
+        history.push('/contacts');
     }
 
     return (

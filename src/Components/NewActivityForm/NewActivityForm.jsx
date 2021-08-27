@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 
 // Styles
 import styles from './NewActivityForm.module.css';
@@ -22,6 +23,7 @@ function NewActivityForm(props) {
       setFormData({...formData, [e.target.name]: e.target.value})
     }
   
+    const history = useHistory()
     const handleSubmit = (e) => {
       e.preventDefault()
         props.handleAddActivity(formData)
@@ -33,6 +35,7 @@ function NewActivityForm(props) {
           type: '',
           owner: props.currentUser.id
         })
+      history.push('/activities');
     }
   
     return (
