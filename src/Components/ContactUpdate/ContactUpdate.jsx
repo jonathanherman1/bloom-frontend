@@ -55,6 +55,7 @@ function ContactUpdate(props) {
                 fullWidth
                 required
                 variant="outlined" 
+                InputLabelProps={{shrink: true}}
             />
             <MuiPhoneNumber 
                 defaultCountry={'us'} 
@@ -62,6 +63,7 @@ function ContactUpdate(props) {
                 value={phoneNum}
                 name="phone"
                 label="Phone number"
+                InputLabelProps={{shrink: true}}
             />
 
             <TextField 
@@ -75,6 +77,7 @@ function ContactUpdate(props) {
                 fullWidth
                 required
                 variant="outlined" 
+                InputLabelProps={{shrink: true}}
             />
 
             <TextField 
@@ -88,6 +91,7 @@ function ContactUpdate(props) {
                 fullWidth
                 required
                 variant="outlined" 
+                InputLabelProps={{shrink: true}}
             />
             
             <TextField 
@@ -101,6 +105,7 @@ function ContactUpdate(props) {
                 fullWidth
                 required
                 variant="outlined" 
+                InputLabelProps={{shrink: true}}
             />
  
             <TextField 
@@ -116,6 +121,7 @@ function ContactUpdate(props) {
                 fullWidth
                 required
                 variant="outlined" 
+                InputLabelProps={{shrink: true}}
             />
                 <Button type="submit" variant="contained" color="primary">
                     Update Contact
