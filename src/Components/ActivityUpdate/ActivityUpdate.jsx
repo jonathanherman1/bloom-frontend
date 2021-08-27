@@ -46,7 +46,8 @@ function ActivityUpdate(props) {
               autoComplete="off"
               fullWidth
               required
-              variant="outlined" 
+              variant="outlined"
+              InputLabelProps={{shrink: true}}
             />
   
             <TextField
@@ -72,6 +73,7 @@ function ActivityUpdate(props) {
               multiline
               rows={4}
               variant="outlined" 
+              InputLabelProps={{shrink: true}}
             />
             <TextField
               id="activity-contact-method"
@@ -81,6 +83,7 @@ function ActivityUpdate(props) {
               onChange={handleChange}
               rows={4}
               variant="outlined" 
+              InputLabelProps={{shrink: true}}
             />
             <TextField
               id="activity-type"
@@ -90,6 +93,7 @@ function ActivityUpdate(props) {
               onChange={handleChange}
               rows={4}
               variant="outlined" 
+              InputLabelProps={{shrink: true}}
             />
             <Button type="submit" variant="contained" color="primary">
               Update Activity

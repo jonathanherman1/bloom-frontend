@@ -54,6 +54,7 @@ function CompanyUpdate(props) {
               autoComplete="off"
               fullWidth
               variant="outlined" 
+              InputLabelProps={{shrink: true}}
               required
             />
   
@@ -67,6 +68,7 @@ function CompanyUpdate(props) {
               autoComplete="off"
               fullWidth
               variant="outlined"
+              InputLabelProps={{shrink: true}}
               required
             />
 
@@ -80,6 +82,7 @@ function CompanyUpdate(props) {
               multiline
               rows={2}
               variant="outlined" 
+              InputLabelProps={{shrink: true}}
               required
             />
             <FormControlLabel
@@ -104,6 +107,7 @@ function CompanyUpdate(props) {
               multiline
               rows={4}
               variant="outlined" 
+              InputLabelProps={{shrink: true}}
               required
             />
             <TextField
@@ -115,6 +119,7 @@ function CompanyUpdate(props) {
               value={formData.glassdoor_rating}
               onChange={handleChange}
               variant="outlined" 
+              InputLabelProps={{shrink: true}}
               required
             />
              <FormControl variant="outlined">
@@ -142,6 +147,7 @@ function CompanyUpdate(props) {
               multiline
               rows={4}
               variant="outlined" 
+              InputLabelProps={{shrink: true}}
             />
             <Button type="submit" variant="contained" color="primary">
               Update

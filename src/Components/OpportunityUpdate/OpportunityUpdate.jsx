@@ -54,6 +54,7 @@ const OpportunityUpdate = (props) => {
             fullWidth
             required
             variant="outlined" 
+            InputLabelProps={{shrink: true}}
           />
           <Box component="fieldset" mt={1} borderColor="transparent" display="flex">
           <Typography> Interest: </Typography>
@@ -87,6 +88,7 @@ const OpportunityUpdate = (props) => {
             autoComplete="off"
             required
             variant="outlined"
+            InputLabelProps={{shrink: true}}
           />
           <TextField
             id="opportunity-salary"
@@ -98,6 +100,7 @@ const OpportunityUpdate = (props) => {
             autoComplete="off"
             required
             variant="outlined"
+            InputLabelProps={{shrink: true}}
           />
           <TextField
             id="opportunity-responsibilities"
@@ -111,6 +114,7 @@ const OpportunityUpdate = (props) => {
             rows={2}
             required
             variant="outlined"
+            InputLabelProps={{shrink: true}}
           />
           <TextField
             id="opportunity-requirements"
@@ -125,6 +129,7 @@ const OpportunityUpdate = (props) => {
             required
             fullWidth
             variant="outlined"
+            InputLabelProps={{shrink: true}}
           />
           <TextField
             id="opportunity-years-experience-required"
@@ -136,6 +141,7 @@ const OpportunityUpdate = (props) => {
             autoComplete="off"
             required
             variant="outlined"
+            InputLabelProps={{shrink: true}}
           />
           <TextField
             id="opportunity-role_list_url"
@@ -148,6 +154,7 @@ const OpportunityUpdate = (props) => {
             autoComplete="off"
             required
             variant="outlined"
+            InputLabelProps={{shrink: true}}
           />
           <FormControl variant="outlined">
             <InputLabel id="listing_source">Listing Source</InputLabel>
@@ -174,6 +181,7 @@ const OpportunityUpdate = (props) => {
             autoComplete="off"
             required
             variant="outlined"
+            InputLabelProps={{shrink: true}}
           />
           <TextField
             id="opportunity-notes"
@@ -184,6 +192,7 @@ const OpportunityUpdate = (props) => {
             multiline
             rows={4}
             variant="outlined" 
+            InputLabelProps={{shrink: true}}
           />
           <Button type="submit" variant="contained" color="primary">
             Update

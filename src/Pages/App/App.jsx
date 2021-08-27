@@ -41,6 +41,9 @@ import * as currentUserService from '../../services/currentUserService.js'
 import * as authService from '../../services/authService.js'
 // Styles
 import './App.css';
+import ContactUpdate from '../../Components/ContactUpdate/ContactUpdate';
+import CompanyUpdate from '../../Components/CompanyUpdate/CompanyUpdate';
+import OpportunityUpdate from '../../Components/OpportunityUpdate/OpportunityUpdate';
 
 
 const App = (props) => {
@@ -333,6 +336,9 @@ const App = (props) => {
           <Route exact path='/opportunities/:id'>
             { loggedIn ? <OpportunityDetail /> : <Redirect to='/'/> }
           </Route>
+          <Route exact path='/opportunities/:id/update'>
+            { loggedIn ? <OpportunityUpdate /> : <Redirect to='/'/> }
+          </Route>
           <Route exact path='/activities'>
             { loggedIn ? <ActivityIndex activities={activities} /> : <Redirect to='/'/> }
           </Route>
@@ -363,6 +369,9 @@ const App = (props) => {
           <Route exact path='/contacts/:id'>
             { loggedIn ? <ContactDetail /> : <Redirect to='/'/> }
           </Route>
+          <Route exact path='/contacts/:id/update'>
+            { loggedIn ? <ContactUpdate /> : <Redirect to='/'/> }
+          </Route>
           <Route exact path='/companies'>
             { loggedIn ? <CompanyIndex companies={companies} /> : <Redirect to='/'/> }
           </Route>
@@ -371,6 +380,9 @@ const App = (props) => {
           </Route>
           <Route exact path='/companies/:id'>
             { loggedIn ? <CompanyDetail /> : <Redirect to='/'/> }
+          </Route>
+          <Route exact path='/companies/:id/update'>
+            { loggedIn ? <CompanyUpdate /> : <Redirect to='/'/> }
           </Route>
           <Route exact path='/opportunities/:id/new-activity'>
             { loggedIn ? <NewActivityForm handleAddActivity={handleAddActivity} currentUser={currentUser}/> : <Redirect to='/'/> }
