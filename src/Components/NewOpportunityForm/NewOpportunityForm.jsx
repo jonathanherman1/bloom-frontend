@@ -20,7 +20,8 @@ function NewOpportunityForm(props) {
       date: '',
       notes: '',
       listing_source: '',
-      stars: 4
+      stars: 4,
+      owner: props.currentUser.id 
     })
     
     const handleChange = (e) => {
@@ -36,6 +37,7 @@ function NewOpportunityForm(props) {
         notes: '',
         listing_source: '',
         stars: '',
+        owner: props.currentUser.id 
       })
     }
   

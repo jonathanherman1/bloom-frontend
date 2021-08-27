@@ -12,7 +12,8 @@ function NewContactForm(props) {
         email: '',
         department: '',
         first_contact_through: '',
-        notes: ''
+        notes: '',
+        owner: props.currentUser.id
     })
 
     const handleChange = (e) => {
@@ -36,6 +37,7 @@ function NewContactForm(props) {
             department: '',
             first_contact_through: '',
             notes: '',
+            owner: props.currentUser.id
         })
     }
 
