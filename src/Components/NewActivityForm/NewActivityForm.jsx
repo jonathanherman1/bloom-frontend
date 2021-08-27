@@ -12,7 +12,7 @@ function NewActivityForm(props) {
       notes: '',
       contact_method: '',
       type: '',
-      contacts: '',
+      contacts: [],
       company: '',
       opportunity: '',
       owner: props.currentUser.id
