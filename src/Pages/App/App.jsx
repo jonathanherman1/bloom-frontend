@@ -274,7 +274,9 @@ const App = (props) => {
   const handleAddContact = async (formData) => {
     try {
       const newContact = await contactService.create(formData)
-      setContacts([newContact, ...contacts])
+      if (newContact.id){
+        setContacts([newContact, ...contacts])
+      }
     } catch (error) {
       throw error
     }
