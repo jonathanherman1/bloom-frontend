@@ -24,7 +24,7 @@ const OpportunityUpdate = (props) => {
       }
 
     return (  <div className={styles.container}>
-        <h2>Add Opportunity</h2>
+        <h2>Edit Opportunity</h2>
         <form 
            id="add-opportunity-form" 
            onSubmit={handleSubmit}
@@ -42,7 +42,6 @@ const OpportunityUpdate = (props) => {
             required
             variant="outlined" 
           />
-
           <Box component="fieldset" mt={1} borderColor="transparent" display="flex">
           <Typography> Interest: </Typography>
           <Rating
@@ -53,7 +52,6 @@ const OpportunityUpdate = (props) => {
           />
           {formData.stars !== null && <Box ml={2} mt={1.5}>{[hover !== -1 ? hover : formData.rating]}</Box>}
           </Box>
-
           <TextField
             id="opportunity-date"
             type="date"
@@ -66,7 +64,6 @@ const OpportunityUpdate = (props) => {
             variant="outlined"
             InputLabelProps={{ shrink: true }}
           />
-
           <TextField
             id="opportunity-location"
             type="location"
@@ -78,7 +75,6 @@ const OpportunityUpdate = (props) => {
             required
             variant="outlined"
           />
-
           <TextField
             id="opportunity-salary"
             type="number"
@@ -90,7 +86,6 @@ const OpportunityUpdate = (props) => {
             required
             variant="outlined"
           />
-
           <TextField
             id="opportunity-responsibilities"
             type="test"
@@ -104,7 +99,6 @@ const OpportunityUpdate = (props) => {
             required
             variant="outlined"
           />
-
           <TextField
             id="opportunity-requirements"
             type="test"
@@ -119,7 +113,6 @@ const OpportunityUpdate = (props) => {
             fullWidth
             variant="outlined"
           />
-
           <TextField
             id="opportunity-years-experience-required"
             type="text"
@@ -131,7 +124,6 @@ const OpportunityUpdate = (props) => {
             required
             variant="outlined"
           />
-
           <TextField
             id="opportunity-role_list_url"
             type="text"
@@ -170,7 +162,6 @@ const OpportunityUpdate = (props) => {
             required
             variant="outlined"
           />
-
           <TextField
             id="opportunity-notes"
             name="notes"
@@ -182,7 +173,7 @@ const OpportunityUpdate = (props) => {
             variant="outlined" 
           />
           <Button type="submit" variant="contained" color="primary">
-            Add Opportunity
+            Update
           </Button>
         </form>
       </div> );
