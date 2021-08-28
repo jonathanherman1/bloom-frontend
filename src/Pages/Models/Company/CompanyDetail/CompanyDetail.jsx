@@ -12,7 +12,7 @@ import Typography from '@material-ui/core/Typography'
 import classes from './CompanyDetail.module.css'
 import BusinessIcon from '@material-ui/icons/Business'
 import NoteIcon from '@material-ui/icons/Note'
-import EditDeleteBtn from '../EditDeleteBtn/EditDeleteBtn'
+import EditDeleteBtn from '../../../../Components/EditDeleteBtn/EditDeleteBtn'
 import MeetingRoomIcon from '@material-ui/icons/MeetingRoom';
 import LanguageIcon from '@material-ui/icons/Language';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
@@ -20,7 +20,7 @@ import ThumbUpAltIcon from '@material-ui/icons/ThumbUpAlt';
 import ThumbDownAltIcon from '@material-ui/icons/ThumbDownAlt';
 import AssignmentIcon from '@material-ui/icons/Assignment';
 
-import * as companyService from '../../services/companyService.js'
+import * as companyService from '../../../../services/companyService.js'
 
 const CompanyDetail = (props) => {
     const [companyDetail, setCompanyDetail] = useState('')

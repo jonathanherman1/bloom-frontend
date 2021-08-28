@@ -6,7 +6,7 @@ import { withRouter } from 'react-router-dom'
 import classes from "./OpportunityDetailCard.module.css";
 import FullWidthTab from "./FullWidthTab/FullWidthTab";
 import Table from "./Table/Table";
-import EditDeleteBtn from "../EditDeleteBtn/EditDeleteBtn";
+import EditDeleteBtn from "../../../../Components/EditDeleteBtn/EditDeleteBtn";
 
 
 const OpportunityDetailCard = ( props ) => {

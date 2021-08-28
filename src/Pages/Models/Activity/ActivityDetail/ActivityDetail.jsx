@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { withRouter } from "react-router-dom";
 import classes from "./ActivityDetail.module.css";
-import * as activityService from "../../services/activityService.js";
+import * as activityService from "../../../../services/activityService.js";
 
 import Avatar from "@material-ui/core/Avatar";
 import Box from "@material-ui/core/Box";
@@ -13,7 +13,7 @@ import ListItemText from "@material-ui/core/ListItemText";
 import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
 
-import EditDeleteBtn from "../EditDeleteBtn/EditDeleteBtn"
+import EditDeleteBtn from "../../../../Components/EditDeleteBtn/EditDeleteBtn"
 import LabelIcon from "@material-ui/icons/Label";
 import NoteIcon from "@material-ui/icons/Note";
 import TocIcon from "@material-ui/icons/Toc";

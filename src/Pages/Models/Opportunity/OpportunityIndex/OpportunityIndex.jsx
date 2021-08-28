@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom'
 
 import styles from './OpportunityIndex.module.css'
 
-import PrevCard from '../PrevCard/PrevCard'
-import Animation from '../Animation/AnimationNoCss'
+import PrevCard from '../../../../Components/PrevCard/PrevCard'
+import Animation from '../../../../Components/Animation/AnimationNoCss'
 
-import seedAnimation from '../../Assets/lottie-files/73344-seed.json'
+import seedAnimation from '../../../../Assets/lottie-files/73344-seed.json'
 
 import Button from '@material-ui/core/Button'
 import Box from '@material-ui/core/Box'

@@ -9,14 +9,14 @@ import Box from '@material-ui/core/Box'
 import Paper from '@material-ui/core/Paper'
 import Divider from '@material-ui/core/Divider'
 import Typography from '@material-ui/core/Typography'
-import * as contactService from '../../services/contactService.js'
+import * as contactService from '../../../../services/contactService.js'
 import classes from './ContactDetail.module.css'
 import PhoneIcon from '@material-ui/icons/Phone'
 import EmailIcon from '@material-ui/icons/Email'
 import BusinessIcon from '@material-ui/icons/Business'
 import NoteIcon from '@material-ui/icons/Note'
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
-import EditDeleteBtn from '../EditDeleteBtn/EditDeleteBtn.jsx'
+import EditDeleteBtn from '../../../../Components/EditDeleteBtn/EditDeleteBtn.jsx'
 
 const ContactDetail = (props) => {
     const [contactDetail, setContactDetail] = useState('')

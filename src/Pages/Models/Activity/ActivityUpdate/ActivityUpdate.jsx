@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { withRouter, useHistory } from 'react-router-dom';
-import * as activityService from '../../services/activityService.js'
+import * as activityService from '../../../../services/activityService.js'
 
 // Styles
 import styles from './ActivityUpdate.module.css';

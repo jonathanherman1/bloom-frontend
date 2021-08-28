@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { withRouter, useHistory } from 'react-router-dom'
-import * as contactService from '../../services/contactService.js'
+import * as contactService from '../../../../services/contactService.js'
 
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';

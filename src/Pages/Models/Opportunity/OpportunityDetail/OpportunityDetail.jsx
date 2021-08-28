@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { withRouter } from 'react-router-dom';
 import OpportunityDetailCard from './OpportunityDetailCard'
-import * as opportunityService from '../../services/opportunityService.js'
+import * as opportunityService from '../../../../services/opportunityService.js'
 import styles from './OpportunityDetailCard.module.css'
 
 const OpportunityDetail = (props) => {

@@ -2,10 +2,10 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styles from "./ContactIndex.module.css";
 
-import PrevCard from "../PrevCard/PrevCard";
-import Animation from "../Animation/AnimationNoCss";
+import PrevCard from "../../../../Components/PrevCard/PrevCard";
+import Animation from "../../../../Components/Animation/AnimationNoCss";
 
-import contactAnimation from "../../Assets/lottie-files/contact.json";
+import contactAnimation from "../../../../Assets/lottie-files/contact.json";
 
 import AddCircleOutlineIcon from "@material-ui/icons/AddCircleOutline";
 import AddIcon from '@material-ui/icons/Add';

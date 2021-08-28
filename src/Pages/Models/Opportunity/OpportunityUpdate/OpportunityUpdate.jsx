@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { withRouter, useHistory } from 'react-router-dom'
-import * as opportunityService from '../../services/opportunityService.js'
+import * as opportunityService from '../../../../services/opportunityService.js'
 import styles from './OpportunityUpdate.module.css'
 
 import Box from '@material-ui/core/Box'

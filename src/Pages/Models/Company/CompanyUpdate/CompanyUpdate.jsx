@@ -13,7 +13,7 @@ import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import { Typography } from '@material-ui/core';
 
-import * as companyService from '../../services/companyService.js'
+import * as companyService from '../../../../services/companyService.js'
 
 
 function CompanyUpdate(props) {

@@ -2,11 +2,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 // Components
-import PrevCard from '../PrevCard/PrevCard';
-import Animation from '../Animation/AnimationNoCss';
+import PrevCard from '../../../../Components/PrevCard/PrevCard';
+import Animation from '../../../../Components/Animation/AnimationNoCss';
 
 // Content
-import companyAnimation from '../../Assets/lottie-files/71205-company-discussion.json';
+import companyAnimation from '../../../../Assets/lottie-files/71205-company-discussion.json';
 
 // Material UI
 import Fab from '@material-ui/core/Fab';
