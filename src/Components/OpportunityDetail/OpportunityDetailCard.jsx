@@ -39,14 +39,14 @@ const OpportunityDetailCard = ( props ) => {
           {props.opportunityDetail.name} at Company
         </Typography>
         <Box>
-                <EditDeleteBtn 
-                    model='opportunities'
-                    id={props.match.params.id}
-                    handleDelete={props.handleDelete}
-                    state={props.opportunities}
-                    setState={props.setOpportunities}
-                    />
-            </Box>
+          <EditDeleteBtn 
+              model='opportunities'
+              id={props.match.params.id}
+              handleDelete={props.handleDelete}
+              state={props.opportunities}
+              setState={props.setOpportunities}
+              />
+        </Box>
         <p>Status</p>
       </Box>
       <Box className={classes.detailsContainer} mt={1}>
