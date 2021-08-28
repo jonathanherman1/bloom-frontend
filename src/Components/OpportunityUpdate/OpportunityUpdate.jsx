@@ -38,7 +38,7 @@ const OpportunityUpdate = (props) => {
     return (  
       formData &&
       <div className={styles.container}>
-        <h2>Edit Opportunity</h2>
+        <Typography variant="h4">Edit Opportunity</Typography>
         <form 
            id="add-opportunity-form" 
            onSubmit={handleSubmit}
