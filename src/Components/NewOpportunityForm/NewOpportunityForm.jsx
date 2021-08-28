@@ -91,12 +91,13 @@ function NewOpportunityForm(props) {
             <Box component="fieldset" mt={1} borderColor="transparent" display="flex">
             <Typography> Interest: </Typography>
             <Rating
-                name="stars"
+                name="rating"
+                size="large"
                 value={formData.rating}
                 onChange={(event, newValue) => setFormData({ ...formData, rating: newValue })}
                 onChangeActive={(event, newHover) => {setHover(newHover);}}
             />
-            {formData.stars !== null && <Box ml={2} mt={1.5}>{[hover !== -1 ? hover : formData.rating]}</Box>}
+            {formData.rating !== null && <Box ml={2} mt={1.5}>{[hover !== -1 ? hover : formData.rating]}</Box>}
             </Box>
   
             <TextField

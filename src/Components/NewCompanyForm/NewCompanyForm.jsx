@@ -122,7 +122,7 @@ function NewCompanyForm(props) {
             <TextField
               id="company-glassdoor-rating"
               type="number"
-              max="5"
+              InputProps={{ inputProps: { min: 0, max: 5, step: 0.1 } }}
               name="glassdoor_rating"
               label="Glassdoor Rating"
               value={formData.glassdoor_rating}

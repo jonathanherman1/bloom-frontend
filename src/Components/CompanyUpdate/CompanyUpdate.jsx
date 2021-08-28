@@ -117,6 +117,7 @@ function CompanyUpdate(props) {
               max="5"
               name="glassdoor_rating"
               label="Glassdoor Rating"
+              InputProps={{ inputProps: { min: 0, max: 5, step: 0.1 } }}
               value={formData.glassdoor_rating}
               onChange={handleChange}
               variant="outlined" 
