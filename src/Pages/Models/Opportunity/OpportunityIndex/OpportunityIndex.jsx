@@ -1,19 +1,22 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-import styles from './OpportunityIndex.module.css'
-
-import PrevCard from '../../../../Components/PrevCard/PrevCard'
+// Components
 import Animation from '../../../../Components/Animation/AnimationNoCss'
+import PrevCard from '../../../../Components/PrevCard/PrevCard'
 
+// Content
 import seedAnimation from '../../../../Assets/lottie-files/73344-seed.json'
 
-import Button from '@material-ui/core/Button'
+import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline'
+import AddIcon from '@material-ui/icons/Add'
 import Box from '@material-ui/core/Box'
+import Button from '@material-ui/core/Button'
 import Fab from '@material-ui/core/Fab'
 import Tooltip from '@material-ui/core/Tooltip'
-import AddIcon from '@material-ui/icons/Add'
-import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline'
+
+// Styles
+import styles from './OpportunityIndex.module.css'
 
 const OpportunityIndex = ({ opportunities }) => {
 

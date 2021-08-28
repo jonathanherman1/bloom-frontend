@@ -1,12 +1,16 @@
 import React, { useState, useEffect } from 'react'
 import { withRouter, useHistory } from 'react-router-dom'
+
+// Services
 import * as contactService from '../../../../services/contactService.js'
 
-import TextField from '@material-ui/core/TextField';
+// Material UI
 import Button from '@material-ui/core/Button';
-import styles from './ContactUpdate.module.css'
 import MuiPhoneNumber from 'material-ui-phone-number'
+import TextField from '@material-ui/core/TextField';
 
+// Styles
+import styles from './ContactUpdate.module.css'
 
 function ContactUpdate(props) {
     const [ phoneNum, setPhoneNum ] = useState()

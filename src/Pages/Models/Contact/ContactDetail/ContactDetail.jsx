@@ -1,22 +1,30 @@
 import React, { useState, useEffect } from 'react'
 import { withRouter } from 'react-router-dom'
-import List from '@material-ui/core/List'
-import ListItem from '@material-ui/core/ListItem'
-import ListItemText from '@material-ui/core/ListItemText'
-import ListItemAvatar from '@material-ui/core/ListItemAvatar'
+
+// Components
+import EditDeleteBtn from '../../../../Components/EditDeleteBtn/EditDeleteBtn.jsx'
+
+// Services
+import * as contactService from '../../../../services/contactService.js'
+
+// Material UI
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import Avatar from '@material-ui/core/Avatar'
 import Box from '@material-ui/core/Box'
-import Paper from '@material-ui/core/Paper'
-import Divider from '@material-ui/core/Divider'
-import Typography from '@material-ui/core/Typography'
-import * as contactService from '../../../../services/contactService.js'
-import classes from './ContactDetail.module.css'
-import PhoneIcon from '@material-ui/icons/Phone'
-import EmailIcon from '@material-ui/icons/Email'
 import BusinessIcon from '@material-ui/icons/Business'
+import Divider from '@material-ui/core/Divider'
+import EmailIcon from '@material-ui/icons/Email'
+import List from '@material-ui/core/List'
+import ListItem from '@material-ui/core/ListItem'
+import ListItemAvatar from '@material-ui/core/ListItemAvatar'
+import ListItemText from '@material-ui/core/ListItemText'
 import NoteIcon from '@material-ui/icons/Note'
-import AccountCircleIcon from '@material-ui/icons/AccountCircle';
-import EditDeleteBtn from '../../../../Components/EditDeleteBtn/EditDeleteBtn.jsx'
+import Paper from '@material-ui/core/Paper'
+import PhoneIcon from '@material-ui/icons/Phone'
+import Typography from '@material-ui/core/Typography'
+
+// Styles
+import styles from './ContactDetail.module.css'
 
 const ContactDetail = (props) => {
     const [contactDetail, setContactDetail] = useState('')
@@ -31,9 +39,9 @@ const ContactDetail = (props) => {
 
     return (
         contactDetail &&
-        <Box className={classes.container} mt={4}>
-            <Box className={classes.titleContainer}>
-            <Paper elevation={10}  className={classes.titlePaper}>
+        <Box className={styles.container} mt={4}>
+            <Box className={styles.titleContainer}>
+            <Paper elevation={10}  className={styles.titlePaper}>
                 <Typography variant="h3"> {contactDetail.name} </Typography>
                 <Box>
                 <EditDeleteBtn 
@@ -46,9 +54,9 @@ const ContactDetail = (props) => {
             </Box>
             </Paper>
             </Box>
-         <Box className={classes.listContainer}>
+         <Box className={styles.listContainer}>
             <Paper>
-            <List className={classes.root}>
+            <List className={styles.root}>
                 <ListItem>
                     <ListItemAvatar>
                     <Avatar>

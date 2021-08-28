@@ -1,10 +1,13 @@
 import React, { useState } from 'react'
 import { useHistory, useParams } from 'react-router-dom'
-import styles from './ContactCreate.module.css'
 
+// Material UI
 import Button from '@material-ui/core/Button'
 import MuiPhoneNumber from 'material-ui-phone-number'
 import TextField from '@material-ui/core/TextField'
+
+// Styles
+import styles from './ContactCreate.module.css'
 
 function ContactCreate(props) {
     const { id } = useParams()

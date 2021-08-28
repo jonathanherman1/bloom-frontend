@@ -2,15 +2,13 @@ import React from "react"
 import { Link } from "react-router-dom"
 
 // Components
-
-import PrevCard from "../../../../Components/PrevCard/PrevCard"
 import Animation from '../../../../Components/Animation/AnimationNoCss'
+import PrevCard from "../../../../Components/PrevCard/PrevCard"
 
 // Content
 import plantAnimation from '../../../../Assets/lottie-files/38193-relaxing-floral-animation.json'
 
 // Material UI
-
 import Box from "@material-ui/core/Box"
 import Fab from '@material-ui/core/Fab';
 import AddIcon from '@material-ui/icons/Add';

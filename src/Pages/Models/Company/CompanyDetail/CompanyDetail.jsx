@@ -1,26 +1,33 @@
 import React, { useState, useEffect } from 'react';
 import { withRouter } from 'react-router-dom';
-import List from '@material-ui/core/List'
-import ListItem from '@material-ui/core/ListItem'
-import ListItemText from '@material-ui/core/ListItemText'
-import ListItemAvatar from '@material-ui/core/ListItemAvatar'
+
+// Components
+import EditDeleteBtn from '../../../../Components/EditDeleteBtn/EditDeleteBtn'
+
+// Services
+import * as companyService from '../../../../services/companyService.js'
+
+// Material UI
+import AssignmentIcon from '@material-ui/icons/Assignment';
 import Avatar from '@material-ui/core/Avatar'
 import Box from '@material-ui/core/Box'
-import Paper from '@material-ui/core/Paper'
-import Divider from '@material-ui/core/Divider'
-import Typography from '@material-ui/core/Typography'
-import classes from './CompanyDetail.module.css'
 import BusinessIcon from '@material-ui/icons/Business'
-import NoteIcon from '@material-ui/icons/Note'
-import EditDeleteBtn from '../../../../Components/EditDeleteBtn/EditDeleteBtn'
-import MeetingRoomIcon from '@material-ui/icons/MeetingRoom';
+import Divider from '@material-ui/core/Divider'
 import LanguageIcon from '@material-ui/icons/Language';
+import List from '@material-ui/core/List'
+import ListItem from '@material-ui/core/ListItem'
+import ListItemAvatar from '@material-ui/core/ListItemAvatar'
+import ListItemText from '@material-ui/core/ListItemText'
 import LocationOnIcon from '@material-ui/icons/LocationOn';
-import ThumbUpAltIcon from '@material-ui/icons/ThumbUpAlt';
+import MeetingRoomIcon from '@material-ui/icons/MeetingRoom';
+import NoteIcon from '@material-ui/icons/Note'
+import Paper from '@material-ui/core/Paper'
 import ThumbDownAltIcon from '@material-ui/icons/ThumbDownAlt';
-import AssignmentIcon from '@material-ui/icons/Assignment';
+import ThumbUpAltIcon from '@material-ui/icons/ThumbUpAlt';
+import Typography from '@material-ui/core/Typography'
 
-import * as companyService from '../../../../services/companyService.js'
+// Styles
+import classes from './CompanyDetail.module.css'
 
 const CompanyDetail = (props) => {
     const [companyDetail, setCompanyDetail] = useState('')

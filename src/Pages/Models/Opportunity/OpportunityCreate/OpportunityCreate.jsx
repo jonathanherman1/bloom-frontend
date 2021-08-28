@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
-import styles from './OpportunityCreate.module.css'
 
+// Material UI
 import Box from '@material-ui/core/Box'
 import Button from '@material-ui/core/Button'
 import FormControl from '@material-ui/core/FormControl'
@@ -11,6 +11,9 @@ import Rating from '@material-ui/lab/Rating'
 import Select from '@material-ui/core/Select'
 import TextField from '@material-ui/core/TextField'
 import Typography from '@material-ui/core/Typography'
+
+// Styles
+import styles from './OpportunityCreate.module.css'
 
 function OpportunityCreate(props) {
     const [ hover, setHover] = useState(-1)

@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
 
-import styles from './ActivityCreate.module.css';
-
+// Material UI
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
+
+// Styles
+import styles from './ActivityCreate.module.css';
+
 
 
 function ActivityCreate(props) {

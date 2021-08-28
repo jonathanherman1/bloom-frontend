@@ -1,12 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import styles from "./ContactIndex.module.css";
 
-import PrevCard from "../../../../Components/PrevCard/PrevCard";
+// Components
 import Animation from "../../../../Components/Animation/AnimationNoCss";
+import PrevCard from "../../../../Components/PrevCard/PrevCard";
 
+// Content
 import contactAnimation from "../../../../Assets/lottie-files/contact.json";
 
+// Material UI
 import AddCircleOutlineIcon from "@material-ui/icons/AddCircleOutline";
 import AddIcon from '@material-ui/icons/Add';
 import Box from "@material-ui/core/Box";
@@ -14,6 +16,8 @@ import Button from "@material-ui/core/Button";
 import Fab from '@material-ui/core/Fab';
 import Tooltip from '@material-ui/core/Tooltip';
 
+// Styles
+import styles from "./ContactIndex.module.css";
 
 const ContactIndex = ({ contacts }) => {
 

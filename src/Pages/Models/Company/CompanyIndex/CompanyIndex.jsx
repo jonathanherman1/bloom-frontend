@@ -2,19 +2,19 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 // Components
-import PrevCard from '../../../../Components/PrevCard/PrevCard';
 import Animation from '../../../../Components/Animation/AnimationNoCss';
+import PrevCard from '../../../../Components/PrevCard/PrevCard';
 
 // Content
 import companyAnimation from '../../../../Assets/lottie-files/71205-company-discussion.json';
 
 // Material UI
-import Fab from '@material-ui/core/Fab';
-import Box from '@material-ui/core/Box';
-import AddIcon from '@material-ui/icons/Add';
-import Button from '@material-ui/core/Button';
-import Tooltip from '@material-ui/core/Tooltip';
 import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
+import AddIcon from '@material-ui/icons/Add';
+import Box from '@material-ui/core/Box';
+import Button from '@material-ui/core/Button';
+import Fab from '@material-ui/core/Fab';
+import Tooltip from '@material-ui/core/Tooltip';
 
 // Styles
 import styles from './CompanyIndex.module.css';

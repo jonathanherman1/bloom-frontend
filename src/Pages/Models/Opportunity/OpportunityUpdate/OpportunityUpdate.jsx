@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import { withRouter, useHistory } from 'react-router-dom'
-import * as opportunityService from '../../../../services/opportunityService.js'
-import styles from './OpportunityUpdate.module.css'
 
+// Services
+import * as opportunityService from '../../../../services/opportunityService.js'
+
+// Material UI
 import Box from '@material-ui/core/Box'
 import Button from '@material-ui/core/Button'
 import FormControl from '@material-ui/core/FormControl'
@@ -12,6 +14,9 @@ import Rating from '@material-ui/lab/Rating'
 import Select from '@material-ui/core/Select'
 import TextField from '@material-ui/core/TextField'
 import Typography from '@material-ui/core/Typography'
+
+// Styles
+import styles from './OpportunityUpdate.module.css'
 
 const OpportunityUpdate = (props) => {
     const [ hover, setHover ] = useState(-1)

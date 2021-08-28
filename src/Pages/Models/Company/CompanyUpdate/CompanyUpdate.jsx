@@ -1,19 +1,22 @@
 import React, { useState, useEffect } from 'react';
 import { withRouter, useHistory } from 'react-router-dom';
 
-// Styles
-import styles from './CompanyUpdate.module.css';
-import TextField from '@material-ui/core/TextField';
+// Services
+import * as companyService from '../../../../services/companyService.js'
+
+// Material UI
 import Button from '@material-ui/core/Button';
-import Switch from '@material-ui/core/Switch';
+import FormControl from '@material-ui/core/FormControl';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
-import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
+import Switch from '@material-ui/core/Switch';
+import TextField from '@material-ui/core/TextField';
 import { Typography } from '@material-ui/core';
 
-import * as companyService from '../../../../services/companyService.js'
+// Styles
+import styles from './CompanyUpdate.module.css';
 
 
 function CompanyUpdate(props) {

@@ -1,11 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { withRouter, useHistory } from 'react-router-dom';
+
+// Services
 import * as activityService from '../../../../services/activityService.js'
+
+// Material UI
+import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
 
 // Styles
 import styles from './ActivityUpdate.module.css';
-import TextField from '@material-ui/core/TextField';
-import Button from '@material-ui/core/Button';
 
 function ActivityUpdate(props) {
     const [formData, setFormData] = useState('')

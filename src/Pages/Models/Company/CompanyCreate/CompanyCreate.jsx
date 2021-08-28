@@ -1,16 +1,19 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import styles from './CompanyCreate.module.css';
 
+// Material UI
 import Button from '@material-ui/core/Button';
+import InputLabel from '@material-ui/core/InputLabel';
 import FormControl from '@material-ui/core/FormControl';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
-import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
-import Select from '@material-ui/core/Select';
-import Switch from '@material-ui/core/Switch';
 import TextField from '@material-ui/core/TextField';
 import Typography from '@material-ui/core/Typography';
+import Select from '@material-ui/core/Select';
+import Switch from '@material-ui/core/Switch';
+
+// Styles
+import styles from './CompanyCreate.module.css';
 
 function CompanyCreate(props) {
     const [formData, setFormData] = useState({

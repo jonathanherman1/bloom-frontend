@@ -1,13 +1,18 @@
 import React, { useState, useEffect } from 'react';
+import { withRouter } from 'react-router-dom'
+
+// Components
+import EditDeleteBtn from "../../../../Components/EditDeleteBtn/EditDeleteBtn";
+import FullWidthTab from "./FullWidthTab/FullWidthTab";
+import Table from "./Table/Table";
+
+// Material UI
 import Box from "@material-ui/core/Box";
 import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
-import { withRouter } from 'react-router-dom'
-import classes from "./OpportunityDetailCard.module.css";
-import FullWidthTab from "./FullWidthTab/FullWidthTab";
-import Table from "./Table/Table";
-import EditDeleteBtn from "../../../../Components/EditDeleteBtn/EditDeleteBtn";
 
+// Styles
+import styles from "./OpportunityDetailCard.module.css";
 
 const OpportunityDetailCard = ( props ) => {
   const [oppActivities, setOppActivities] = useState([])
@@ -34,7 +39,7 @@ const OpportunityDetailCard = ( props ) => {
 
   return (
     <>
-      <Box className={classes.titleContainer}>
+      <Box className={styles.titleContainer}>
         <Typography variant="h5">
           {props.opportunityDetail.name} at Company
         </Typography>
@@ -49,8 +54,8 @@ const OpportunityDetailCard = ( props ) => {
         </Box>
         <p>Status</p>
       </Box>
-      <Box className={classes.detailsContainer} mt={1}>
-        <Box  mt={1} className={classes.container1}>
+      <Box className={styles.detailsContainer} mt={1}>
+        <Box  mt={1} className={styles.container1}>
           <Paper square>
             <FullWidthTab 
               opportunityDetail={props.opportunityDetail} 
@@ -59,15 +64,15 @@ const OpportunityDetailCard = ( props ) => {
             />
           </Paper>
         </Box>
-        <Box  mt={1} className={classes.container2}>
-          <Box className={classes.container2left}>
+        <Box  mt={1} className={styles.container2}>
+          <Box className={styles.container2left}>
             <p>pros</p>
           </Box>
-          <Box className={classes.container2right}>
+          <Box className={styles.container2right}>
             <p>cons</p>
           </Box>
         </Box>
-        <Box  mt={1} className={classes.container3}>
+        <Box  mt={1} className={styles.container3}>
           <Table opportunityDetail={props.opportunityDetail} />
         </Box>
       </Box>
