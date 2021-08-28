@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
 import { useHistory, useParams } from 'react-router-dom'
-import styles from './NewContactForm.module.css'
+import styles from './ContactCreate.module.css'
 
 import Button from '@material-ui/core/Button'
 import MuiPhoneNumber from 'material-ui-phone-number'
 import TextField from '@material-ui/core/TextField'
 
-function NewContactForm(props) {
+function ContactCreate(props) {
     const { id } = useParams()
     const [ phoneNum, setPhoneNum ] = useState('')
     const [formData, setFormData] = useState({
@@ -139,4 +139,4 @@ function NewContactForm(props) {
     )
 }
 
-export default NewContactForm
+export default ContactCreate

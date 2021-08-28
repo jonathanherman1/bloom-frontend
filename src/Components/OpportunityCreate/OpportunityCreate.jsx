@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
-import styles from './NewOpportunityForm.module.css'
+import styles from './OpportunityCreate.module.css'
 
 import Box from '@material-ui/core/Box'
 import Button from '@material-ui/core/Button'
@@ -12,7 +12,7 @@ import Select from '@material-ui/core/Select'
 import TextField from '@material-ui/core/TextField'
 import Typography from '@material-ui/core/Typography'
 
-function NewOpportunityForm(props) {
+function OpportunityCreate(props) {
     const [ hover, setHover] = useState(-1)
     const todaysDate = new Date().getFullYear()+"-"+((new Date().getMonth()+1) < 10 ? '0' : '')+(new Date().getMonth()+1)+"-"+(new Date().getDate() < 10 ? '0' : '')+(new Date().getDate())
     
@@ -235,4 +235,4 @@ function NewOpportunityForm(props) {
     )
 }
 
-export default NewOpportunityForm
+export default OpportunityCreate

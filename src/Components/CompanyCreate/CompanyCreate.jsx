@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import styles from './NewCompanyForm.module.css';
+import styles from './CompanyCreate.module.css';
 
 import Button from '@material-ui/core/Button';
 import FormControl from '@material-ui/core/FormControl';
@@ -12,7 +12,7 @@ import Switch from '@material-ui/core/Switch';
 import TextField from '@material-ui/core/TextField';
 import Typography from '@material-ui/core/Typography';
 
-function NewCompanyForm(props) {
+function CompanyCreate(props) {
     const [formData, setFormData] = useState({
       name: '',
       location: '',
@@ -164,4 +164,4 @@ function NewCompanyForm(props) {
     )
 }
 
-export default NewCompanyForm
+export default CompanyCreate

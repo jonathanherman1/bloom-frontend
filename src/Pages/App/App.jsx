@@ -11,19 +11,19 @@ import { Route, Switch, Redirect} from 'react-router-dom'
 import Nav from '../../Components/Nav/Nav'
 import LoginForm from '../../Components/LoginForm/LoginForm'
 import SignupForm from '../../Components/SignupForm/SignupForm'
-import NewOpportunityForm from '../../Components/NewOpportunityForm/NewOpportunityForm';
+import OpportunityCreate from '../../Components/OpportunityCreate/OpportunityCreate';
 import OpportunityIndex from '../../Components/OpportunityIndex/OpportunityIndex';
 import OpportunityDetail from '../../Components/OpportunityDetail/OpportunityDetail';
 import CompanyIndex from '../../Components/CompanyIndex/CompanyIndex'
 import CompanyDetail from '../../Components/CompanyDetail/CompanyDetail'
-import NewCompanyForm from '../../Components/NewCompanyForm/NewCompanyForm';
+import CompanyCreate from '../../Components/CompanyCreate/CompanyCreate';
 import ActivityIndex from '../../Components/ActivityIndex/ActivityIndex'
 import ActivityDetail from '../../Components/ActivityDetail/ActivityDetail'
 import ActivityUpdate from '../../Components/ActivityUpdate/ActivityUpdate'
-import NewActivityForm from '../../Components/NewActivityForm/NewActivityForm';
+import ActivityCreate from '../../Components/ActivityCreate/ActivityCreate';
 import ContactIndex from '../../Components/ContactIndex/ContactIndex'
 import ContactDetail from '../../Components/ContactDetail/ContactDetail'
-import NewContactForm from '../../Components/NewContactForm/NewContactForm';
+import ContactCreate from '../../Components/ContactCreate/ContactCreate';
 import BottomNav from '../../Components/Nav/BottomNav'
 
 // Animation
@@ -298,7 +298,7 @@ const App = (props) => {
           </Route>
           <Route exact path='/opportunities/new'>
             { loggedIn ? 
-              <NewOpportunityForm 
+              <OpportunityCreate 
                 handleAddOpportunity={handleAddOpportunity}
                 currentUser={currentUser}
               /> 
@@ -323,7 +323,7 @@ const App = (props) => {
           </Route>
           <Route exact path='/activities/new'>
             { loggedIn ? 
-               <NewActivityForm 
+               <ActivityCreate 
                  handleAddActivity={handleAddActivity}
                  currentUser={currentUser}
                /> : <Redirect to='/'/> }
@@ -345,7 +345,7 @@ const App = (props) => {
           </Route>
           <Route exact path='/contacts/new'>
             { loggedIn ? 
-                 <NewContactForm 
+                 <ContactCreate 
                  handleAddContact={handleAddContact}
                  currentUser={currentUser}
                  /> : <Redirect to='/'/> 
@@ -366,7 +366,7 @@ const App = (props) => {
             { loggedIn ? <CompanyIndex companies={companies} /> : <Redirect to='/'/> }
           </Route>
           <Route exact path='/companies/new'>
-            { loggedIn ?  <NewCompanyForm handleAddCompany={handleAddCompany} currentUser={currentUser}/> : <Redirect to='/'/> }
+            { loggedIn ?  <CompanyCreate handleAddCompany={handleAddCompany} currentUser={currentUser}/> : <Redirect to='/'/> }
           </Route>
           <Route exact path='/companies/:id'>
             { loggedIn ? 
@@ -380,11 +380,11 @@ const App = (props) => {
             { loggedIn ? <CompanyUpdate handleUpdateCompany={handleUpdateCompany} /> : <Redirect to='/'/> }
           </Route>
           <Route exact path='/opportunities/:id/new-activity'>
-            { loggedIn ? <NewActivityForm handleAddActivity={handleAddActivity} currentUser={currentUser}/> : <Redirect to='/'/> }
+            { loggedIn ? <ActivityCreate handleAddActivity={handleAddActivity} currentUser={currentUser}/> : <Redirect to='/'/> }
           </Route>
           <Route exact path='/opportunities/:id/new-contact'>
                 { loggedIn ? 
-                    <NewContactForm 
+                    <ContactCreate 
                     handleAddContact={handleAddContact}
                     currentUser={currentUser}
                   /> : <Redirect to='/'/> 

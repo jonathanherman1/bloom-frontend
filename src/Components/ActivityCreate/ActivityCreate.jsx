@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
 
-import styles from './NewActivityForm.module.css';
+import styles from './ActivityCreate.module.css';
 
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 
 
-function NewActivityForm(props) {
+function ActivityCreate(props) {
     const { id } = useParams()
     const [formData, setFormData] = useState({
       name: '',
@@ -114,4 +114,4 @@ function NewActivityForm(props) {
     )
 }
 
-export default NewActivityForm
+export default ActivityCreate
