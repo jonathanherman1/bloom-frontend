@@ -1,29 +1,29 @@
 import React, { useState, useEffect } from 'react';
-import {
-  createTheme,
-  ThemeProvider,
-  CssBaseline
-} from '@material-ui/core';
-import useMediaQuery from '@material-ui/core/useMediaQuery'
 import { Route, Switch, Redirect} from 'react-router-dom'
 
 // Components
 import Nav from '../../Components/Nav/Nav'
 import LoginForm from '../../Components/LoginForm/LoginForm'
 import SignupForm from '../../Components/SignupForm/SignupForm'
-import NewOpportunityForm from '../../Components/NewOpportunityForm/NewOpportunityForm';
-import OpportunityIndex from '../../Components/OpportunityIndex/OpportunityIndex';
-import OpportunityDetail from '../../Components/OpportunityDetail/OpportunityDetail';
-import CompanyIndex from '../../Components/CompanyIndex/CompanyIndex'
-import CompanyDetail from '../../Components/CompanyDetail/CompanyDetail'
-import NewCompanyForm from '../../Components/NewCompanyForm/NewCompanyForm';
-import ActivityIndex from '../../Components/ActivityIndex/ActivityIndex'
-import ActivityDetail from '../../Components/ActivityDetail/ActivityDetail'
-import ActivityUpdate from '../../Components/ActivityUpdate/ActivityUpdate'
-import NewActivityForm from '../../Components/NewActivityForm/NewActivityForm';
-import ContactIndex from '../../Components/ContactIndex/ContactIndex'
-import ContactDetail from '../../Components/ContactDetail/ContactDetail'
-import NewContactForm from '../../Components/NewContactForm/NewContactForm';
+
+// Pages
+import ActivityCreate from '../Models/Activity/ActivityCreate/ActivityCreate';
+import ActivityDetail from '../Models/Activity/ActivityDetail/ActivityDetail'
+import ActivityIndex from '../Models/Activity/ActivityIndex/ActivityIndex'
+import ActivityUpdate from '../Models/Activity/ActivityUpdate/ActivityUpdate'
+import CompanyCreate from '../Models/Company/CompanyCreate/CompanyCreate';
+import CompanyIndex from '../Models/Company/CompanyIndex/CompanyIndex'
+import CompanyDetail from '../Models/Company/CompanyDetail/CompanyDetail'
+import CompanyUpdate from '../Models/Company/CompanyUpdate/CompanyUpdate';
+import ContactCreate from '../Models/Contact/ContactCreate/ContactCreate';
+import ContactIndex from '../Models/Contact/ContactIndex/ContactIndex'
+import ContactDetail from '../Models/Contact/ContactDetail/ContactDetail'
+import ContactUpdate from '../Models/Contact/ContactUpdate/ContactUpdate';
+import OpportunityCreate from '../Models/Opportunity/OpportunityCreate/OpportunityCreate';
+import OpportunityIndex from '../Models/Opportunity/OpportunityIndex/OpportunityIndex';
+import OpportunityDetail from '../Models/Opportunity/OpportunityDetail/OpportunityDetail';
+import OpportunityUpdate from '../Models/Opportunity/OpportunityUpdate/OpportunityUpdate';
+
 import BottomNav from '../../Components/Nav/BottomNav'
 
 // Animation
@@ -45,12 +45,15 @@ import * as companyService from '../../services/companyService.js'
 import * as contactService from '../../services/contactService.js'
 import * as currentUserService from '../../services/currentUserService.js'
 import * as authService from '../../services/authService.js'
+
 // Styles
 import './App.css';
-import ContactUpdate from '../../Components/ContactUpdate/ContactUpdate';
-import CompanyUpdate from '../../Components/CompanyUpdate/CompanyUpdate';
-import OpportunityUpdate from '../../Components/OpportunityUpdate/OpportunityUpdate';
-
+import {
+  createTheme,
+  ThemeProvider,
+  CssBaseline
+} from '@material-ui/core';
+import useMediaQuery from '@material-ui/core/useMediaQuery'
 
 const App = (props) => {
       // <pre>
@@ -298,7 +301,7 @@ const App = (props) => {
           </Route>
           <Route exact path='/opportunities/new'>
             { loggedIn ? 
-              <NewOpportunityForm 
+              <OpportunityCreate 
                 handleAddOpportunity={handleAddOpportunity}
                 currentUser={currentUser}
               /> 
@@ -323,7 +326,7 @@ const App = (props) => {
           </Route>
           <Route exact path='/activities/new'>
             { loggedIn ? 
-               <NewActivityForm 
+               <ActivityCreate 
                  handleAddActivity={handleAddActivity}
                  currentUser={currentUser}
                /> : <Redirect to='/'/> }
@@ -345,7 +348,7 @@ const App = (props) => {
           </Route>
           <Route exact path='/contacts/new'>
             { loggedIn ? 
-                 <NewContactForm 
+                 <ContactCreate 
                  handleAddContact={handleAddContact}
                  currentUser={currentUser}
                  /> : <Redirect to='/'/> 
@@ -366,7 +369,7 @@ const App = (props) => {
             { loggedIn ? <CompanyIndex companies={companies} /> : <Redirect to='/'/> }
           </Route>
           <Route exact path='/companies/new'>
-            { loggedIn ?  <NewCompanyForm handleAddCompany={handleAddCompany} currentUser={currentUser}/> : <Redirect to='/'/> }
+            { loggedIn ?  <CompanyCreate handleAddCompany={handleAddCompany} currentUser={currentUser}/> : <Redirect to='/'/> }
           </Route>
           <Route exact path='/companies/:id'>
             { loggedIn ? 
@@ -380,11 +383,11 @@ const App = (props) => {
             { loggedIn ? <CompanyUpdate handleUpdateCompany={handleUpdateCompany} /> : <Redirect to='/'/> }
           </Route>
           <Route exact path='/opportunities/:id/new-activity'>
-            { loggedIn ? <NewActivityForm handleAddActivity={handleAddActivity} currentUser={currentUser}/> : <Redirect to='/'/> }
+            { loggedIn ? <ActivityCreate handleAddActivity={handleAddActivity} currentUser={currentUser}/> : <Redirect to='/'/> }
           </Route>
           <Route exact path='/opportunities/:id/new-contact'>
                 { loggedIn ? 
-                    <NewContactForm 
+                    <ContactCreate 
                     handleAddContact={handleAddContact}
                     currentUser={currentUser}
                   /> : <Redirect to='/'/> 
