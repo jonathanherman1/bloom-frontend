@@ -44,10 +44,10 @@ const OpportunityDetailCard = ( props ) => {
   return (
     <>
       <Box className={styles.titleContainer}>
+      <Box>
         <Typography variant="h5">
           {props.opportunityDetail.name} at Company
         </Typography>
-        <Box>
           <EditDeleteBtn 
               model='opportunities'
               id={props.match.params.id}
