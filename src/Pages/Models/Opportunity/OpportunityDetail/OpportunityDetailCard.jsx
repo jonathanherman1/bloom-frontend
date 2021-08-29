@@ -41,7 +41,7 @@ const OpportunityDetailCard = ( props ) => {
     <>
       <Box className={styles.titleContainer}>
         <Typography variant="h5">
-          {props.opportunityDetail.name} at Company
+          {props.opportunityDetail.name}
         </Typography>
         <Box>
           <EditDeleteBtn 
