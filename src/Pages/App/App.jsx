@@ -297,6 +297,7 @@ const App = (props) => {
           handleLogout={handleLogout}
           darkMode={darkMode}
           setDarkMode={setDarkMode}
+          username={username}
         />
         <Switch>
           <Route exact path='/'>

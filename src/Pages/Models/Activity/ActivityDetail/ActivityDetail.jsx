@@ -43,16 +43,20 @@ const ActivityDetail = (props) => {
       <Box className={styles.container} mt={4}>
         <Box className={styles.titleContainer}>
           <Paper elevation={10} className={styles.titlePaper}>
-            <Typography variant="h3"> {activityDetail.name} </Typography>
-            <Box>
-                <EditDeleteBtn 
-                    model='activities'
-                    id={props.match.params.id}
-                    handleDelete={props.handleDelete}
-                    state={props.activities}
-                    setState={props.setActivities}
+            <div className={styles.grid}>
+              <div className={styles.flex}>
+                <Typography variant='h5'> {activityDetail.name} </Typography>
+              </div>
+              <div className={styles.flexDots}>
+                  <EditDeleteBtn 
+                      model='activities'
+                      id={props.match.params.id}
+                      handleDelete={props.handleDelete}
+                      state={props.activities}
+                      setState={props.setActivities}
                     />
-            </Box>
+              </div>
+            </div>
           </Paper>
         </Box>
 

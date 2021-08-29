@@ -27,7 +27,7 @@ import ThumbUpAltIcon from '@material-ui/icons/ThumbUpAlt';
 import Typography from '@material-ui/core/Typography'
 
 // Styles
-import classes from './CompanyDetail.module.css'
+import styles from './CompanyDetail.module.css'
 
 const CompanyDetail = (props) => {
     const [companyDetail, setCompanyDetail] = useState('')
@@ -40,24 +40,30 @@ const CompanyDetail = (props) => {
 
     return ( 
         companyDetail &&
-        <Box className={classes.container} mt={4}>
-            <Box className={classes.titleContainer}>
-            <Paper elevation={10}  className={classes.titlePaper}>
-                <Typography variant="h3"> {companyDetail.name} </Typography>
-                <Box>
-                <EditDeleteBtn 
-                    model='companies'
-                    id={props.match.params.id}
-                    handleDelete={props.handleDelete}
-                    state={props.companies}
-                    setState={props.setCompanies}
-                    />
-            </Box>
+        <Box className={styles.container} mt={4}>
+            <Box className={styles.titleContainer}>
+            <Paper elevation={10} className={styles.titlePaper}>
+            {/* <div className={styles.paper}> */}
+              <div className={styles.grid}>
+                <div className={styles.flex}>
+                  <Typography variant="h5"> {companyDetail.name} </Typography>
+                </div>
+                <div className={styles.flexDots}>
+                  <EditDeleteBtn 
+                      model='companies'
+                      id={props.match.params.id}
+                      handleDelete={props.handleDelete}
+                      state={props.companies}
+                      setState={props.setCompanies}
+                  />
+                </div>
+              </div>
+            {/* </div> */}
             </Paper>
             </Box>
-         <Box className={classes.listContainer}>
+         <Box className={styles.listContainer}>
             <Paper>
-            <List className={classes.root}>
+            <List className={styles.root}>
                 <ListItem>
                     <ListItemAvatar>
                     <Avatar>

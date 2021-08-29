@@ -5,7 +5,7 @@ import { useHistory, useParams } from 'react-router-dom'
 import Button from '@material-ui/core/Button'
 import MuiPhoneNumber from 'material-ui-phone-number'
 import TextField from '@material-ui/core/TextField'
-
+import Typography from '@material-ui/core/Typography'
 // Styles
 import styles from './ContactCreate.module.css'
 
@@ -57,7 +57,7 @@ function ContactCreate(props) {
 
     return (
         <div className={styles.container}>
-            <h2>Add Contact</h2>
+            <Typography variant="h5" mb={1}>Add Contact</Typography>
             <form
                 id="add-contact-form"
                 onSubmit={handleSubmit}

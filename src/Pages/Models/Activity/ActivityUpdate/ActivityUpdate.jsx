@@ -5,8 +5,9 @@ import { withRouter, useHistory } from 'react-router-dom';
 import * as activityService from '../../../../services/activityService.js'
 
 // Material UI
-import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
+import TextField from '@material-ui/core/TextField';
+import Typography from '@material-ui/core/Typography'
 
 // Styles
 import styles from './ActivityUpdate.module.css';
@@ -33,7 +34,7 @@ function ActivityUpdate(props) {
   
     return (
         <div className={styles.container}>
-          <h2>Edit Activity</h2>
+          <Typography variant="h5" mb={1}>Edit Activity</Typography>
           <form 
               id="update-activity-form" 
               onSubmit={handleSubmit}

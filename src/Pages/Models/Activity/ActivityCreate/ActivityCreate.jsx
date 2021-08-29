@@ -4,7 +4,7 @@ import { useHistory, useParams } from 'react-router-dom';
 // Material UI
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
-
+import Typography from '@material-ui/core/Typography'
 // Styles
 import styles from './ActivityCreate.module.css';
 
@@ -48,7 +48,7 @@ function ActivityCreate(props) {
   
     return (
         <div className={styles.container}>
-          <h2>Add Activity</h2>
+          <Typography variant="h5" mb={1}>Add Activity</Typography>
           <form 
              id="add-activity-form" 
              onSubmit={handleSubmit}

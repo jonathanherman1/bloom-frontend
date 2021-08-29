@@ -95,13 +95,13 @@ export default function FullWidthTabs({oppActivities, oppContacts, id}) {
         <TabPanel value={value} index={0} dir={theme.direction}>
           {oppActivities.length ? 
             <div className={styles.grid}>
-              <div className={styles.flexCol}>
+              <div className={styles.flex}>
              <Link to={`/opportunities/${id}/new-activity`}>
               <Grid style={{ display: "flex" }}>
                 <AddCircleOutlineIcon 
                   />
                 <Typography>
-                    Add activity
+                &nbsp; Add activity
                 </Typography>
               </Grid>
              </Link>
@@ -110,13 +110,13 @@ export default function FullWidthTabs({oppActivities, oppContacts, id}) {
              </div>
              :
              <div className={styles.grid}>
-              <div className={styles.flexCol}>
+              <div className={styles.flex}>
              <Link to={`/opportunities/${id}/new-activity`}>
               <Grid style={{ display: "flex" }}>
                 <AddCircleOutlineIcon 
                   />
                 <Typography>
-                    Add activity
+                &nbsp; Add activity
                 </Typography>
               </Grid>
              </Link>
@@ -127,13 +127,13 @@ export default function FullWidthTabs({oppActivities, oppContacts, id}) {
         <TabPanel value={value} index={1} dir={theme.direction}>
         {oppContacts.length ? 
             <div className={styles.grid}>
-              <div className={styles.flexCol}>
+              <div className={styles.flex}>
              <Link to={`/opportunities/${id}/new-contact`}>
               <Grid style={{ display: "flex" }}>
                 <AddCircleOutlineIcon 
                   />
                 <Typography>
-                    Add contact
+                &nbsp; Add contact
                 </Typography>
               </Grid>
              </Link>
@@ -142,13 +142,13 @@ export default function FullWidthTabs({oppActivities, oppContacts, id}) {
              </div>
              :
              <div className={styles.grid}>
-              <div className={styles.flexCol}>
+              <div className={styles.flex}>
              <Link to={`/opportunities/${id}/new-contact`}>
               <Grid style={{ display: "flex" }}>
                 <AddCircleOutlineIcon 
                   />
                 <Typography>
-                    Add contact
+                &nbsp; Add contact
                 </Typography>
               </Grid>
              </Link>
