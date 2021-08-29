@@ -31,7 +31,6 @@ function CompanyCreate(props) {
 
     const handleChange = (e) => {
       setFormData({...formData, [e.target.name]: e.target.value})
-      console.log(formData)
     }
   
     const history = useHistory()
@@ -83,7 +82,7 @@ function CompanyCreate(props) {
               autoComplete="off"
               fullWidth
               variant="outlined"
-              required
+              // required
             />
 
             <TextField
@@ -96,7 +95,7 @@ function CompanyCreate(props) {
               multiline
               rows={2}
               variant="outlined" 
-              required
+              // required
             />
             <FormControlLabel
                 label="Interested"
@@ -120,7 +119,7 @@ function CompanyCreate(props) {
               multiline
               rows={4}
               variant="outlined" 
-              required
+              // required
             />
             <TextField
               id="company-glassdoor-rating"

@@ -87,7 +87,7 @@ function CompanyUpdate(props) {
               rows={2}
               variant="outlined" 
               InputLabelProps={{shrink: true}}
-              required
+              // required
             />
             <FormControlLabel
                 label="Interested"
