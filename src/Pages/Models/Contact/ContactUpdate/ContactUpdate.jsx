@@ -37,6 +37,7 @@ function ContactUpdate(props) {
 
     const handleSubmit = async (e) => {
         e.preventDefault()
+        formData.phone = phoneNum
         await props.handleUpdateContact(formData, props.match.params.id)
         history.push('/contacts')
     }

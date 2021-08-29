@@ -38,6 +38,7 @@ function ContactCreate(props) {
     const history = useHistory()
     const handleSubmit = (e) => {
         e.preventDefault()
+            formData.phone = phoneNum
             props.handleAddContact(formData)
             setFormData({
                 name: '',
@@ -49,6 +50,7 @@ function ContactCreate(props) {
                 opportunity: id ? id : '', 
                 owner: props.currentUser.id
             })
+            setPhoneNum('')
         
         id ? history.push(`/opportunities/${id}`) : history.push('/contacts')
     }
