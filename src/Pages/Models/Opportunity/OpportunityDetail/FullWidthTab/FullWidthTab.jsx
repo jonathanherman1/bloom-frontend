@@ -87,10 +87,19 @@ export default function FullWidthTabs({oppActivities, oppContacts}) {
         onChangeIndex={handleChangeIndex}
       >
         <TabPanel value={value} index={0} dir={theme.direction}>
+          {oppActivities.length ? 
              <List items={oppActivities} model='activities' />
+             :
+             <Typography>No Activities</Typography>
+          }
         </TabPanel>
         <TabPanel value={value} index={1} dir={theme.direction}>
-          <List items={oppContacts} model='contacts' />
+          {oppContacts.length ?
+            <List items={oppContacts} model='contacts'/>
+            :
+            <Typography>No Contacts</Typography>
+        }
+
         </TabPanel>
       </SwipeableViews>
     </div>

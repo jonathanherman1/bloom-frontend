@@ -18,7 +18,6 @@ import styles from './OpportunityCreate.module.css'
 function OpportunityCreate(props) {
     const [ hover, setHover] = useState(-1)
     const todaysDate = new Date().getFullYear()+"-"+((new Date().getMonth()+1) < 10 ? '0' : '')+(new Date().getMonth()+1)+"-"+(new Date().getDate() < 10 ? '0' : '')+(new Date().getDate())
-    
     const [formData, setFormData] = useState({
       name: '',
       date: todaysDate,
@@ -212,6 +211,28 @@ function OpportunityCreate(props) {
               autoComplete="off"
               variant="outlined"
             />
+
+            <TextField
+              id="opportunity-pros"
+              type="text"
+              name="pros"
+              label="Pros"
+              value={formData.pros}
+              onChange={handleChange}
+              autoComplete="off"
+              variant="outlined"
+            />
+
+            <TextField
+              id="opportunity-cons"
+              type="text"
+              name="cons"
+              label="Cons"
+              value={formData.cons}
+              onChange={handleChange}
+              autoComplete="off"
+              variant="outlined"
+            />    
 
             <TextField
               id="opportunity-notes"
