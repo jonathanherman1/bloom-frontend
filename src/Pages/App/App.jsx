@@ -5,6 +5,9 @@ import { Route, Switch, Redirect} from 'react-router-dom'
 import Nav from '../../Components/Nav/Nav'
 import LoginForm from '../../Components/LoginForm/LoginForm'
 import SignupForm from '../../Components/SignupForm/SignupForm'
+import Snackbar from '@material-ui/core/Snackbar';
+import IconButton from '@material-ui/core/IconButton';
+import CloseIcon from '@material-ui/icons/Close';
 
 // Pages
 import ActivityCreate from '../Models/Activity/ActivityCreate/ActivityCreate';
@@ -57,15 +60,19 @@ import useMediaQuery from '@material-ui/core/useMediaQuery'
 
 const App = (props) => {
       const [ darkMode, setDarkMode ] = useState(false);
+      const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)')
       const [ loggedIn, setLoggedIn ] = useState(localStorage.getItem('token') ? true : false)
-      const [ displayedForm, setDisplayedForm ] = useState ('')
       const [ username, setUsername ] = useState ('')
       const [ currentUser, setCurrentUser ] = useState('')
+      const [ displayedForm, setDisplayedForm ] = useState ('')
+      const [ snackBar, setSnackBar ] = useState({
+        loggedIn: false,
+        loggedOut: false,
+      })
       const [activities, setActivities] = useState([])
       const [contacts, setContacts] = useState([])
       const [companies, setCompanies] = useState([])
       const [opportunities, setOpportunities] = useState([])
-      const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)')
 
   useEffect(() => {
       prefersDarkMode ? setDarkMode(true) : setDarkMode(false)
@@ -158,6 +165,7 @@ const App = (props) => {
     setLoggedIn(true)
     setDisplayedForm('')
     setUsername(json.user.username)
+    setSnackBar({loggedIn: true, loggedOut: false})
   };
 
   const handleSignup = async (e, data) => {
@@ -174,12 +182,14 @@ const App = (props) => {
       setLoggedIn(true)
       setDisplayedForm('')
       setUsername(json.username)
+      setSnackBar({loggedIn: true, loggedOut: false})
   };
 
   const handleLogout = () => {
-    localStorage.removeItem('token');
-    setLoggedIn(false)
-    setUsername('')
+      localStorage.removeItem('token');
+      setLoggedIn(false)
+      setUsername('')
+      setSnackBar({loggedOut: true, loggedIn: false})
   };
 
   const displayForm = form => setDisplayedForm(form)
@@ -274,6 +284,13 @@ const App = (props) => {
       throw error
     }
   }
+
+  const handleCloseSnackBar = (event, reason) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+    setSnackBar({loggedIn: false, loggedOut: false});
+  };
 
   return (
       <div className="App">      
@@ -393,7 +410,24 @@ const App = (props) => {
             <BottomNav className="bottom-nav" />
           </>
         }
-        
+        <Snackbar
+        anchorOrigin={{
+          vertical: 'bottom',
+          horizontal: 'left',
+        }}
+        open={snackBar.loggedIn || snackBar.loggedOut}
+        autoHideDuration={3000}
+        onClose={handleCloseSnackBar}
+        color="primary"
+        message={snackBar.loggedIn ? 'Logged In' : 'Logged Out'}
+        action={
+          <React.Fragment>
+            <IconButton size="small" aria-label="close" color="inherit" onClick={handleCloseSnackBar}>
+              <CloseIcon fontSize="small" />
+            </IconButton>
+          </React.Fragment>
+        }
+      />
         </ThemeProvider>
       </div>
   );
