@@ -173,9 +173,9 @@ const OpportunityUpdate = (props) => {
               label="listing_source"
               defaultValue={""}
             >
-              <MenuItem value={"Indeed"}>Indeed</MenuItem>
-              <MenuItem value={"LinkedIn"}>LinkedIn</MenuItem>
-              <MenuItem value={"Jen"}>Jen told me about this directly</MenuItem>
+              <MenuItem value={"Indeed"} {...formData?.listing_source === "Indeed" ? "selected" : ""}>Indeed</MenuItem>
+              <MenuItem value={"LinkedIn"} {...formData?.listing_source === "LinkedIn" ? "selected" : ""}>LinkedIn</MenuItem>
+              <MenuItem value={"Jen"} {...formData?.listing_source === "Jen" ? "selected" : ""}>Jen told me about this directly</MenuItem>
             </Select>
           </FormControl>
           <TextField
