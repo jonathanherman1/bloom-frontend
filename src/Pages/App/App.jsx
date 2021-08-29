@@ -110,7 +110,6 @@ const App = (props) => {
     (async () => {
       const allOpportunities = await opportunityService.getAll()
       setOpportunities(allOpportunities)
-      console.log(allOpportunities)
     })()
     return () => { setOpportunities('') }
   }, [loggedIn]);
@@ -119,7 +118,6 @@ const App = (props) => {
     (async () => {
       const newCurrentUser = await currentUserService.getCurrentUser()
       setCurrentUser(newCurrentUser)
-      console.log(newCurrentUser)
     })()
     return () => { setCurrentUser('') }
   }, [loggedIn]);
@@ -128,7 +126,6 @@ const App = (props) => {
     (async () => {
       const allActivities = await activityService.getAll()
       setActivities(allActivities)
-      console.log(allActivities)
     })()
     return () => { setActivities('') }
   }, [loggedIn]);
@@ -137,7 +134,6 @@ const App = (props) => {
     (async () => {
       const allCompanies = await companyService.getAll()
       setCompanies(allCompanies)
-      console.log(allCompanies)
     })()
     return () => { setCompanies('') }
   }, [loggedIn]);
