@@ -1,0 +1,11 @@
+.grid {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 30% 70%;
+}
+
+.flexCol {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
