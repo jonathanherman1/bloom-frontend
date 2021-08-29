@@ -20,6 +20,7 @@ import ApartmentIcon from '@material-ui/icons/Apartment';
 import LocalActivityIcon from '@material-ui/icons/LocalActivity';
 import * as navStyles from './Nav.module.css';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
+import MenuIcon from '@material-ui/icons/Menu';
 import { Link } from 'react-router-dom'
 
 const useStyles = makeStyles({
@@ -61,7 +62,7 @@ function Nav({ displayForm, handleLogout, loggedIn, darkMode, setDarkMode }) {
           <div className={navStyles.rightMenu}>
             {loggedIn &&
               <>
-              <Button onClick={toggleDrawer(true)}>Open</Button>
+              <Button onClick={toggleDrawer(true)}><MenuIcon fontSize='large'/></Button>
               <SwipeableDrawer
                 anchor='right'
                 open={open}
@@ -121,10 +122,10 @@ function Nav({ displayForm, handleLogout, loggedIn, darkMode, setDarkMode }) {
                   </ListItemIcon>
                   <ListItemText primary='LOGOUT' />
                   </ListItem>
-                  <ListItem>
-                    <ListItemText primary={darkMode ? 'DARK MODE' : 'LIGHT MODE'} />
-                  <Switch checked={darkMode} onChange={() => setDarkMode(!darkMode)} />
-                  </ListItem>
+                    <ListItem>
+                      <ListItemText primary={darkMode ? 'DARK MODE' : 'LIGHT MODE'} />
+                      <Switch color='primary' checked={darkMode} onChange={() => setDarkMode(!darkMode)} />
+                    </ListItem>
                 </List>
               </SwipeableDrawer>
               </>
