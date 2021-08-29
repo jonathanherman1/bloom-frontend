@@ -101,7 +101,7 @@ export default function FullWidthTabs({oppActivities, oppContacts, id}) {
                 <AddCircleOutlineIcon 
                   />
                 <Typography>
-                    Add activity
+                &nbsp; Add activity
                 </Typography>
               </Grid>
              </Link>
@@ -116,7 +116,7 @@ export default function FullWidthTabs({oppActivities, oppContacts, id}) {
                 <AddCircleOutlineIcon 
                   />
                 <Typography>
-                    Add activity
+                &nbsp; Add activity
                 </Typography>
               </Grid>
              </Link>
@@ -133,7 +133,7 @@ export default function FullWidthTabs({oppActivities, oppContacts, id}) {
                 <AddCircleOutlineIcon 
                   />
                 <Typography>
-                    Add contact
+                &nbsp; Add contact
                 </Typography>
               </Grid>
              </Link>
@@ -148,7 +148,7 @@ export default function FullWidthTabs({oppActivities, oppContacts, id}) {
                 <AddCircleOutlineIcon 
                   />
                 <Typography>
-                    Add contact
+                &nbsp; Add contact
                 </Typography>
               </Grid>
              </Link>
