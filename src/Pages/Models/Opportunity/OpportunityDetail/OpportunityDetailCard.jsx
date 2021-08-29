@@ -25,8 +25,10 @@ const OpportunityDetailCard = ( props ) => {
 
   useEffect(() => {
     const getActivities = () => {
-      const filteredActivities = props.activities?.filter(activity => parseInt(activity.opportunity) === parseInt(props.match.params.id))
-      setOppActivities(filteredActivities)
+      if(props.activities?.length) {
+        const filteredActivities = props.activities?.filter(activity => parseInt(activity.opportunity) === parseInt(props.match.params.id))
+        setOppActivities(filteredActivities)
+      }
     }
     getActivities()
     return () => {setOppActivities([])}
@@ -34,8 +36,10 @@ const OpportunityDetailCard = ( props ) => {
 
   useEffect(() => {
     const getContacts = () => {
-      const filteredContacts = props.contacts?.filter(contact => parseInt(contact.opportunity) === parseInt(props.match.params.id))
-      setOppContacts(filteredContacts)
+      if(props.contacts?.length){
+        const filteredContacts = props.contacts?.filter(contact => parseInt(contact.opportunity) === parseInt(props.match.params.id))
+        setOppContacts(filteredContacts)
+      }
     }
     getContacts()
     return () => {setOppContacts([])}
