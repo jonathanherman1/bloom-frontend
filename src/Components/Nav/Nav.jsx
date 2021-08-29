@@ -1,16 +1,47 @@
-import React from 'react';
+import React, { useState } from 'react';
+import clsx from 'clsx';
+import { makeStyles } from '@material-ui/core/styles';
 import PropTypes from 'prop-types';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import Switch from '@material-ui/core/Switch'
+import List from '@material-ui/core/List';
+import Divider from '@material-ui/core/Divider';
+import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
+import ListItemText from '@material-ui/core/ListItemText';
 import IconButton from '@material-ui/core/IconButton';
+import ContactsIcon from '@material-ui/icons/Contacts';
+import EcoIcon from '@material-ui/icons/Eco';
+import ApartmentIcon from '@material-ui/icons/Apartment';
+import LocalActivityIcon from '@material-ui/icons/LocalActivity';
 import * as navStyles from './Nav.module.css';
+import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import { Link } from 'react-router-dom'
 
+const useStyles = makeStyles({
+  list: {
+    width: 250,
+  },
+  fullList: {
+    width: 'auto',
+  },
+});
 
 function Nav({ displayForm, handleLogout, loggedIn, darkMode, setDarkMode }) {
+  const classes = useStyles();
+  const [ open, setOpen ] = useState(false)
+
+  const toggleDrawer = (open) => (event) => {
+    if (event && event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
+      return;
+    }
+    setOpen(open)
+  };
+
   
   return (
     <>
@@ -30,16 +61,74 @@ function Nav({ displayForm, handleLogout, loggedIn, darkMode, setDarkMode }) {
           <div className={navStyles.rightMenu}>
             {loggedIn &&
               <>
-                <span id={navStyles.navlinks}>
-                  <Link to='/opportunities'><Button>OPPORTUNITY</Button></Link>
-                  <Link to='/activities'><Button>ACTIVITY</Button></Link>
-                  <Link to='/contacts'><Button>CONTACT</Button></Link>
-                  <Link to='/companies'><Button>COMPANY</Button></Link>
-                </span>
-                <Button onClick={handleLogout}>Logout</Button>
+              <Button onClick={toggleDrawer(true)}>Open</Button>
+              <SwipeableDrawer
+                anchor='right'
+                open={open}
+                onClose={toggleDrawer(false)}
+                onOpen={toggleDrawer(true)}
+              >
+                <List>
+                  <ListItem 
+                    button key='opportunities'
+                    component={Link}
+                    to='/opportunities'
+                  >
+                    <ListItemIcon>
+                      <EcoIcon />
+                    </ListItemIcon>
+                    <ListItemText primary='OPPORTUNITIES' />
+                  </ListItem>
+                  <ListItem
+                    button key='activities'
+                    component={Link}
+                    to='/activities'
+                  >
+                    <ListItemIcon>
+                      <LocalActivityIcon />
+                    </ListItemIcon>
+                    <ListItemText primary="ACTIVITIES" />
+                  </ListItem>
+                  <ListItem
+                    button key='contacts'
+                    component={Link}
+                    to='contacts'
+                  >
+                    <ListItemIcon>
+                      <ContactsIcon />
+                    </ListItemIcon>
+                    <ListItemText primary='CONTACTS' />
+                  </ListItem>
+                  <ListItem
+                    button key ='companies'
+                    component={Link}
+                    to='companies'
+                  >
+                    <ListItemIcon>
+                      <ApartmentIcon />
+                    </ListItemIcon>
+                    <ListItemText primary='COMPANIES' />
+                  </ListItem>
+                </List>
+                <Divider />
+                <List>
+                  <ListItem
+                    button key='logout'
+                    onClick={handleLogout}
+                  >
+                  <ListItemIcon>
+                    <ExitToAppIcon />
+                  </ListItemIcon>
+                  <ListItemText primary='LOGOUT' />
+                  </ListItem>
+                  <ListItem>
+                    <ListItemText primary={darkMode ? 'DARK MODE' : 'LIGHT MODE'} />
+                  <Switch checked={darkMode} onChange={() => setDarkMode(!darkMode)} />
+                  </ListItem>
+                </List>
+              </SwipeableDrawer>
               </>
             }
-            <Switch checked={darkMode} onChange={() => setDarkMode(!darkMode)} />
           </div>
         </Toolbar>
       </AppBar>
