@@ -98,8 +98,7 @@ export default function FullWidthTabs({oppActivities, oppContacts, id}) {
               <div className={styles.flex}>
              <Link to={`/opportunities/${id}/new-activity`}>
               <Grid style={{ display: "flex" }}>
-                <AddCircleOutlineIcon 
-                  />
+                <AddCircleOutlineIcon/>
                 <Typography>
                 &nbsp; Add activity
                 </Typography>

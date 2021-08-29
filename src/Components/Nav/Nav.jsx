@@ -86,6 +86,7 @@ function Nav({ displayForm, handleLogout, loggedIn, darkMode, setDarkMode, usern
                   </ListItem>
                   <ListItem 
                     button key='opportunities'
+                    onClick={() => setOpen(false)}
                     component={Link}
                     to='/opportunities'
                   >
@@ -96,6 +97,7 @@ function Nav({ displayForm, handleLogout, loggedIn, darkMode, setDarkMode, usern
                   </ListItem>
                   <ListItem
                     button key='activities'
+                    onClick={() => setOpen(false)}
                     component={Link}
                     to='/activities'
                   >
@@ -106,6 +108,7 @@ function Nav({ displayForm, handleLogout, loggedIn, darkMode, setDarkMode, usern
                   </ListItem>
                   <ListItem
                     button key='contacts'
+                    onClick={() => setOpen(false)}
                     component={Link}
                     to='/contacts'
                   >
@@ -116,6 +119,7 @@ function Nav({ displayForm, handleLogout, loggedIn, darkMode, setDarkMode, usern
                   </ListItem>
                   <ListItem
                     button key ='companies'
+                    onClick={() => setOpen(false)}
                     component={Link}
                     to='/companies'
                   >
