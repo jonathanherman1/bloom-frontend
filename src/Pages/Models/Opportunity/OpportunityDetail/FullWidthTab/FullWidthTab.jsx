@@ -13,7 +13,6 @@ import Tabs from '@material-ui/core/Tabs';
 import Typography from '@material-ui/core/Typography';
 import SwipeableViews from 'react-swipeable-views';
 
-
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
 
@@ -54,7 +53,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function FullWidthTabs({ opportunityDetail, oppActivities, oppContacts }) {
+export default function FullWidthTabs({oppActivities, oppContacts}) {
   const classes = useStyles();
   const theme = useTheme();
   const [value, setValue] = React.useState(0);
@@ -88,10 +87,10 @@ export default function FullWidthTabs({ opportunityDetail, oppActivities, oppCon
         onChangeIndex={handleChangeIndex}
       >
         <TabPanel value={value} index={0} dir={theme.direction}>
-             <List items={oppActivities} />
+             <List items={oppActivities} model='activities' />
         </TabPanel>
         <TabPanel value={value} index={1} dir={theme.direction}>
-          <List items={oppContacts} />
+          <List items={oppContacts} model='contacts' />
         </TabPanel>
       </SwipeableViews>
     </div>
