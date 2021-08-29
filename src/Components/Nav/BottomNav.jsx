@@ -22,7 +22,7 @@ const useStyles = makeStyles({
 
 export default function LabelBottomNavigation() {
     const classes = useStyles();
-    const [value, setValue] = React.useState('activity');
+    const [value, setValue] = React.useState('opportunity');
 
     const handleChange = (event, newValue) => {
         setValue(newValue);
