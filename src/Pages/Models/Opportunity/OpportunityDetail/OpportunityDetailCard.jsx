@@ -37,7 +37,6 @@ const OpportunityDetailCard = ( props ) => {
     return () => {setOppContacts([])}
   }, [props.contacts, props.match.params.id]);
 
-
   return (
     <>
       <Box className={styles.titleContainer}>
@@ -67,21 +66,17 @@ const OpportunityDetailCard = ( props ) => {
         </Box>
         <Box  mt={1} className={styles.container2}>
           <Box className={styles.container2left}>
-            <Typography>Pros</Typography>
+            <Typography variant="h4">PROS</Typography>
             <Divider />
             <Box>
-              <Paper>
-                <Typography>{props.pros}</Typography>
-              </Paper>
+                <Typography>{props.opportunityDetail.pros}</Typography>
             </Box>
           </Box>
           <Box className={styles.container2right}>
-            <Typography>Cons</Typography>
+            <Typography variant="h4">CONS</Typography>
             <Divider />
             <Box>
-            <Paper>
-                <Typography>{props.cons}</Typography>
-              </Paper>
+                <Typography>{props.opportunityDetail.cons}</Typography>
             </Box>
           </Box>
         </Box>

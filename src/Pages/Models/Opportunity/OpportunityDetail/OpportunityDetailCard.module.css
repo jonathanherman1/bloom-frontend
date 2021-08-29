@@ -39,6 +39,24 @@
     padding: 0;
 }
 
+.container2left,
+.container2right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+
+    width: 50%;
+}
+
+.container2left{
+    background-color: rgba(45, 193, 238, 0.1);
+}
+
+.container2right{
+    background-color: rgba(252, 55, 84, 0.1);
+}
+
 .container3 {
     display: flex;
     flex-direction: column;
