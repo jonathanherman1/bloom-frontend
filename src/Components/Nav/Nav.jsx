@@ -43,6 +43,11 @@ function Nav({ displayForm, handleLogout, loggedIn, darkMode, setDarkMode }) {
     setOpen(open)
   };
 
+  const handleNavLogout = () => {
+    handleLogout()
+    setOpen(false)
+  }
+
   
   return (
     <>
@@ -115,7 +120,7 @@ function Nav({ displayForm, handleLogout, loggedIn, darkMode, setDarkMode }) {
                 <List>
                   <ListItem
                     button key='logout'
-                    onClick={handleLogout}
+                    onClick={handleNavLogout}
                   >
                   <ListItemIcon>
                     <ExitToAppIcon />
