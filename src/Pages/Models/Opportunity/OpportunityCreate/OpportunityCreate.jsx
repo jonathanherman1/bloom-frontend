@@ -71,7 +71,7 @@ function OpportunityCreate(props) {
   
     return (
         <div className={styles.container}>
-          <h2>Add Opportunity</h2>
+          <Typography variant="h5" mb={1}>Add Opportunity</Typography>
           <form 
              id="add-opportunity-form" 
              onSubmit={handleSubmit}

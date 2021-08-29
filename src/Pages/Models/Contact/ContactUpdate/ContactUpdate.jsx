@@ -8,6 +8,7 @@ import * as contactService from '../../../../services/contactService.js'
 import Button from '@material-ui/core/Button';
 import MuiPhoneNumber from 'material-ui-phone-number'
 import TextField from '@material-ui/core/TextField';
+import Typography from '@material-ui/core/Typography'
 
 // Styles
 import styles from './ContactUpdate.module.css'
@@ -44,7 +45,7 @@ function ContactUpdate(props) {
 
     return (
         <div className={styles.container}>
-            <h3>Edit Contact</h3>
+            <Typography variant="h5" mb={1}>Edit Contact</Typography>
             <form
                 id="add-contact-form"
                 onSubmit={handleSubmit}

@@ -54,7 +54,7 @@ function CompanyCreate(props) {
   
     return (
         <div className={styles.container}>
-          <h2> Add Company </h2>
+          <Typography variant="h5" mb={1}>Add Company</Typography>
           <form 
              id="add-company-form" 
              onSubmit={handleSubmit}
