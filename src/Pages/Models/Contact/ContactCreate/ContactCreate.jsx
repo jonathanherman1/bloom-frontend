@@ -57,7 +57,7 @@ function ContactCreate(props) {
 
     return (
         <div className={styles.container}>
-            <h3>Add a Contact</h3>
+            <h2>Add Contact</h2>
             <form
                 id="add-contact-form"
                 onSubmit={handleSubmit}
