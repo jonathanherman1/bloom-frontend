@@ -391,7 +391,12 @@ const App = (props) => {
                 }
           </Route>          
         </Switch>
-        <BottomNav className="bottom-nav" />
+        { loggedIn&&
+          <>
+            <BottomNav className="bottom-nav" />
+          </>
+        }
+        
         </ThemeProvider>
       </div>
   );
