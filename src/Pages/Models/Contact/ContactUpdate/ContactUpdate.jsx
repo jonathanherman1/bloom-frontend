@@ -20,7 +20,7 @@ function ContactUpdate(props) {
       (async () => {
           const contactDetail = await contactService.getContactById(props.match.params.id)
           setFormData(contactDetail)
-          setPhoneNum(contactDetail.phone)
+          setPhoneNum(contactDetail.phone) 
       })()
     }, [props.match.params.id]);
 
