@@ -125,7 +125,7 @@ function OpportunityCreate(props) {
               value={formData.location}
               onChange={handleChange}
               autoComplete="off"
-              required
+              // required
               variant="outlined"
             />
 
@@ -137,7 +137,7 @@ function OpportunityCreate(props) {
               value={formData.salary}
               onChange={handleChange}
               autoComplete="off"
-              required
+              // required
               variant="outlined"
             />
 
@@ -151,7 +151,7 @@ function OpportunityCreate(props) {
               autoComplete="off"
               multiline
               rows={2}
-              required
+              // required
               variant="outlined"
             />
 
@@ -165,7 +165,7 @@ function OpportunityCreate(props) {
               autoComplete="off"
               multiline
               rows={2}
-              required
+              // required
               fullWidth
               variant="outlined"
             />
@@ -178,7 +178,7 @@ function OpportunityCreate(props) {
               value={formData.years_experience_required}
               onChange={handleChange}
               autoComplete="off"
-              required
+              // required
               variant="outlined"
             />
 
@@ -205,7 +205,7 @@ function OpportunityCreate(props) {
               value={formData.role_list_url}
               onChange={handleChange}
               autoComplete="off"
-              required
+              // required
               variant="outlined"
             />
             <TextField
@@ -216,7 +216,7 @@ function OpportunityCreate(props) {
               value={formData.keywords}
               onChange={handleChange}
               autoComplete="off"
-              required
+              // required
               variant="outlined"
             />
 
