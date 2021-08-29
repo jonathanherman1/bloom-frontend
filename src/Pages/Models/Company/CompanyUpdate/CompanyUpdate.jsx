@@ -122,7 +122,6 @@ function CompanyUpdate(props) {
               onChange={handleChange}
               variant="outlined" 
               InputLabelProps={{shrink: true}}
-              required
             />
              <FormControl variant="outlined">
               <InputLabel id="business_structure">Business Structure</InputLabel>
