@@ -1,27 +1,31 @@
 import React, { useState } from 'react';
-import clsx from 'clsx';
-import { makeStyles } from '@material-ui/core/styles';
+import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types';
+import clsx from 'clsx';
+
+// Material UI
+import ApartmentIcon from '@material-ui/icons/Apartment';
 import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
-import Switch from '@material-ui/core/Switch'
-import List from '@material-ui/core/List';
+import ContactsIcon from '@material-ui/icons/Contacts';
 import Divider from '@material-ui/core/Divider';
-import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
+import EcoIcon from '@material-ui/icons/Eco';
+import ExitToAppIcon from '@material-ui/icons/ExitToApp';
+import IconButton from '@material-ui/core/IconButton';
+import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import IconButton from '@material-ui/core/IconButton';
-import ContactsIcon from '@material-ui/icons/Contacts';
-import EcoIcon from '@material-ui/icons/Eco';
-import ApartmentIcon from '@material-ui/icons/Apartment';
 import LocalActivityIcon from '@material-ui/icons/LocalActivity';
-import * as navStyles from './Nav.module.css';
-import ExitToAppIcon from '@material-ui/icons/ExitToApp';
+import { makeStyles } from '@material-ui/core/styles';
 import MenuIcon from '@material-ui/icons/Menu';
-import { Link } from 'react-router-dom'
+import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
+import Switch from '@material-ui/core/Switch'
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
+
+// Styles
+import * as navStyles from './Nav.module.css';
 
 const useStyles = makeStyles({
   list: {
@@ -32,7 +36,7 @@ const useStyles = makeStyles({
   },
 });
 
-function Nav({ displayForm, handleLogout, loggedIn, darkMode, setDarkMode }) {
+function Nav({ displayForm, handleLogout, loggedIn, darkMode, setDarkMode, username }) {
   const classes = useStyles();
   const [ open, setOpen ] = useState(false)
 
@@ -75,6 +79,11 @@ function Nav({ displayForm, handleLogout, loggedIn, darkMode, setDarkMode }) {
                 onOpen={toggleDrawer(true)}
               >
                 <List>
+                  <ListItem>
+                    <ListItemText>
+                      {`Hello, ${username}`}
+                    </ListItemText>
+                  </ListItem>
                   <ListItem 
                     button key='opportunities'
                     component={Link}
