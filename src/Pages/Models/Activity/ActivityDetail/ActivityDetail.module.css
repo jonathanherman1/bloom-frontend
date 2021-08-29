@@ -1,6 +1,7 @@
 .grid {
+    width: 100%;
     display: grid;
-    grid-template-columns: 100% 15%;
+    grid-template-columns: 100% 1%;
     grid-template-rows: 100%;
 }
 
@@ -8,6 +9,15 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.flexDots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: -50px;
 }
 
 .container {

@@ -42,16 +42,20 @@ const ContactDetail = (props) => {
         <Box className={styles.container} mt={4}>
             <Box className={styles.titleContainer}>
             <Paper elevation={10}  className={styles.titlePaper}>
-                <Typography variant="h3"> {contactDetail.name} </Typography>
-                <Box>
+            <div className={styles.grid}>
+              <div className={styles.flex}>
+                <Typography variant="h5"> {contactDetail.name} </Typography>
+              </div>
+              <div className={styles.flexDots}>
                 <EditDeleteBtn 
                     model='contacts'
                     id={props.match.params.id}
                     handleDelete={props.handleDelete}
                     state={props.contacts}
                     setState={props.setContacts}
-                    />
-            </Box>
+                />
+              </div>
+            </div>
             </Paper>
             </Box>
          <Box className={styles.listContainer}>
