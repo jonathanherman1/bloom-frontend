@@ -9,8 +9,12 @@ import Table from "./Table/Table";
 // Material UI
 import Box from "@material-ui/core/Box";
 import Paper from "@material-ui/core/Paper";
-import Typography from "@material-ui/core/Typography";
 import Divider from '@material-ui/core/Divider';
+import Accordion from '@material-ui/core/Accordion';
+import AccordionSummary from '@material-ui/core/AccordionSummary';
+import AccordionDetails from '@material-ui/core/AccordionDetails';
+import Typography from '@material-ui/core/Typography';
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
 // Styles
 import styles from "./OpportunityDetailCard.module.css";
@@ -64,22 +68,34 @@ const OpportunityDetailCard = ( props ) => {
             />
           </Paper>
         </Box>
-        <Box  mt={1} className={styles.container2}>
-          <Box className={styles.container2left}>
-            <Typography variant="h4">PROS</Typography>
-            <Divider />
-            <Box>
-                <Typography>{props.opportunityDetail.pros}</Typography>
+        <Accordion>
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon />}
+          aria-controls="panel1a-content"
+          id="panel1a-header"
+        >
+          <Typography>Pros/Cons</Typography>
+          <Divider />
+        </AccordionSummary>
+        <AccordionDetails>
+          <Box  mt={1} className={styles.container2}>
+            <Box className={styles.container2left}>
+              <Typography variant="h5">PROS</Typography>
+              <Divider />
+              <Box>
+                  <Typography>{props.opportunityDetail.pros}</Typography>
+              </Box>
+            </Box>
+            <Box className={styles.container2right}>
+              <Typography variant="h5">CONS</Typography>
+              <Divider />
+              <Box>
+                  <Typography>{props.opportunityDetail.cons}</Typography>
+              </Box>
             </Box>
           </Box>
-          <Box className={styles.container2right}>
-            <Typography variant="h4">CONS</Typography>
-            <Divider />
-            <Box>
-                <Typography>{props.opportunityDetail.cons}</Typography>
-            </Box>
-          </Box>
-        </Box>
+        </AccordionDetails>
+      </Accordion>
         <Box  mt={1} className={styles.container3}>
           <Table opportunityDetail={props.opportunityDetail} />
         </Box>
