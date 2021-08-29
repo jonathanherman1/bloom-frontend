@@ -22,7 +22,7 @@ function CompanyCreate(props) {
       url: 'http://',
       summary: '',
       interested: false,
-      glassdoor_rating: '',
+      glassdoor_rating: null,
       business_structure: '',
       notes: '',
       archived: false,
@@ -42,10 +42,11 @@ function CompanyCreate(props) {
         location: '',
         url: 'http://',
         summary: '',
-        interested: formData.interested,
-        glassdoor_rating: formData.glassdoor_rating,
-        business_structure: formData.business_structure,
+        interested: false,
+        glassdoor_rating: null,
+        business_structure: '',
         notes: '',
+        archived: false,
         owner: props.currentUser.id
       })
       history.push('/companies');
@@ -127,7 +128,6 @@ function CompanyCreate(props) {
               value={formData.glassdoor_rating}
               onChange={handleChange}
               variant="outlined" 
-              required
             />
              <FormControl variant="outlined">
               <InputLabel id="business_structure">Business Structure</InputLabel>
