@@ -65,6 +65,7 @@ const OpportunityDetailCard = ( props ) => {
               opportunityDetail={props.opportunityDetail} 
               oppActivities={oppActivities}
               oppContacts={oppContacts}
+              id={props.match.params.id}
             />
           </Paper>
         </Box>

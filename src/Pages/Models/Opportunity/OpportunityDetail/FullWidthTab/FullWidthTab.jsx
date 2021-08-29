@@ -1,12 +1,15 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types';
 
 // Components
 import List from '../List/List'
 
 // Material UI
+import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
 import AppBar from '@material-ui/core/AppBar';
 import Box from '@material-ui/core/Box';
+import Grid from '@material-ui/core/Grid'
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import Tab from '@material-ui/core/Tab';
 import Tabs from '@material-ui/core/Tabs';
@@ -53,7 +56,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function FullWidthTabs({oppActivities, oppContacts}) {
+export default function FullWidthTabs({oppActivities, oppContacts, id}) {
   const classes = useStyles();
   const theme = useTheme();
   const [value, setValue] = React.useState(0);
@@ -90,14 +93,31 @@ export default function FullWidthTabs({oppActivities, oppContacts}) {
           {oppActivities.length ? 
              <List items={oppActivities} model='activities' />
              :
-             <Typography>No Activities</Typography>
+             <Link to={`/opportunities/${id}/new-activity`}>
+              <Grid style={{ display: "flex" }}>
+                <AddCircleOutlineIcon 
+                  />
+                <Typography>
+                    Add activity
+                </Typography>
+              </Grid>
+             </Link>
+            
           }
         </TabPanel>
         <TabPanel value={value} index={1} dir={theme.direction}>
           {oppContacts.length ?
             <List items={oppContacts} model='contacts'/>
             :
-            <Typography>No Contacts</Typography>
+            <Link to={`/opportunities/${id}/new-contact`}>
+            <Grid style={{ display: "flex" }}>
+              <AddCircleOutlineIcon 
+                />
+              <Typography>
+                  Add contact
+              </Typography>
+            </Grid>
+           </Link>
         }
 
         </TabPanel>
