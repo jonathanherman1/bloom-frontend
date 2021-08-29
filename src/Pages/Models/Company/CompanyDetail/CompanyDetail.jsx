@@ -42,21 +42,23 @@ const CompanyDetail = (props) => {
         companyDetail &&
         <Box className={styles.container} mt={4}>
             <Box className={styles.titleContainer}>
-            <Paper elevation={10}  className={styles.titlePaper}>
-            <div className={styles.grid}>
-              <div className={styles.flex}>
-                <Typography variant="h5"> {companyDetail.name} </Typography>
+            <Paper elevation={10} className={styles.titlePaper}>
+            {/* <div className={styles.paper}> */}
+              <div className={styles.grid}>
+                <div className={styles.flex}>
+                  <Typography variant="h5"> {companyDetail.name} </Typography>
+                </div>
+                <div className={styles.flexDots}>
+                  <EditDeleteBtn 
+                      model='companies'
+                      id={props.match.params.id}
+                      handleDelete={props.handleDelete}
+                      state={props.companies}
+                      setState={props.setCompanies}
+                  />
+                </div>
               </div>
-              <div className={styles.flexDots}>
-                <EditDeleteBtn 
-                    model='companies'
-                    id={props.match.params.id}
-                    handleDelete={props.handleDelete}
-                    state={props.companies}
-                    setState={props.setCompanies}
-                />
-            </div>
-            </div>
+            {/* </div> */}
             </Paper>
             </Box>
          <Box className={styles.listContainer}>
