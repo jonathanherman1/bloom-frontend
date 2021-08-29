@@ -93,7 +93,6 @@ const OpportunityUpdate = (props) => {
             value={formData.location}
             onChange={handleChange}
             autoComplete="off"
-            required
             variant="outlined"
             InputLabelProps={{shrink: true}}
           />
@@ -105,7 +104,6 @@ const OpportunityUpdate = (props) => {
             value={formData.salary}
             onChange={handleChange}
             autoComplete="off"
-            required
             variant="outlined"
             InputLabelProps={{shrink: true}}
           />
@@ -119,7 +117,6 @@ const OpportunityUpdate = (props) => {
             autoComplete="off"
             multiline
             rows={2}
-            required
             variant="outlined"
             InputLabelProps={{shrink: true}}
           />
@@ -133,7 +130,6 @@ const OpportunityUpdate = (props) => {
             autoComplete="off"
             multiline
             rows={2}
-            required
             fullWidth
             variant="outlined"
             InputLabelProps={{shrink: true}}
@@ -146,7 +142,6 @@ const OpportunityUpdate = (props) => {
             value={formData.years_experience_required}
             onChange={handleChange}
             autoComplete="off"
-            required
             variant="outlined"
             InputLabelProps={{shrink: true}}
           />
@@ -159,7 +154,6 @@ const OpportunityUpdate = (props) => {
             helperText="Enter as valid URL"
             onChange={handleChange}
             autoComplete="off"
-            required
             variant="outlined"
             InputLabelProps={{shrink: true}}
           />
@@ -186,7 +180,6 @@ const OpportunityUpdate = (props) => {
             value={formData.keywords}
             onChange={handleChange}
             autoComplete="off"
-            required
             variant="outlined"
             InputLabelProps={{shrink: true}}
           />
