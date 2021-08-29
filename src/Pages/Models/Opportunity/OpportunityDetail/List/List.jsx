@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 
 // Material UI
 import AssignmentTurnedInIcon from '@material-ui/icons/AssignmentTurnedIn';
@@ -26,15 +27,17 @@ export default function SimpleList(props) {
       <List component="nav" aria-label="prop name list">
         {
           props.items.map(item => (
-            <ListItem 
-              key={item.id}
-              button
-            >
-              <ListItemIcon>
-                <AssignmentTurnedInIcon />
-              </ListItemIcon>
-              <ListItemText primary={item.name} />
-            </ListItem>
+            <Link to={`/${props.model}/${item.id}`}>
+              <ListItem 
+                key={item.id}
+                button
+              >
+                <ListItemIcon>
+                  <AssignmentTurnedInIcon />
+                </ListItemIcon>
+                <ListItemText primary={item.name} />
+              </ListItem>
+            </Link>
           ))
         }
       </List>

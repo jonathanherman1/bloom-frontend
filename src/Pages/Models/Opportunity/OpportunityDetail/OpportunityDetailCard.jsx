@@ -46,7 +46,7 @@ const OpportunityDetailCard = ( props ) => {
       <Box className={styles.titleContainer}>
         <Box className={styles.titleHeader}>
         <Typography variant="h5">
-          {props.opportunityDetail.name} at Company
+          {props.opportunityDetail.name}
         </Typography>
           <EditDeleteBtn 
               model='opportunities'
@@ -65,6 +65,7 @@ const OpportunityDetailCard = ( props ) => {
               opportunityDetail={props.opportunityDetail} 
               oppActivities={oppActivities}
               oppContacts={oppContacts}
+              id={props.match.params.id}
             />
           </Paper>
         </Box>

@@ -98,7 +98,7 @@ function Nav({ displayForm, handleLogout, loggedIn, darkMode, setDarkMode }) {
                   <ListItem
                     button key='contacts'
                     component={Link}
-                    to='contacts'
+                    to='/contacts'
                   >
                     <ListItemIcon>
                       <ContactsIcon />
@@ -108,7 +108,7 @@ function Nav({ displayForm, handleLogout, loggedIn, darkMode, setDarkMode }) {
                   <ListItem
                     button key ='companies'
                     component={Link}
-                    to='companies'
+                    to='/companies'
                   >
                     <ListItemIcon>
                       <ApartmentIcon />
