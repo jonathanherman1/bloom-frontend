@@ -73,7 +73,7 @@ function CompanyUpdate(props) {
               fullWidth
               variant="outlined"
               InputLabelProps={{shrink: true}}
-              required
+              // required
             />
 
             <TextField
@@ -112,7 +112,7 @@ function CompanyUpdate(props) {
               rows={4}
               variant="outlined" 
               InputLabelProps={{shrink: true}}
-              required
+              // required
             />
             <TextField
               id="company-glassdoor-rating"
