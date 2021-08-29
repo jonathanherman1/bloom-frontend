@@ -137,9 +137,9 @@ function CompanyUpdate(props) {
                 label="business_structure"
                 defaultValue={""}
               >
-                <MenuItem value={"Public"}>Public</MenuItem>
-                <MenuItem value={"Private"}>Private</MenuItem>
-                <MenuItem value={"Non_Profit"}>Non Profit</MenuItem>
+                <MenuItem value={"Public"} {...formData?.listing_source === "Public" ? "selected" : ""}>Public</MenuItem>
+                <MenuItem value={"Private"} {...formData?.listing_source === "Private" ? "selected" : ""}>Private</MenuItem>
+                <MenuItem value={"Non_Profit"} {...formData?.listing_source === "Non_Profit" ? "selected" : ""}>Non Profit</MenuItem>
               </Select>
             </FormControl>
             <TextField
