@@ -90,7 +90,6 @@ function ContactCreate(props) {
                 onChange={handleChange}
                 autoComplete="off"
                 fullWidth
-                // required
                 variant="outlined" 
             />
 
@@ -103,7 +102,6 @@ function ContactCreate(props) {
                 onChange={handleChange}
                 autoComplete="off"
                 fullWidth
-                // required
                 variant="outlined" 
             />
             
@@ -116,7 +114,6 @@ function ContactCreate(props) {
                 onChange={handleChange}
                 autoComplete="off"
                 fullWidth
-                // required
                 variant="outlined" 
             />
  
@@ -131,7 +128,6 @@ function ContactCreate(props) {
                 multiline
                 rows={4}
                 fullWidth
-                // required
                 variant="outlined" 
             />
                 <Button type="submit" variant="contained" color="primary">

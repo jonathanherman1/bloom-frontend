@@ -80,7 +80,6 @@ function ContactUpdate(props) {
                 onChange={handleChange}
                 autoComplete="off"
                 fullWidth
-                // required
                 variant="outlined" 
                 InputLabelProps={{shrink: true}}
             />
@@ -94,7 +93,6 @@ function ContactUpdate(props) {
                 onChange={handleChange}
                 autoComplete="off"
                 fullWidth
-                // required
                 variant="outlined" 
                 InputLabelProps={{shrink: true}}
             />
@@ -108,7 +106,6 @@ function ContactUpdate(props) {
                 onChange={handleChange}
                 autoComplete="off"
                 fullWidth
-                // required
                 variant="outlined" 
                 InputLabelProps={{shrink: true}}
             />
@@ -124,7 +121,6 @@ function ContactUpdate(props) {
                 multiline
                 rows={4}
                 fullWidth
-                // required
                 variant="outlined" 
                 InputLabelProps={{shrink: true}}
             />

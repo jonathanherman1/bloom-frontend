@@ -73,7 +73,6 @@ function CompanyUpdate(props) {
               fullWidth
               variant="outlined"
               InputLabelProps={{shrink: true}}
-              // required
             />
 
             <TextField
@@ -87,7 +86,6 @@ function CompanyUpdate(props) {
               rows={2}
               variant="outlined" 
               InputLabelProps={{shrink: true}}
-              // required
             />
             <FormControlLabel
                 label="Interested"
@@ -112,7 +110,6 @@ function CompanyUpdate(props) {
               rows={4}
               variant="outlined" 
               InputLabelProps={{shrink: true}}
-              // required
             />
             <TextField
               id="company-glassdoor-rating"
