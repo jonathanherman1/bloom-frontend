@@ -10,6 +10,7 @@ import Table from "./Table/Table";
 import Box from "@material-ui/core/Box";
 import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
+import Divider from '@material-ui/core/Divider';
 
 // Styles
 import styles from "./OpportunityDetailCard.module.css";
@@ -66,10 +67,22 @@ const OpportunityDetailCard = ( props ) => {
         </Box>
         <Box  mt={1} className={styles.container2}>
           <Box className={styles.container2left}>
-            <p>pros</p>
+            <Typography>Pros</Typography>
+            <Divider />
+            <Box>
+              <Paper>
+                <Typography>{props.pros}</Typography>
+              </Paper>
+            </Box>
           </Box>
           <Box className={styles.container2right}>
-            <p>cons</p>
+            <Typography>Cons</Typography>
+            <Divider />
+            <Box>
+            <Paper>
+                <Typography>{props.cons}</Typography>
+              </Paper>
+            </Box>
           </Box>
         </Box>
         <Box  mt={1} className={styles.container3}>
