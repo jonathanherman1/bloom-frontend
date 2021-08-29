@@ -128,7 +128,7 @@ const App = (props) => {
       setActivities(allActivities)
     })()
     return () => { setActivities('') }
-  }, [loggedIn]);
+  }, [loggedIn, opportunities]);
 
   useEffect(() => {
     (async () => {
@@ -142,10 +142,9 @@ const App = (props) => {
     (async () => {
       const allContacts = await contactService.getAll()
       setContacts(allContacts)
-      console.log(allContacts)
     })()
     return () => { setContacts('') }
-  }, [loggedIn]);
+  }, [loggedIn, opportunities]);
 
   const handleLogin = async (e, data) => {
     e.preventDefault();
