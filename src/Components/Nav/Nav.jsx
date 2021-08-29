@@ -124,7 +124,11 @@ function Nav({ displayForm, handleLogout, loggedIn, darkMode, setDarkMode }) {
                   </ListItem>
                     <ListItem>
                       <ListItemText primary={darkMode ? 'DARK MODE' : 'LIGHT MODE'} />
-                      <Switch color='primary' checked={darkMode} onChange={() => setDarkMode(!darkMode)} />
+                      <Switch 
+                        color='primary' 
+                        checked={darkMode} 
+                        onChange={() => setDarkMode(!darkMode)} 
+                      />
                     </ListItem>
                 </List>
               </SwipeableDrawer>
