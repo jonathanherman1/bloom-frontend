@@ -49,16 +49,22 @@ const OpportunityDetailCard = ( props ) => {
     <>
       <Box className={styles.titleContainer}>
         <Box className={styles.titleHeader}>
-        <Typography variant="h5">
-          {props.opportunityDetail.name}
-        </Typography>
-          <EditDeleteBtn 
-              model='opportunities'
-              id={props.match.params.id}
-              handleDelete={props.handleDelete}
-              state={props.opportunities}
-              setState={props.setOpportunities}
+          <div className={styles.grid}>
+            <div className={styles.flex}>
+              <Typography variant="h5">
+                {props.opportunityDetail.name}
+              </Typography>
+            </div>
+            <div className={styles.flex}>
+              <EditDeleteBtn 
+                  model='opportunities'
+                  id={props.match.params.id}
+                  handleDelete={props.handleDelete}
+                  state={props.opportunities}
+                  setState={props.setOpportunities}
               />
+            </div>
+          </div>
         </Box>
         <p>Status</p>
       </Box>
