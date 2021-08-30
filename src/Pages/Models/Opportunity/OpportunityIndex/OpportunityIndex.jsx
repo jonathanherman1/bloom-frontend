@@ -84,6 +84,7 @@ const OpportunityIndex = ({ opportunities }) => {
       ) : (
         noOpportunities()
       )}
+     <Box mb={6}></Box>
     </div>
   );
 };

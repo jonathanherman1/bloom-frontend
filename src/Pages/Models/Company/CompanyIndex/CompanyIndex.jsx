@@ -81,7 +81,9 @@ const CompanyIndex = ({ companies }) => {
           alignItems="center">
         {companiesList()}
         </Grid>
-      </> : noCompanies()}
+      </> : noCompanies()
+      }
+      <Box mb={6}></Box>
     </div>
   );
 };
