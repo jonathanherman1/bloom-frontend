@@ -37,7 +37,7 @@ const OpportunityUpdate = (props) => {
       const handleSubmit = async (e) => {
         e.preventDefault()
         await props.handleUpdateOpportunity(formData, props.match.params.id)
-        history.push('/opportunities')
+        history.push(`/opportunities/${props.match.params.id}/`)
       }
 
     return (  

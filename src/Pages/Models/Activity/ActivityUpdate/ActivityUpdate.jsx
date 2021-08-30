@@ -29,7 +29,7 @@ function ActivityUpdate(props) {
     const handleSubmit = async (e) => {
       e.preventDefault()
         await props.handleUpdateActivity(formData, props.match.params.id)
-        history.push('/activities')
+        history.push(`/activities/${props.match.params.id}/`)
     }
   
     return (
