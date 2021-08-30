@@ -57,7 +57,14 @@ const OpportunityDetailCard = ( props ) => {
                 {props.opportunityDetail.name}
               </Typography>
             </div>
-            <div className={styles.flex}>
+          </div>
+        </Box>
+        <div className={styles.statusGrid}>
+          <div className={styles.flex}>
+            <FlagIcon></FlagIcon>
+          </div>
+          <p className={styles.flex}>{props.opportunities[0]?.status}</p>
+          <div className={styles.flex}>
               <EditDeleteBtn 
                   model='opportunities'
                   id={props.match.params.id}
@@ -66,13 +73,6 @@ const OpportunityDetailCard = ( props ) => {
                   setState={props.setOpportunities}
               />
             </div>
-          </div>
-        </Box>
-        <div className={styles.statusGrid}>
-          <div className={styles.flex}>
-            <FlagIcon></FlagIcon>
-          </div>
-          <p className={styles.flex}>{props.opportunities[0]?.status}</p>
         </div>
       </Box>
       <Box className={styles.detailsContainer} mt={1}>
