@@ -209,8 +209,10 @@ const App = (props) => {
   const handleUpdateOpportunity = async (formData, id) => {
     try {
       const updatedOpportunity = await opportunityService.update(formData, id)
-      let oppArray = opportunities.filter(opp => opp.id !== formData.id)
-      setOpportunities([updatedOpportunity, ...oppArray])
+      if (updatedOpportunity.id){
+        let oppArray = opportunities.filter(opp => opp.id !== formData.id)
+        setOpportunities([updatedOpportunity, ...oppArray])
+      }
     } catch (error) {
       throw error
     }
@@ -218,8 +220,10 @@ const App = (props) => {
   const handleUpdateContact = async (formData, id) => {
     try {
       const updatedContact = await contactService.update(formData, id)
-      let conArray = contacts.filter(con => con.id !== formData.id)
-      setContacts([updatedContact, ...conArray])
+      if (updatedContact.id){
+        let conArray = contacts.filter(con => con.id !== formData.id)
+        setContacts([updatedContact, ...conArray])
+      }
     } catch (error) {
       throw error
     }
@@ -227,8 +231,10 @@ const App = (props) => {
   const handleUpdateActivity = async (formData, id) => {
     try {
       const updatedActivity = await activityService.update(formData, id)
-      let actArray = activities.filter(act => act.id !== formData.id)
-      setActivities([updatedActivity, ...actArray])
+      if (updatedActivity.id){
+        let actArray = activities.filter(act => act.id !== formData.id)
+        setActivities([updatedActivity, ...actArray])
+      }
     } catch (error) {
       throw error
     }
@@ -236,8 +242,10 @@ const App = (props) => {
   const handleUpdateCompany = async (formData, id) => {
     try {
       const updatedCompany = await companyService.update(formData, id)
-      let comArray = companies.filter(com => com.id !== formData.id)
-      setCompanies([updatedCompany, ...comArray])
+      if (updatedCompany.id){
+        let comArray = companies.filter(com => com.id !== formData.id)
+        setCompanies([updatedCompany, ...comArray])
+      }
     } catch (error) {
       throw error
     }
