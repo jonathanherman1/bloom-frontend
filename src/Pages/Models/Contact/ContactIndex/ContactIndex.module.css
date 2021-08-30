@@ -49,7 +49,7 @@
 
 @media only screen and (min-width: 767px) {
     .addBtnContainer {
-        position: relative;
+        position: static;
         margin: 2rem;
         padding: 0px;
     }
