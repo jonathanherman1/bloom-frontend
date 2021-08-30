@@ -88,7 +88,9 @@ const ActivityIndex = ({ activities }) => {
 					alignItems="center">
 				{activitiesList()}
 				</Grid>
-			</> : noActivities()}
+			</> : noActivities()
+			}
+			<Box mb={6}></Box>
 		</div> 
 	)
 }

@@ -90,7 +90,9 @@ const ContactIndex = ({ contacts }) => {
           alignItems="center">
           {contactsList()}
         </Grid>
-        </> : noContacts()}
+        </> : noContacts()
+        }
+        <Box mb={6}></Box>
     </div>
   );
 };
