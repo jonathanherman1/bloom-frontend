@@ -62,6 +62,33 @@ const OpportunityUpdate = (props) => {
             variant="outlined" 
             InputLabelProps={{shrink: true}}
           />
+
+
+          <FormControl variant="outlined">
+            <InputLabel id="status">Status</InputLabel>
+            <Select
+              labelId="status"
+              id="status"
+              value={formData.status}
+              onChange={(e) => setFormData({ ...formData, status: e.target.value })}
+              label="status"
+              defaultValue={""}
+            >
+              <MenuItem value={"Started"} {...formData?.status === "started" ? "selected" : ""}>Started</MenuItem>
+              <MenuItem value={"Read Job Description"} {...formData?.status === "Read Job Description" ? "selected" : ""}>Read Job Description</MenuItem>
+              <MenuItem value={"Determined If Qualified"} {...formData?.status === "Determined If Qualified" ? "selected" : ""}>Determined If Qualified</MenuItem>
+              <MenuItem value={"Researched Company"} {...formData?.status === "Researched Company" ? "selected" : ""}>Researched Company</MenuItem>
+              <MenuItem value={"Optimized Resume for Role"} {...formData?.status === "Optimized Resume for Role" ? "selected" : ""}>Optimized Resume for Role</MenuItem>
+              <MenuItem value={"In Contact"} {...formData?.status === "In Contact" ? "selected" : ""}>In Contact</MenuItem>
+              <MenuItem value={"Applied"} {...formData?.status === "Applied" ? "selected" : ""}>Applied</MenuItem>
+              <MenuItem value={"Interviewed"} {...formData?.status === "Interviewed" ? "selected" : ""}>Interviewed</MenuItem>
+              <MenuItem value={"Negotiated"} {...formData?.status === "Negotiated" ? "selected" : ""}>Negotiated</MenuItem>
+              <MenuItem value={"Accepted Offer"} {...formData?.status === "Accepted Offer" ? "selected" : ""}>Accepted Offer</MenuItem>
+              <MenuItem value={"Decided to Pass"} {...formData?.status === "Decided to Pass" ? "selected" : ""}>Decided to Pass</MenuItem>
+              <MenuItem value={"No Offer Extended"} {...formData?.status === "No Offer Extended" ? "selected" : ""}>No Offer Extended</MenuItem>
+            </Select>
+          </FormControl>
+
           <Box component="fieldset" mt={1} borderColor="transparent" display="flex">
           <Typography> Interest: </Typography>
           <Rating

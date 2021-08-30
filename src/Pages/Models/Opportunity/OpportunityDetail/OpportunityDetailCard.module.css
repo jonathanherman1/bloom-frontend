@@ -82,3 +82,9 @@
     border: none;
     padding: 0;
 }
+
+.statusGrid {
+    display: grid;
+    grid-template-columns: 20% 150%;
+    grid-template-rows: 100%;
+}

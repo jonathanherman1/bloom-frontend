@@ -8,6 +8,7 @@ import Table from "./Table/Table";
 
 // Material UI
 import Box from "@material-ui/core/Box";
+import Grid from '@material-ui/core/Grid'
 import Paper from "@material-ui/core/Paper";
 import Divider from '@material-ui/core/Divider';
 import Accordion from '@material-ui/core/Accordion';
@@ -15,6 +16,7 @@ import AccordionSummary from '@material-ui/core/AccordionSummary';
 import AccordionDetails from '@material-ui/core/AccordionDetails';
 import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import FlagIcon from '@material-ui/icons/Flag';
 
 // Styles
 import styles from "./OpportunityDetailCard.module.css";
@@ -66,7 +68,12 @@ const OpportunityDetailCard = ( props ) => {
             </div>
           </div>
         </Box>
-        <p>Status</p>
+        <div className={styles.statusGrid}>
+          <div className={styles.flex}>
+            <FlagIcon></FlagIcon>
+          </div>
+          <p>{props.opportunities[0]?.status}</p>
+        </div>
       </Box>
       <Box className={styles.detailsContainer} mt={1}>
         <Box  mt={1} className={styles.container1}>
