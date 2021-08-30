@@ -62,7 +62,7 @@ const App = (props) => {
       const [ darkMode, setDarkMode ] = useState(false);
       const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)')
       const [ loggedIn, setLoggedIn ] = useState(localStorage.getItem('token') ? true : false)
-      const [ username, setUsername ] = useState ('')
+      const [ username, setUsername ] = useState ('Guest')
       const [ currentUser, setCurrentUser ] = useState('')
       const [ displayedForm, setDisplayedForm ] = useState ('')
       const [ snackBar, setSnackBar ] = useState({
@@ -159,7 +159,7 @@ const App = (props) => {
     localStorage.setItem('token', json.token);
     setLoggedIn(true)
     setDisplayedForm('')
-    setUsername(json.user.username)
+    setUsername(json.user?.username)
     setSnackBar({loggedIn: true, loggedOut: false})
   };
 
