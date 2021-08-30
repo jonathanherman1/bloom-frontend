@@ -1,7 +1,7 @@
 .root {
-    width: 345px;
+    width: 360px;
     min-height: 250px;
-    margin: .5rem;
+    margin-bottom: 1rem;
 }
 
 .media {
