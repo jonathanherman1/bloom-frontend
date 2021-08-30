@@ -38,3 +38,8 @@
 .addBtnContainer {
     margin: 2rem;
 }
+
+.grid {
+    display: flex;
+    justify-content: center;
+}

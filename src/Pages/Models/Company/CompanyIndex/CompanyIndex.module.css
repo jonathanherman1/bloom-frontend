@@ -22,3 +22,8 @@
     color: orange;
     font-size: x-large;
 }
+
+.grid {
+    display: flex;
+    justify-content: center;
+}

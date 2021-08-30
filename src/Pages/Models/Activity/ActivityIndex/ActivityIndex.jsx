@@ -15,6 +15,7 @@ import AddIcon from '@material-ui/icons/Add';
 import Button from "@material-ui/core/Button"
 import Tooltip from '@material-ui/core/Tooltip';
 import AddCircleOutlineIcon from "@material-ui/icons/AddCircleOutline"
+import Grid from '@material-ui/core/Grid'
 
 // Styles
 import styles from "./ActivityIndex.module.css"
@@ -23,14 +24,16 @@ const ActivityIndex = ({ activities }) => {
 	const activitiesList = () => {
 		return activities.map((a, i) => {
 			return (
+				<Grid item xs className={styles.grid}>
 				<PrevCard
 					key={i}
 					name={a.name}
 					date={a.date}
 					notes={a.notes}
 					id={a.id}
-          preRoute="activities"
+          			preRoute="activities"
 				/>
+				</Grid>
 			)
 		})
 	}
@@ -79,7 +82,13 @@ const ActivityIndex = ({ activities }) => {
 			? 
 			 <div className={styles.container}>
 				{button}
+				<Grid 
+					container
+					direction="row"
+					justifyContent="center"
+					alignItems="center">
 				{activitiesList()}
+				</Grid>
 		   	 </div> 
 		   : 
 		   		noActivities()}

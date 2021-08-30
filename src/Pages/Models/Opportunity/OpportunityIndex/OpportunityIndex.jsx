@@ -13,6 +13,7 @@ import AddIcon from '@material-ui/icons/Add'
 import Box from '@material-ui/core/Box'
 import Button from '@material-ui/core/Button'
 import Fab from '@material-ui/core/Fab'
+import Grid from '@material-ui/core/Grid'
 import Tooltip from '@material-ui/core/Tooltip'
 
 // Styles
@@ -23,14 +24,15 @@ const OpportunityIndex = ({ opportunities }) => {
   const opportunitiesList = () => {
     return opportunities.map((o, i) => {
       return (
+        <Grid item xs className={styles.grid}>
         <PrevCard
           key={i}
           name={o.name}
           notes={o.notes}
           id={o.id}
           preRoute="opportunities"
-
         />
+        </Grid>
       );
     });
   };
@@ -71,7 +73,13 @@ const OpportunityIndex = ({ opportunities }) => {
       {opportunities.length ? (
         <>
           {button}
+          <Grid 
+          container
+          direction="row"
+          justifyContent="center"
+          alignItems="center">
           {opportunitiesList()}
+          </Grid>
         </>
       ) : (
         noOpportunities()
