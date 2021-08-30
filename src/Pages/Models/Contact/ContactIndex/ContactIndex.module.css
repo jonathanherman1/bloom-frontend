@@ -36,10 +36,25 @@
 }
 
 .addBtnContainer {
-    margin: 2rem;
+    position: fixed;
+    right: 30px;
+    bottom: 80px;
+    z-index: 1000;
 }
 
 .grid {
     display: flex;
     justify-content: center;
+}
+
+@media only screen and (min-width: 767px) {
+    .addBtnContainer {
+        position: relative;
+        margin: 2rem;
+        padding: 0px;
+    }
+
+    .grid {
+        padding: 0px;
+    }
 }

@@ -14,8 +14,9 @@ import AddIcon from '@material-ui/icons/Add';
 import Box from "@material-ui/core/Box";
 import Button from "@material-ui/core/Button";
 import Fab from '@material-ui/core/Fab';
-import Tooltip from '@material-ui/core/Tooltip';
 import Grid from '@material-ui/core/Grid'
+import Tooltip from '@material-ui/core/Tooltip';
+import Typography from '@material-ui/core/Typography'
 
 // Styles
 import styles from "./ContactIndex.module.css";
@@ -80,6 +81,9 @@ const ContactIndex = ({ contacts }) => {
 
   return (
     <div className={styles.container}>
+       <br></br>
+      <Typography variant='h5'>Contacts</Typography>
+      <br></br>
       {contacts.length ? 
         <> 
         {button}
