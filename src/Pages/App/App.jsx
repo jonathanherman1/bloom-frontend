@@ -156,7 +156,7 @@ const App = (props) => {
       body: JSON.stringify(data)
     })
     const json = await res.json()
-    const usernameVar =  json.user.username
+    const usernameVar = await json.user.username
     localStorage.setItem('token', json.token);
     setLoggedIn(true)
     setDisplayedForm('')
