@@ -156,10 +156,11 @@ const App = (props) => {
       body: JSON.stringify(data)
     })
     const json = await res.json()
+    const usernameVar =  json.user.username
     localStorage.setItem('token', json.token);
     setLoggedIn(true)
     setDisplayedForm('')
-    await setUsername(json.user.username)
+    setUsername(usernameVar)
     setSnackBar({loggedIn: true, loggedOut: false})
   };
 
