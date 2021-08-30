@@ -164,7 +164,7 @@ const App = (props) => {
       setUsername(usernameVar)
       setSnackBar({loggedIn: true, loggedOut: false})
     } catch (error) {
-      console.log(error)
+      // console.log(error)
     }
   };
 
