@@ -148,20 +148,24 @@ const App = (props) => {
 
   const handleLogin = async (e, data) => {
     e.preventDefault();
-    const res = await fetch(`${process.env.REACT_APP_LOGIN}`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(data)
-    })
-    const json = await res.json()
-    const usernameVar = await json.user.username
-    localStorage.setItem('token', json.token);
-    setLoggedIn(true)
-    setDisplayedForm('')
-    setUsername(usernameVar)
-    setSnackBar({loggedIn: true, loggedOut: false})
+    try {
+      const res = await fetch(`${process.env.REACT_APP_LOGIN}`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+      })
+      const json = await res.json()
+      localStorage.setItem('token', json.token);
+      const usernameVar = await json.user.username
+      setLoggedIn(true)
+      setDisplayedForm('')
+      setUsername(usernameVar)
+      setSnackBar({loggedIn: true, loggedOut: false})
+    } catch (error) {
+      console.log(error)
+    }
   };
 
   const handleSignup = async (e, data) => {
