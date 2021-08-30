@@ -31,7 +31,6 @@ const OpportunityIndex = ({ opportunities }) => {
           notes={o.notes}
           id={o.id}
           preRoute="opportunities"
-
         />
         </Grid>
       );

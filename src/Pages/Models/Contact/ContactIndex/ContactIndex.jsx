@@ -15,6 +15,7 @@ import Box from "@material-ui/core/Box";
 import Button from "@material-ui/core/Button";
 import Fab from '@material-ui/core/Fab';
 import Tooltip from '@material-ui/core/Tooltip';
+import Grid from '@material-ui/core/Grid'
 
 // Styles
 import styles from "./ContactIndex.module.css";
@@ -24,6 +25,7 @@ const ContactIndex = ({ contacts }) => {
   const contactsList = () => {
     return contacts.map((c, i) => {
       return (
+        <Grid item xs className={styles.grid}>
         <PrevCard
           key={i}
           name={c.name}
@@ -34,6 +36,7 @@ const ContactIndex = ({ contacts }) => {
           id={c.id}
           preRoute="contacts"
         />
+        </Grid>
       );
     });
   };
@@ -79,8 +82,14 @@ const ContactIndex = ({ contacts }) => {
     <div className={styles.container}>
       {contacts.length ? 
         <> 
-        {button} 
-        {contactsList()}
+        {button}
+        <Grid 
+          container
+          direction="row"
+          justifyContent="center"
+          alignItems="center">
+          {contactsList()}
+        </Grid>
         </> : noContacts()}
     </div>
   );
