@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import styles from './LoginForm.module.css'
 
+// Material UI
 import Button from '@material-ui/core/Button'
 import TextField from '@material-ui/core/TextField'
+
+// Styles
+import styles from './LoginForm.module.css'
 
 const LoginForm = ({ setDisplayedForm, handleLogin }) => {
   const [ state, setState ] = useState({
@@ -25,6 +28,11 @@ const LoginForm = ({ setDisplayedForm, handleLogin }) => {
       <>
       <form className={styles.form} onSubmit={e => handleLogin(e, state)}>
           <h4 className={styles.loginText} ><i class="fas fa-seedling" id={styles.loginIcon}></i>Log In</h4>
+
+        <div>
+          <h2 className={styles.text}>Welcome to Bloom! </h2>
+          <p className={styles.text}>The place to organize your job hunt and grow your opportunities.</p>
+        </div>
 
         <TextField
           type="text"

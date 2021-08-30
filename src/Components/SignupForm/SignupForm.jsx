@@ -29,6 +29,11 @@ const SignupForm = ({ setDisplayedForm, handleSignup}) => {
         onSubmit={e => handleSignup(e, state)}>
           <h4 className={styles.signUpText}>Sign Up<i class="fas fa-leaf" id={styles.leafIcon}></i></h4>
 
+        <div>
+          <h2 className={styles.text}>Welcome to Bloom! </h2>
+          <p className={styles.text}>The place to organize your job hunt and grow your opportunities.</p>
+        </div>
+
         <TextField
           type="text"
           name="username"
