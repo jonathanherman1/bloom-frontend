@@ -11,8 +11,6 @@ export {
 const BASE_URL = `${process.env.REACT_APP_ACTIVITY}`
 
 async function create(activity){
-  console.log("opp: ", activity)
-  console.log(localStorage.getItem('token'))
   try {
       const res = await fetch(BASE_URL, {
           method: 'POST',
@@ -22,9 +20,7 @@ async function create(activity){
           },
           body: JSON.stringify(activity)
       })
-      console.log("res: ", res)
       const data = await res.json()
-      console.log("data: ", data)
       return data
   } catch (error) {
       throw error
@@ -61,7 +57,6 @@ async function deleteOne(id){
 }
 
 async function update(opportunity, id){
-  console.log(opportunity)
   try{
       const res = await fetch(`${BASE_URL}${id}/`, {
           method: 'PUT',

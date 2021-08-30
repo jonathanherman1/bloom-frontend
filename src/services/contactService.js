@@ -58,7 +58,6 @@ async function deleteOne(id){
 }
 
 async function update(contact, id){
-  console.log(contact)
   try{
       const res = await fetch(`${BASE_URL}${id}/`, {
           method: 'PUT',
