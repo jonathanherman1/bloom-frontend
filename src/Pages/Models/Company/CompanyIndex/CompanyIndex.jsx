@@ -15,6 +15,7 @@ import Box from '@material-ui/core/Box';
 import Button from '@material-ui/core/Button';
 import Fab from '@material-ui/core/Fab';
 import Tooltip from '@material-ui/core/Tooltip';
+import Grid from '@material-ui/core/Grid';
 
 // Styles
 import styles from './CompanyIndex.module.css';
@@ -23,6 +24,7 @@ const CompanyIndex = ({ companies }) => {
   const companiesList = () => {
     return companies.map((o, i) => {
       return (
+        <Grid item xs className={styles.grid}>
         <PrevCard
           key={i}
           name={o.name}
@@ -31,6 +33,7 @@ const CompanyIndex = ({ companies }) => {
           id={o.id}
           preRoute="companies"
         />
+        </Grid>
       );
     });
   };
@@ -70,8 +73,14 @@ const CompanyIndex = ({ companies }) => {
     <div className={styles.container}>
       {companies.length ? 
       <>  
-        {button} 
-        {companiesList()} 
+        {button}
+        <Grid 
+          container
+          direction="row"
+          justifyContent="center"
+          alignItems="center">
+        {companiesList()}
+        </Grid>
       </> : noCompanies()}
     </div>
   );
