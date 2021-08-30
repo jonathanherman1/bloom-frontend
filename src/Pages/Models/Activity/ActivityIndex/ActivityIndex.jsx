@@ -77,10 +77,9 @@ const ActivityIndex = ({ activities }) => {
 	)
 
 	return (
-		<>
-			{activities.length 
-			? 
-			 <div className={styles.container}>
+		<div className={styles.container}>
+			{activities.length ? 
+			<>
 				{button}
 				<Grid 
 					container
@@ -89,10 +88,8 @@ const ActivityIndex = ({ activities }) => {
 					alignItems="center">
 				{activitiesList()}
 				</Grid>
-		   	 </div> 
-		   : 
-		   		noActivities()}
-		</>
+			</> : noActivities()}
+		</div> 
 	)
 }
 
