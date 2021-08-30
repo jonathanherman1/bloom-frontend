@@ -72,7 +72,7 @@ const OpportunityDetailCard = ( props ) => {
           <div className={styles.flex}>
             <FlagIcon></FlagIcon>
           </div>
-          <p>{props.opportunities[0]?.status}</p>
+          <p className={styles.flex}>{props.opportunities[0]?.status}</p>
         </div>
       </Box>
       <Box className={styles.detailsContainer} mt={1}>
