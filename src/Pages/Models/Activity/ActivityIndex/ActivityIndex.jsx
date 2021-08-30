@@ -9,13 +9,14 @@ import PrevCard from "../../../../Components/PrevCard/PrevCard"
 import plantAnimation from '../../../../Assets/lottie-files/38193-relaxing-floral-animation.json'
 
 // Material UI
-import Box from "@material-ui/core/Box"
-import Fab from '@material-ui/core/Fab';
-import AddIcon from '@material-ui/icons/Add';
-import Button from "@material-ui/core/Button"
-import Tooltip from '@material-ui/core/Tooltip';
 import AddCircleOutlineIcon from "@material-ui/icons/AddCircleOutline"
+import AddIcon from '@material-ui/icons/Add';
+import Box from "@material-ui/core/Box"
+import Button from "@material-ui/core/Button"
+import Fab from '@material-ui/core/Fab';
 import Grid from '@material-ui/core/Grid'
+import Tooltip from '@material-ui/core/Tooltip';
+import Typography from '@material-ui/core/Typography';
 
 // Styles
 import styles from "./ActivityIndex.module.css"
@@ -78,6 +79,9 @@ const ActivityIndex = ({ activities }) => {
 
 	return (
 		<div className={styles.container}>
+			 <br></br>
+			<Typography variant='h5'>Activities</Typography>
+			<br></br>
 			{activities.length ? 
 			<>
 				{button}

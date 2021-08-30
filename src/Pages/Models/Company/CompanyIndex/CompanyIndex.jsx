@@ -13,10 +13,10 @@ import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
 import AddIcon from '@material-ui/icons/Add';
 import Box from '@material-ui/core/Box';
 import Button from '@material-ui/core/Button';
+import Grid from '@material-ui/core/Grid';
 import Fab from '@material-ui/core/Fab';
 import Tooltip from '@material-ui/core/Tooltip';
-import Grid from '@material-ui/core/Grid';
-
+import Typography from '@material-ui/core/Typography'
 // Styles
 import styles from './CompanyIndex.module.css';
 
@@ -71,6 +71,9 @@ const CompanyIndex = ({ companies }) => {
 
   return (
     <div className={styles.container}>
+       <br></br>
+      <Typography variant='h5'>Companies</Typography>
+      <br></br>
       {companies.length ? 
       <>  
         {button}

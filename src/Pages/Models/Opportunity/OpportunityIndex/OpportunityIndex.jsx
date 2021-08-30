@@ -15,7 +15,7 @@ import Button from '@material-ui/core/Button'
 import Fab from '@material-ui/core/Fab'
 import Grid from '@material-ui/core/Grid'
 import Tooltip from '@material-ui/core/Tooltip'
-
+import Typography from '@material-ui/core/Typography'
 // Styles
 import styles from './OpportunityIndex.module.css'
 
@@ -70,6 +70,9 @@ const OpportunityIndex = ({ opportunities }) => {
 
   return (
     <div className={styles.container}>
+      <br></br>
+      <Typography variant='h5'>Opportunities</Typography>
+      <br></br>
       {opportunities.length ? (
         <>
           {button}
@@ -84,7 +87,7 @@ const OpportunityIndex = ({ opportunities }) => {
       ) : (
         noOpportunities()
       )}
-     <Box mb={6}></Box>
+     <Box mb={10}></Box>
     </div>
   );
 };
