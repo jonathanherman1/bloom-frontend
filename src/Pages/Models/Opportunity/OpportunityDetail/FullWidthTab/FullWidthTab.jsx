@@ -93,67 +93,43 @@ export default function FullWidthTabs({oppActivities, oppContacts, id}) {
         onChangeIndex={handleChangeIndex}
       >
         <TabPanel value={value} index={0} dir={theme.direction}>
-          {oppActivities.length ? 
             <div className={styles.grid}>
               <div className={styles.flex}>
-             <Link to={`/opportunities/${id}/new-activity`}>
-              <Grid style={{ display: "flex" }}>
+              <Grid 
+                style={{ display: "flex", color: '#7fc8a9', padding: '1rem' }} 
+                component={Link} 
+                to={`/opportunities/${id}/new-activity`}
+              >
                 <AddCircleOutlineIcon/>
                 <Typography>
                 &nbsp; Add activity
                 </Typography>
               </Grid>
-             </Link>
              </div>
-             <List items={oppActivities} model='activities' />
+             {oppActivities &&
+              <List items={oppActivities} model='activities' style={{ color: '#7fc8a9' }} />
+            }
              </div>
-             :
-             <div className={styles.grid}>
-              <div className={styles.flex}>
-             <Link to={`/opportunities/${id}/new-activity`}>
-              <Grid style={{ display: "flex" }}>
-                <AddCircleOutlineIcon 
-                  />
-                <Typography>
-                &nbsp; Add activity
-                </Typography>
-              </Grid>
-             </Link>
-              </div>
-             </div>
-          }
         </TabPanel>
         <TabPanel value={value} index={1} dir={theme.direction}>
-        {oppContacts.length ? 
             <div className={styles.grid}>
               <div className={styles.flex}>
-             <Link to={`/opportunities/${id}/new-contact`}>
-              <Grid style={{ display: "flex" }}>
+              <Grid 
+                style={{ display: "flex", color: '#7fc8a9', padding: '1rem' }} 
+                component={ Link } 
+                to={`/opportunities/${id}/new-contact`}
+              >
                 <AddCircleOutlineIcon 
                   />
                 <Typography>
                 &nbsp; Add contact
                 </Typography>
               </Grid>
-             </Link>
              </div>
+             {oppContacts &&
              <List items={oppContacts} model='contacts' />
+            }
              </div>
-             :
-             <div className={styles.grid}>
-              <div className={styles.flex}>
-             <Link to={`/opportunities/${id}/new-contact`}>
-              <Grid style={{ display: "flex" }}>
-                <AddCircleOutlineIcon 
-                  />
-                <Typography>
-                &nbsp; Add contact
-                </Typography>
-              </Grid>
-             </Link>
-              </div>
-             </div>
-          }
         </TabPanel>
       </SwipeableViews>
     </div>

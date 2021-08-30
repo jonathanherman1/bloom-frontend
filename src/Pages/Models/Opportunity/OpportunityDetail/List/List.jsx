@@ -27,7 +27,7 @@ export default function SimpleList(props) {
       <List component="nav" aria-label="prop name list">
         {
           props.items.map(item => (
-            <Link to={`/${props.model}/${item.id}`}>
+            <Link to={`/${props.model}/${item.id}`} style={{ color: '#7fc8a9' }}>
               <ListItem 
                 key={item.id}
                 button
