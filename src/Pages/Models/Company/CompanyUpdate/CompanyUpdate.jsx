@@ -37,7 +37,7 @@ function CompanyUpdate(props) {
     const handleSubmit = async (e) => {
       e.preventDefault()
       await props.handleUpdateCompany(formData, props.match.params.id)
-      history.push('/companies')
+      history.push(`/companies/${props.match.params.id}`)
     }
   
     return (

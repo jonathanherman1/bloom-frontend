@@ -40,7 +40,7 @@ function ContactUpdate(props) {
         e.preventDefault()
         formData.phone = phoneNum
         await props.handleUpdateContact(formData, props.match.params.id)
-        history.push('/contacts')
+        history.push(`/contacts/${props.match.params.id}/`)
     }
 
     return (

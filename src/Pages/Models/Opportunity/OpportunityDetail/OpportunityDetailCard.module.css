@@ -85,6 +85,6 @@
 
 .statusGrid {
     display: grid;
-    grid-template-columns: 20% 150%;
+    grid-template-columns: 20% 100%;
     grid-template-rows: 100%;
 }
