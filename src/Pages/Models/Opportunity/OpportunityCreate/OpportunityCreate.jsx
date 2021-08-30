@@ -38,7 +38,6 @@ function OpportunityCreate(props) {
       contacts: [],
       owner: props.currentUser.id 
     })
-    console.log(formData.date)
     const handleChange = (e) => {
       setFormData({...formData, [e.target.name]: e.target.value})
     }

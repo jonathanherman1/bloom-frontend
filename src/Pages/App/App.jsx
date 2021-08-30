@@ -223,7 +223,6 @@ const App = (props) => {
     try {
       const updatedActivity = await activityService.update(formData, id)
       let actArray = activities.filter(act => act.id !== formData.id)
-      console.log(actArray)
       setActivities([updatedActivity, ...actArray])
     } catch (error) {
       throw error

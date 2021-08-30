@@ -12,8 +12,6 @@ export {
 const BASE_URL = `${process.env.REACT_APP_COMPANY}`
 
 async function create(company){
-    console.log("opp: ", company)
-    console.log(localStorage.getItem('token'))
     try {
         const res = await fetch(BASE_URL, {
             method: 'POST',
@@ -23,9 +21,7 @@ async function create(company){
             },
             body: JSON.stringify(company)
         })
-        console.log("res: ", res)
         const data = await res.json()
-        console.log("data: ", data)
         return data
     } catch (error) {
         throw error
@@ -62,7 +58,6 @@ async function deleteOne(id){
 }
 
 async function update(company, id){
-    console.log(company)
     try{
         const res = await fetch(`${BASE_URL}${id}/`, {
             method: 'PUT',
