@@ -76,7 +76,7 @@ const OpportunityUpdate = (props) => {
             >
               <MenuItem value={"Started"} {...formData?.status === "started" ? "selected" : ""}>Started</MenuItem>
               <MenuItem value={"Read Job Description"} {...formData?.status === "Read Job Description" ? "selected" : ""}>Read Job Description</MenuItem>
-              <MenuItem value={"Determined If Qualified"} {...formData?.status === "Determined If Qualified" ? "selected" : ""}>Determined If Qualified</MenuItem>
+              {/* <MenuItem value={"Determined If Qualified"} {...formData?.status === "Determined If Qualified" ? "selected" : ""}>Determined If Qualified</MenuItem> */}
               <MenuItem value={"Researched Company"} {...formData?.status === "Researched Company" ? "selected" : ""}>Researched Company</MenuItem>
               <MenuItem value={"Optimized Resume for Role"} {...formData?.status === "Optimized Resume for Role" ? "selected" : ""}>Optimized Resume for Role</MenuItem>
               <MenuItem value={"In Contact"} {...formData?.status === "In Contact" ? "selected" : ""}>In Contact</MenuItem>
