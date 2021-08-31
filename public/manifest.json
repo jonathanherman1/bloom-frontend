@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Bloom",
+  "name": "Bloom",
   "icons": [
     {
       "src": "favicon.ico",
@@ -8,18 +8,18 @@
       "type": "image/x-icon"
     },
     {
-      "src": "logo192.png",
+      "src": "favicon-32x32.png",
       "type": "image/png",
-      "sizes": "192x93"
+      "sizes": "32x32"
     },
     {
-      "src": "logo512.png",
+      "src": "bloomfavicon.png",
       "type": "image/png",
-      "sizes": "512x248"
+      "sizes": "144x144"
     }
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#000000",
+  "theme_color": "#7fc8a9",
   "background_color": "#ffffff"
 }
