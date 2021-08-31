@@ -4,7 +4,7 @@ Grow Your Opportunities<sup>TM</sup>
 
 ## Background
 
-### [Watch the Bloom Intro Video](https://www.youtube.com/watch?v=s35vPfNzFJU)
+### [Watch the Bloom Intro Video](https://www.youtube.com/watch?v=w4OMpRpCu7M)
 
 At Bloom, we believe every job seeker deserves an opportunity to find meaningful work. That starts with helping you turn complexity into simplicity. When you simplify your search, you can grasp your options, prioritize what you want, and take action to land your next role.
 
@@ -107,3 +107,5 @@ Bloom helps you easily track job opportunities. Maintain a lightweight CRM of co
 - Notifications + reminders
 
 For a complete list of icebox items in the Bloom backlog, [visit our Trello board](https://trello.com/b/bTZJXCsD).
+
+Checkout the [Bloom backend](https://github.com/jonathanherman1/bloom_backend) built with Django.
