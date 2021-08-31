@@ -1,4 +1,5 @@
-# [Bloom](https://go-bloom.com)
+[![Bloom Logo Banner Dark](src/Assets/screenshots/logo-banner-dark.png)](https://go-bloom.com)
+
 Grow Your Opportunities<sup>TM</sup>
 
 ## Background
@@ -96,6 +97,8 @@ Bloom helps you easily track job opportunities. Maintain a lightweight CRM of co
 - Material UI
 - Heroku
 - Lottie
+
+![Bloom Technologies Used](src/Assets/screenshots/bloom%20tech.png)
 
 ## Next Steps
 
